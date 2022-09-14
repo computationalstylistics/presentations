@@ -1,6 +1,6 @@
 ---
-title: "CLS INFRA project"
-subtitle: "towards DH infrastructures"
+title: "CLS INFRA"
+subtitle: "an infrastructural project"
 author: Maciej Eder (<a>maciej.eder@ijp.pan.pl</a>)
 date: 15.09.2022 
       </br></br></br> Libraries & Digital Humanities – Projects and Challenges 
@@ -108,7 +108,6 @@ Karina van Dalen-Oskam, _Het raadsel literatuur_, 2021
 
 ## Not possible individually { .cls_section }
 
-Hence: the role of collaboration!
 
 
 ## Research infrastructures { .cls_section }
@@ -148,7 +147,7 @@ Hence: the role of collaboration!
 
 ## CLS INFRA { .cls_section }
 
-An infrastructural project for computational literary studies, founded by H2020 scheme
+An infrastructural project for computational literary studies, founded by Horizon 2020 scheme
 
 
 
