@@ -3,8 +3,8 @@ title: "CLS INFRA project"
 subtitle: "towards DH infrastructures"
 author: Maciej Eder (<a>maciej.eder@ijp.pan.pl</a>)
 date: 15.09.2022 
-      </br></br></br> Libraries & Digital Humanities: Projects and Challenges </br>
-      LINDH-UNED, Madrid, 13–16.09.2022
+      </br></br></br> Libraries & Digital Humanities – Projects and Challenges 
+      </br>LINDH-UNED, Madrid, 13–16.09.2022
 output:
   revealjs::revealjs_presentation:
     transition: fade
@@ -19,7 +19,7 @@ output:
 ## introduction { .cls_section }
 
 
-## First, what is CLS about?
+## First, what CLS is about
 
 * Computational Literary Studies
 * Aimed at analyzing (large amounts of) textual data...
@@ -28,21 +28,31 @@ output:
 
 ## Leon Battista Alberti
 
+![](img/alberti.jpg){height=450}
+
 Leon Battista Alberti, _De componendis cifris_, ca. 1466
 
 
 ## Computation into criticism
+
+![](img/burrows.jpg){height=450}
 
 John Burrows, _Computation into Criticism_, 1987
 
 
 ## Distant reading 
 
-<!-- Moretti, Jockers, Underwood -->
+![](img/moretti.jpg){height=450}
+![](img/jockers.jpg){height=450}
+![](img/underwood.jpg){height=450}
+
+Franco Moretti, Matt Jockers, Ted Underwood
 
 
 
 ## Sociology of reading 
+
+![](img/van-dalen.jpg){height=450}
 
 Karina van Dalen-Oskam, _Het raadsel literatuur_, 2021
 
@@ -50,6 +60,7 @@ Karina van Dalen-Oskam, _Het raadsel literatuur_, 2021
 
 ## Quantitative linguistics
 
+![](img/baayen.jpg){height=450}
 <!-- Matematyka i poetyka, Baayen, Analyzing linguistic data with R -->
 
 
@@ -81,6 +92,7 @@ Karina van Dalen-Oskam, _Het raadsel literatuur_, 2021
 
 ## Blase Pascal and two infinities
 
+![](img/pascal_two_infinities_smaller.png){height=550}
 <!-- a picture --> 
 
 
@@ -103,19 +115,33 @@ Hence: the role of collaboration!
 
 
 
-## Libraries, academic journals, publishers, ...
+## Libraries, journals, publishers, ...
+
+![](img/reading_room.jpg){height=550}
+
 
 
 ## Dictionaries at IJP PAN
 
-<!-- Słownik XVII w. --> 
+![](img/sxvii.png){height=550}
+
 
 
 
 ## ELTeC corpus
 
+![](img/eltec.png){height=550}
 
-## DraCor and Programmable Corpora
+
+
+
+## DraCor
+
+
+![](img/dracor.png){height=550}
+
+
+
 
 
 
@@ -156,6 +182,33 @@ An infrastructural project for computational literary studies, founded by H2020 
     * training schools
     * short-term research stays
     * collaboration with COST Action
+
+
+
+
+## Overarching idea is to connect...
+
+* People
+  * To establish a network of CLS researchers
+* Data
+  * To consolidate existing high-quality corpora...
+  * ...covering prose, drama and poetry
+* Tools
+  * To build a chain of NLP tools to analyze texts
+* Methods
+  * To provide a survey of state-of-the-art methods
+
+
+
+## The project's structure
+
+
+![](img/work_packages.png){height=500}
+
+
+## The team (30+ people)
+
+Julie Birkholz, Ingo Börner, Joanna Byszuk, Sally Chambers, Vera Maria Charvat, Silvie Cinková, Tess Dejaeghere, Julia Dudar, Matej Ďurčo, Maciej Eder, Jennifer Edmond, Evgeniia Fileva, Frank Fischer, Serge Heiden, Michal Křen, Bartłomiej Kunda, Michał Mrugalski, Ciara Murphy, Carolin Odebrecht, Marco Raciti, Salvador Ros, Christof Schöch, Artjoms Šeļa, Toma Tasovac, Justin Tonra, Erzsébet Tóth-Czifra, Peer Trilcke, Karina van Dalen-Oskam, Lisanne van Rossum
 
 
 
