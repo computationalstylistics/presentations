@@ -5,3 +5,4 @@
 # vim tmp files
 *.swp
 
+*.Rhistory
