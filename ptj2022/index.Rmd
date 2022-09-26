@@ -106,6 +106,25 @@ opts_chunk$set(cache = FALSE)
 * Wiemy, że imiesłów uprzedni powoli zanika
 * Czy jednak możemy zmierzyć tempo zaniku w całym korpusie?
 * Czy tak samo się to odbywa u różnych pisarzy?
+* Stanisław Lem
+  * pisarz sci-fi...
+  * ... którego styl zdaje się archaizować
+  * Czy da się odnaleźć ślady tych archaizacji?
+
+
+## Materiał badawczy
+
+* Korpus Lema:
+  * 35 tekstów
+  * powieści, eseistyka
+  * lata 1951–2001
+  * \>2.5 mln słów
+* Korpus porównawczy
+  * 951 tekstów
+  * \>25 mln słów
+  * różne gatunki
+  * lata 1601–2010
+  * _Korba_, SXVI, inne źródła (zob. Górski, Król, Eder 2019)
 
 
 
@@ -256,6 +275,16 @@ daj_obrazek(tedy, "topleft")
 ```
 
 
+## Język czy styl?
+
+
+* Czy obserwujemy zmianę w języku?
+* Czy zmiana jest efektem gustu epoki?
+* Czy za zmianę odpowiadają wpływowi autorzy?
+* Do jakiego stopnia autor może iść wbrew zmianom?
+
+
+
 ## Zaimek zwrotny _się_
 
 ``` {R echo = FALSE, message = FALSE}
@@ -363,9 +392,14 @@ daj_obrazek(sie, "topleft")
 
 
 
+## Stanisław Lem raz jeszcze
+
+![](img/siec_powiazan_Lema.png){height=500}
 
 
-## idiolekt w idiolekcie { .ijppan_section }
+
+
+## idiolekt postaci fikcyjnej { .ijppan_section }
 
 
 
