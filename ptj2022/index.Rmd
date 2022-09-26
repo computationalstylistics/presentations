@@ -336,7 +336,7 @@ daj_obrazek(sie, "topleft")
 * Harper Lee, Joseph Conrad, Ford Madox Ford  
 * Elena Ferrante
 
-
+<!--
 
 ## Roman de la Rose
 
@@ -357,7 +357,7 @@ daj_obrazek(sie, "topleft")
 ![](img/rdlr.png){height=500}
 
 
-
+-->
 
 
 ## Biblia królowej Zofii
@@ -392,6 +392,8 @@ daj_obrazek(sie, "topleft")
 
 
 
+
+
 ## Stanisław Lem raz jeszcze
 
 ![](img/siec_powiazan_Lema.png){height=500}
@@ -407,11 +409,46 @@ daj_obrazek(sie, "topleft")
 ## Zróżnicowanie języka bohaterów 
 
 
-
 * Computation into criticism (John Burrows)
-* 
+  * zróżnicowanie bohaterów u Jane Austen
+* Czy dobry autor potrafi różnicować styl?
+* Czy istnieją pewne ogólne tendencje?
+* Czy zróżnicowanie języka postaci odpowiada zjawiskom socjolingwistycznym języka ogólnego?
 
-* czy socjolingwistyczne zróżnicowanie tekstów da się odtworzyć w literaturze?
+
+
+
+
+## Początek większego studium
+
+* Artjoms Šeļa
+* Ben Nagy
+* Joanna Byszuk
+* Laura Hernández-Lorenzo
+* Botond Szemes
+* Maciej Eder
+
+
+
+## Założenia
+
+
+* Metody atrybucji autorskiej mogą pokazać zróżnicowanie postaci
+* Oddzielenie postaci mówiących znacznie prostsze w tekstach dramatycznych
+* Użyty korpus dramatów: DraCor
+  * Szekspir (37 tekstów)
+  * dramat rosyjski (212 tekstów)
+  * dramat francuski (1560 tekstów)
+  * dramat niemiecki (592)
+
+
+
+## DraCor
+
+![](img/dracor.png){height=550}
+
+
+
 
 
 ## Mocny idiolekt (kobiety)
@@ -427,10 +464,10 @@ daj_obrazek(sie, "topleft")
 ![](img/shak_male_voices_2.png){height=450}
 
 
-##
+## Wstępne obserwacje
 
-* postaci kobiece bardziej charakterystyczne
-* postaci drugoplanowe bardziej charakterystyczne
+* Postaci kobiece bardziej charakterystyczne
+* Postaci drugoplanowe bardziej charakterystyczne
 
 
 
@@ -442,6 +479,15 @@ daj_obrazek(sie, "topleft")
 ## Dramat francuski oraz niemiecki
 
 ![](img/distinctiveness_dialog1.png){height=450}
+
+
+
+## Dalsze obserwacje
+
+* Postaci kobiece mocniej zindiwidualizowane...
+* ... niezależnie od języka i epoki
+* Czy dlatego, że autorzy są w lwiej części mężczyznami?
+
 
 
 
@@ -466,6 +512,16 @@ daj_obrazek(sie, "topleft")
 zaimki vs. rodzajniki 
 
 słownictwo rodzinne vs. słownictwo polityczne
+
+
+
+
+## Podsumowanie
+
+* Zróżnicowanie stylistyczne/językowe postaci powtarza niektóre zjawiska socjolingwistyczne
+* Literatura najnowsza może te różnice zatrzeć (?)
+* Czy literatura kobieca mocniej indywidualizuje język męskich postaci?
+* ... 
 
 
 
