@@ -83,20 +83,30 @@ daj_obrazek = function(leksem, gdzie_legenda = "topright") {
 
 
 
-opts_chunk$set(cache = TRUE)
+opts_chunk$set(cache = FALSE)
 ```
 
 
 
 
-## wprowadzenie { .ijppan_section }
+## Spis rzeczy
+
+* Spojrzenie na styl autorski na tle ogólnych cech rozwojowych polszczyzny
+* Zróżnicowanie stylistyczne jako narzędzie atrybucji autorskiej
+* Idiolekt postaci literackich
 
 
-## First, what CLS is about
 
-* Computational Literary Studies
-* Aimed at analyzing (large amounts of) textual data...
-* ... by computational techniques
+
+## język a styl { .ijppan_section }
+
+
+## Przykład: imiesłów uprzedni
+
+* Wiemy, że imiesłów uprzedni powoli zanika
+* Czy jednak możemy zmierzyć tempo zaniku w całym korpusie?
+* Czy tak samo się to odbywa u różnych pisarzy?
+
 
 
 
@@ -229,13 +239,6 @@ daj_obrazek(zeby_aby_by, "topleft")
 ```
 
 
-## Zaimek zwrotny _się_
-
-``` {R echo = FALSE, message = FALSE}
-#sie = sapply(dane, function(x) length(grep("\\b[ſśs][iy][eę]\\b", x)))
-daj_obrazek(sie, "topleft")
-```
-
 
 ## Spójnik _że_
 
@@ -253,6 +256,13 @@ daj_obrazek(tedy, "topleft")
 ```
 
 
+## Zaimek zwrotny _się_
+
+``` {R echo = FALSE, message = FALSE}
+#sie = sapply(dane, function(x) length(grep("\\b[ſśs][iy][eę]\\b", x)))
+daj_obrazek(sie, "topleft")
+```
+
 
 
 
@@ -268,6 +278,20 @@ daj_obrazek(tedy, "topleft")
   * bardzo silny znacznik: częstości słów gramatycznych
   * chętnie wybierane przybliżenie: najczęstsze słowa
 * Czy styl jest _jednoznacznie_ zależny od autora? (cf. kod DNA, odcisk palca, wzór na źrenicy, ...)
+
+
+## Frekwencje najczęstszych słów
+
+
+> ‘It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.’
+
+> (J. Austen, _Pride and Prejudice_)
+
+
+<p>“<span style="color: red;">the</span>” = 4.25%</p>
+<p>“<span style="color: red;">in</span>” = 3.45%</p>
+<p>“<span style="color: red;">of</span>” = 1.81%</p>
+<p><span style="color: red;">. . .</span></p>
 
 
 
