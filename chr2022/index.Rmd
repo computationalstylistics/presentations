@@ -626,7 +626,7 @@ performance_gain_wurzburg[performance_gain_wurzburg <= 0] = NA
 
 
 # gain over the baseline
-plot_2 = levelplot(t(performance_gain_wurzburg), cuts = 1000, scales = list(x = x.scale, y = y.scale), col.regions = rev(plasma(1000)), xlab= "semantic background (cosine distance)", ylab = "MFWs", main = "Cosine Delta", at=seq(0, 0.089, length.out=150))
+plot_2 = levelplot(t(performance_gain_wurzburg), cuts = 1000, scales = list(x = x.scale, y = y.scale), col.regions = rev(plasma(1000)), xlab= "semantic background (cosine distance)", ylab = "MFWs", main = "Cosine Delta")#, at=seq(0, 0.089, length.out=150))
 plot_2
 
 ```
@@ -641,7 +641,7 @@ collect_results_all_similarity_areas = collect_results_all_similarity_areas[,1:3
 x.scale <- list(at = seq(1, 37, 4), label = seq(0.9, -1, -0.2))
 y.scale <- list(at = c(1, 4, 7, 10, 13, 16, 19), labels = seq(100, 1000, 150))
 # absolute values
-plot_3 = levelplot(t(collect_results_all_similarity_areas), cuts = 1000, scales = list(x = x.scale, y = y.scale), col.regions = rev(turbo(1000)), xlab= "semantic background (cosine distance)", ylab = "number of MFWs", main = "Burrows's Delta", at=seq(0.45, 0.97, length.out=150))
+plot_3 = levelplot(t(collect_results_all_similarity_areas), cuts = 1000, scales = list(x = x.scale, y = y.scale), col.regions = rev(turbo(1000)), xlab= "semantic background (cosine distance)", ylab = "number of MFWs", main = "Burrows's Delta")#, at=seq(0.45, 0.97, length.out=150))
 plot_3
 ```
 
@@ -679,7 +679,7 @@ collect_results_all_similarity_areas = collect_results_all_similarity_areas[,1:3
 x.scale <- list(at = seq(1, 37, 4), label = seq(0.9, -1, -0.2))
 y.scale <- list(at = c(1, 4, 7, 10, 13, 16, 19), labels = seq(100, 1000, 150))
 # absolute values
-plot_3 = levelplot(t(collect_results_all_similarity_areas), cuts = 1000, scales = list(x = x.scale, y = y.scale), col.regions = rev(turbo(1000)), xlab= "semantic background (cosine distance)", ylab = "number of MFWs", main = "Eder's Delta", at=seq(0.45, 0.97, length.out=120))
+plot_3 = levelplot(t(collect_results_all_similarity_areas), cuts = 1000, scales = list(x = x.scale, y = y.scale), col.regions = rev(turbo(1000)), xlab= "semantic background (cosine distance)", ylab = "number of MFWs", main = "Eder's Delta")#, at=seq(0.45, 0.97, length.out=120))
 plot_3
 ```
 
@@ -696,7 +696,7 @@ performance_gain_eder[performance_gain_eder <= 0] = NA
 
 
 # gain over the baseline
-plot_2 = levelplot(t(performance_gain_eder), cuts = 1000, scales = list(x = x.scale, y = y.scale), col.regions = rev(turbo(1000, end = 0.6)), xlab= "semantic background (cosine distance)", ylab = "MFWs", main = "Eder's Delta", at=seq(0, 0.084, length.out=120))
+plot_2 = levelplot(t(performance_gain_eder), cuts = 1000, scales = list(x = x.scale, y = y.scale), col.regions = rev(plasma(1000)), xlab= "semantic background (cosine distance)", ylab = "MFWs", main = "Eder's Delta", at=seq(0, 0.084, length.out=120))
 plot_2
 
 
