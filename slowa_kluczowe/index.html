@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nie czytając, poznać treść, czyli o metodach automatycznej identyfikacji słów kluczowych</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="index_files/shower-ribbon/package/styles/screen-4x3.css">
+  <link rel="stylesheet" href="index_files/rmdshower/style-common.css">
+  <link rel="stylesheet" href="index_files/rmdshower/style-ribbon.css">
+  <link rel="stylesheet" href="index_files/shower-ribbon/style-override.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.js"></script>
+  <script src="index_files/rmdshower/auto-render.min.js" type="text/javascript"></script>
+  
+  
+  
+  
+      <script src="index_files/header-attrs-2.14/header-attrs.js"></script>
+  
+</head>
+
+<body class="shower list">
+
+  <header class="caption">
+    <h1>Nie czytając, poznać treść, czyli o metodach automatycznej identyfikacji słów kluczowych</h1>
+    <p>Maciej Eder (Instytut Języka Polskiego PAN)</p>
+  </header>
+
+  
+  
+<section id="section" class="slide level2 white">
+<h2 class="white"></h2>
+<p><img src="IMG_0229.jpg" class="cover"></p>
+<p class="white" style="font-size: 180%">
+<b>Nie czytając, poznać treść,</b> </br> <b>czyli o metodach</b> </br>
+<b>automatycznej identyfikacji</b> </br> <b>słów kluczowych</b>
+</p>
+<p class="white" style="font-size: 120%">
+Maciej Eder
+</p>
+<p class="white" style="font-size: 90%; margin-bottom: 10em;">
+Instytut Języka Polskiego PAN
+</p>
+</section>
+<section id="wprowadzenie" class="slide level2">
+<h2>Wprowadzenie</h2>
+<ul>
+<li>Nauki o informacji:
+<ul>
+<li>Jak “przeczytać” duży zbiór tekstów, np. całe archiwum?</li>
+</ul></li>
+<li>Językoznawstwo:
+<ul>
+<li>Czy można coś powiedzieć o znaczeniu słowa na podstawie jego
+frekwencji?</li>
+</ul></li>
+</ul>
+</section>
+<section id="czy-idealne-słowo-kluczowe-może-istnieć"
+class="slide level2">
+<h2>Czy idealne słowo kluczowe może istnieć?</h2>
+<ul>
+<li>nauki o informacji:
+<ul>
+<li>“znaczące” słowa</li>
+<li>o czym jest dany tekst</li>
+</ul></li>
+<li>stylistyka:
+<ul>
+<li>czy warstwa stylistyczna też ma znaczenie?</li>
+<li>jeśli jakiś autor nadużywa “się”, to czy powinniśmy to słowo uznać
+za kluczowe?</li>
+</ul></li>
+</ul>
+</section>
+<section id="podstawowe-założenia" class="slide level2">
+<h2>Podstawowe założenia</h2>
+<ul>
+<li>Te same słowa w różnych tekstach występują z różną częstością.</li>
+<li>Frekwencja danego słowa w dwóch podkorpusach <em>zawsze</em> będzie
+się różnić.</li>
+<li>Istotą jest znalezienie tych słów, które w obu podkorpusach różnią
+się <em>w istotnym stopniu</em>.</li>
+<li>Słowo kluczowe = słowo znacząco częstsze w danym tekście.</li>
+</ul>
+</section>
+<section id="przykładowy-artykuł" class="slide level2">
+<h2>Przykładowy artykuł</h2>
+<p>Wystawę prezentującą dorobek Tadeusza Kantora obejrzą mieszkańcy Sao
+Paulo (Brazylia). Ekspozycja “Maszyna Kantor. Wystawianie, perforowanie,
+montowanie, malowanie i inne sposoby produkcji” otwarta zostanie 18
+sierpnia. W tym roku przypada 100. rocznica urodzin artysty. Jak
+poinformował Błażej Filanowski z Muzeum Sztuki w Łodzi - jednego ze
+współorganizatorów wystawy - ekspozycja będzie “największą,
+komplementarną prezentacją dorobku tego twórcy poza granicami kraju, jak
+i jego pierwszą retrospektywą w Ameryce Południowej”. W specjalnie
+przygotowanej przestrzeni pojawi się ponad 130 obiektów: oryginały i
+repliki rekwizytów scenicznych, dzieła malarskie, rysunki, asamblaże, a
+także bardzo bogata dokumentacja fotograficzna i filmowa happeningów,
+akcji oraz…</p>
+</section>
+<section id="najsilniejszych-słów-kluczowych" class="slide level2">
+<h2>15 najsilniejszych słów kluczowych</h2>
+<p>kantora, kantor, sztuki, cricot, paulo, sao, teatru, krakowskiej,
+muzeum, ekspozycja, twórczości, krakowie, happeningów, krzysztofory,
+kuratorów, …</p>
+</section>
+<section id="prosty-pomysł" class="slide level2">
+<h2>Prosty pomysł…</h2>
+<blockquote>
+<p>Rok 1647 był to dziwny rok, w którym rozmaite znaki na niebie i ziemi
+zwiastowały jakoweś klęski i nadzwyczajne zdarzenia.</p>
+</blockquote>
+<p>rok zwiastowały jakieś zdarzenia nadzwyczajne klęski znaki rozmaite
+dziwny niebie ziemi którym był i to na w</p>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-1-1.png" width="864" /></p>
+</section>
+<section id="słowa-kluczowe-vs.-pozostałe" class="slide level2">
+<h2>Słowa kluczowe vs. pozostałe</h2>
+<p>kantora, kantor, sztuki, cricot, paulo, sao, teatru, krakowskiej,
+muzeum, ekspozycja, twórczości, krakowie, happeningów, krzysztofory,
+kuratorów, plastyków, scenografem, wielopole, wystawy, aktorem, malarza,
+muzeów, reżyserem, …, …, …, …, <strong>a, są, jak, jej, również, która,
+bardzo, tej, do, na, w, się</strong></p>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<h2 class="shout">
+Metoda LL
+</h2>
+</section>
+<section id="analiza-słów-kluczowych" class="slide level2">
+<h2>Analiza słów kluczowych</h2>
+<ul>
+<li>analiza słów kluczowych za pomocą zlogarytmowanej funkcji
+wiarygodności (ang. <em>log likelihood</em>)</li>
+<li>szeroko stosowana w ogólnodostępnym oprogramowaniu: AntConc,
+WordSmith Tools, etc.</li>
+</ul>
+</section>
+<section id="słowa-kluczowe-ll" class="slide level2">
+<h2>Słowa kluczowe LL</h2>
+<pre><code>##   [1] &quot;lecz&quot;           &quot;ponieważ&quot;       &quot;jako&quot;           &quot;jest&quot;          
+##   [5] &quot;np&quot;             &quot;informacji&quot;     &quot;świat&quot;          &quot;dzieła&quot;        
+##   [9] &quot;są&quot;             &quot;można&quot;          &quot;czyli&quot;          &quot;fiction&quot;       
+##  [13] &quot;science&quot;        &quot;jeśli&quot;          &quot;świata&quot;         &quot;powieści&quot;      
+##  [17] &quot;bowiem&quot;         &quot;właśnie&quot;        &quot;teorii&quot;         &quot;dla&quot;           
+##  [21] &quot;oraz&quot;           &quot;literatury&quot;     &quot;należy&quot;         &quot;tj&quot;            
+##  [25] &quot;więc&quot;           &quot;itp&quot;            &quot;by&quot;             &quot;podług&quot;        
+##  [29] &quot;utwór&quot;          &quot;lub&quot;            &quot;postaci&quot;        &quot;otóż&quot;          
+##  [33] &quot;takiej&quot;         &quot;stanowi&quot;        &quot;przedstawia&quot;    &quot;teoria&quot;        
+##  [37] &quot;niejako&quot;        &quot;względem&quot;       &quot;sprzeczności&quot;   &quot;takich&quot;        
+##  [41] &quot;wiedzy&quot;         &quot;mogą&quot;           &quot;takiego&quot;        &quot;bohatera&quot;      
+##  [45] &quot;mianowicie&quot;     &quot;utworu&quot;         &quot;musi&quot;           &quot;typu&quot;          
+##  [49] &quot;ani&quot;            &quot;autor&quot;          &quot;powieść&quot;        &quot;wszak&quot;         
+##  [53] &quot;zbioru&quot;         &quot;życia&quot;          &quot;natomiast&quot;      &quot;czytelnika&quot;    
+##  [57] &quot;natury&quot;         &quot;dicka&quot;          &quot;dostojewskiego&quot; &quot;sf&quot;            
+##  [61] &quot;takim&quot;          &quot;sensie&quot;         &quot;gdy&quot;            &quot;dzieło&quot;        
+##  [65] &quot;kultury&quot;        &quot;zjawisk&quot;        &quot;takie&quot;          &quot;jakim&quot;         
+##  [69] &quot;zachodzi&quot;       &quot;czysto&quot;         &quot;tedy&quot;           &quot;nam&quot;           
+##  [73] &quot;zaś&quot;            &quot;gdyż&quot;           &quot;literaturze&quot;    &quot;literatura&quot;    
+##  [77] &quot;utwory&quot;         &quot;zarazem&quot;        &quot;zjawiska&quot;       &quot;tym&quot;           
+##  [81] &quot;pisarz&quot;         &quot;zajść&quot;          &quot;sytuacji&quot;       &quot;bohater&quot;       
+##  [85] &quot;humbert&quot;        &quot;wszakże&quot;        &quot;gatunku&quot;        &quot;dziś&quot;          
+##  [89] &quot;stanu&quot;          &quot;todorov&quot;        &quot;utworów&quot;        &quot;prostu&quot;        
+##  [93] &quot;daje&quot;           &quot;istnieją&quot;       &quot;skoro&quot;          &quot;aby&quot;           
+##  [97] &quot;efekt&quot;          &quot;literackich&quot;    &quot;toteż&quot;          &quot;czytelnik&quot;</code></pre>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<h2 class="shout">
+Zeta
+</h2>
+</section>
+<section id="zeta-założenia" class="slide level2">
+<h2>Zeta: założenia</h2>
+<p><img src="Diagram1.png" width=800px></p>
+</section>
+<section id="zeta-rozwiązania" class="slide level2">
+<h2>Zeta: rozwiązania</h2>
+<p><img src="Diagram2.png" width=800px></p>
+<p><span class="math display">\[\zeta_{(a,b)} = \left(\frac{f_{(a)} -
+f_{(b)}}{100}\right) +1\]</span></p>
+<p>(Burrows, 2007; Craig, 2009)</p>
+</section>
+<section id="zeta-wyniki" class="slide level2">
+<h2>Zeta: wyniki</h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-4-1.png" width="864" /></p>
+</section>
+<section id="słowa-kluczowe-obliczone-metodą-zeta" class="slide level2">
+<h2>Słowa kluczowe obliczone metodą Zeta</h2>
+<pre><code>##   [1] &quot;np&quot;          &quot;takiej&quot;      &quot;świata&quot;      &quot;oraz&quot;        &quot;świat&quot;      
+##   [6] &quot;czyli&quot;       &quot;należy&quot;      &quot;względem&quot;    &quot;przedstawia&quot; &quot;wiedzy&quot;     
+##  [11] &quot;takim&quot;       &quot;otóż&quot;        &quot;typu&quot;        &quot;powieści&quot;    &quot;lecz&quot;       
+##  [16] &quot;skoro&quot;       &quot;niejako&quot;     &quot;itp&quot;         &quot;mianowicie&quot;  &quot;wszak&quot;      
+##  [21] &quot;gdyż&quot;        &quot;takiego&quot;     &quot;staje&quot;       &quot;wydaje&quot;      &quot;natomiast&quot;  
+##  [26] &quot;sytuacji&quot;    &quot;jakim&quot;       &quot;tj&quot;          &quot;wszakże&quot;     &quot;ponieważ&quot;   
+##  [31] &quot;życia&quot;       &quot;postaci&quot;     &quot;daje&quot;        &quot;literatury&quot;  &quot;utworu&quot;     
+##  [36] &quot;bowiem&quot;      &quot;mogą&quot;        &quot;zaś&quot;         &quot;dzieła&quot;      &quot;natury&quot;     
+##  [41] &quot;zachodzi&quot;    &quot;czysto&quot;      &quot;utwór&quot;       &quot;autor&quot;       &quot;stanu&quot;      
+##  [46] &quot;lub&quot;         &quot;zarazem&quot;     &quot;stanowi&quot;     &quot;zatem&quot;       &quot;zjawisk&quot;    
+##  [51] &quot;mówi&quot;        &quot;podług&quot;      &quot;literackich&quot; &quot;nam&quot;         &quot;zjawiska&quot;   
+##  [56] &quot;nauki&quot;       &quot;wręcz&quot;       &quot;istnieją&quot;    &quot;możliwych&quot;   &quot;rozmaitych&quot; 
+##  [61] &quot;skądinąd&quot;    &quot;science&quot;     &quot;czytelnika&quot;  &quot;dzieło&quot;      &quot;kultury&quot;    
+##  [66] &quot;utwory&quot;      &quot;toteż&quot;       &quot;autora&quot;      &quot;im&quot;          &quot;ów&quot;         
+##  [71] &quot;teorii&quot;      &quot;kolei&quot;       &quot;wartości&quot;    &quot;stąd&quot;        &quot;teoria&quot;     
+##  [76] &quot;wieku&quot;       &quot;informacji&quot;  &quot;sądzę&quot;       &quot;owej&quot;        &quot;tedy&quot;       
+##  [81] &quot;relacji&quot;     &quot;fakt&quot;        &quot;wyłącznie&quot;   &quot;kwestii&quot;     &quot;dość&quot;       
+##  [86] &quot;trudno&quot;      &quot;literatura&quot;  &quot;niestety&quot;    &quot;literaturze&quot; &quot;charakter&quot;  
+##  [91] &quot;działań&quot;     &quot;filozofii&quot;   &quot;pełni&quot;       &quot;rzec&quot;        &quot;stopniu&quot;    
+##  [96] &quot;jakimi&quot;      &quot;ono&quot;         &quot;takie&quot;       &quot;musi&quot;        &quot;niż&quot;</code></pre>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<h2 class="shout">
+Krakowiana
+</h2>
+</section>
+<section id="section-4" class="slide level2 white">
+<h2 class="white"></h2>
+<p><img src="sci_rep.png" class="cover"></p>
+</section>
+<section id="szekspir-vs.-conan-doyle" class="slide level2">
+<h2>Szekspir vs. Conan Doyle</h2>
+<table>
+<thead>
+<tr class="header">
+<th>word</th>
+<th>count</th>
+<th>word</th>
+<th>count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>the</td>
+<td>27595</td>
+<td>the</td>
+<td>28662</td>
+</tr>
+<tr class="even">
+<td>and</td>
+<td>26735</td>
+<td>and</td>
+<td>14109</td>
+</tr>
+<tr class="odd">
+<td>I</td>
+<td>22538</td>
+<td>of</td>
+<td>13229</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr class="odd">
+<td>northerly</td>
+<td>1</td>
+<td>revolvers</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<p><img src="Fig-5.png" class="cover"></p>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<p><img src="Fig-6.png" class="cover"></p>
+</section>
+<section id="frekwencja-oraz-pozycja" class="slide level2">
+<h2>Frekwencja <strong>oraz</strong> pozycja</h2>
+<p><span class="math display">\[P_{r(x)} =
+\frac{1}{N}\sum_{i=1}^{r(x)}f(i)\]</span></p>
+<p>co jednocześnie zapewnia, że wartości znajdą się w przedziale {0,
+1}.</p>
+</section>
+<section id="frekwencja-oraz-pozycja-1" class="slide level2">
+<h2>Frekwencja <strong>oraz</strong> pozycja</h2>
+<p>bardziej elegancka wersja omawianego pomysłu:</p>
+<p><span class="math display">\[P_{r(x)} = \left(
+\frac{1}{N}\sum_{i=1}^{r(x)}f(x_{i}) \right) - f(x)\]</span></p>
+<p>która jest oczywiście jednoznaczna z poniższym wzorem:</p>
+<p><span class="math display">\[P_{r(x)} =
+\frac{1}{N}\sum_{i=1}^{r(x-1)}f(x_{i})\]</span></p>
+</section>
+<section id="interpretacja-algebraiczna" class="slide level2">
+<h2>Interpretacja algebraiczna</h2>
+<p>Z powyższych wzorów wynika, że pozycja danego słowa <span
+class="math inline">\(P_{r(x)}\)</span> jest po prostu <strong>sumą
+skumulowaną frekwencji wszystkich słów poprzedzających</strong>.</p>
+</section>
+<section id="słowa-wydobyte-nową-metodą" class="slide level2">
+<h2>Słowa wydobyte nową metodą</h2>
+<pre><code>##   [1] &quot;świat&quot;          &quot;fiction&quot;        &quot;science&quot;        &quot;powieści&quot;      
+##   [5] &quot;literatury&quot;     &quot;itp&quot;            &quot;podług&quot;         &quot;utwór&quot;         
+##   [9] &quot;np&quot;             &quot;względem&quot;       &quot;przedstawia&quot;    &quot;tj&quot;            
+##  [13] &quot;sprzeczności&quot;   &quot;wiedzy&quot;         &quot;bohatera&quot;       &quot;mianowicie&quot;    
+##  [17] &quot;utworu&quot;         &quot;autor&quot;          &quot;powieść&quot;        &quot;wszak&quot;         
+##  [21] &quot;zbioru&quot;         &quot;czytelnika&quot;     &quot;dicka&quot;          &quot;dostojewskiego&quot;
+##  [25] &quot;sf&quot;             &quot;dzieło&quot;         &quot;kultury&quot;        &quot;typu&quot;          
+##  [29] &quot;zajść&quot;          &quot;tedy&quot;           &quot;utwory&quot;         &quot;pisarz&quot;        
+##  [33] &quot;bohater&quot;        &quot;humbert&quot;        &quot;wszakże&quot;        &quot;informacji&quot;    
+##  [37] &quot;stanu&quot;          &quot;todorov&quot;        &quot;utworów&quot;        &quot;efekt&quot;         
+##  [41] &quot;literackich&quot;    &quot;toteż&quot;          &quot;czytelnik&quot;      &quot;oraz&quot;          
+##  [45] &quot;relacji&quot;        &quot;znaków&quot;         &quot;dostojewski&quot;    &quot;mejbaum&quot;       
+##  [49] &quot;przypadku&quot;      &quot;ulega&quot;          &quot;wellsa&quot;         &quot;akcji&quot;         
+##  [53] &quot;autora&quot;         &quot;fakt&quot;           &quot;itd&quot;            &quot;języka&quot;        
+##  [57] &quot;społecznych&quot;    &quot;wells&quot;          &quot;de&quot;             &quot;jednakże&quot;      
+##  [61] &quot;wypowiedzi&quot;     &quot;todorova&quot;       &quot;zasadniczo&quot;     &quot;cywilizacja&quot;   
+##  [65] &quot;fantastyki&quot;     &quot;informacja&quot;     &quot;kreacji&quot;        &quot;krytyk&quot;        
+##  [69] &quot;nowej&quot;          &quot;zawiera&quot;        &quot;stanów&quot;         &quot;uznać&quot;         
+##  [73] &quot;własności&quot;      &quot;wyłącznie&quot;      &quot;dick&quot;           &quot;kwestii&quot;       
+##  [77] &quot;oszusta&quot;        &quot;ową&quot;            &quot;zadanie&quot;        &quot;zasadzie&quot;      
+##  [81] &quot;ewolucji&quot;       &quot;teorię&quot;         &quot;kraków&quot;         &quot;zbiór&quot;         
+##  [85] &quot;okaże&quot;          &quot;znaku&quot;          &quot;różnica&quot;        &quot;społeczeństwa&quot; 
+##  [89] &quot;technologii&quot;    &quot;wojna&quot;          &quot;zdań&quot;           &quot;ad&quot;            
+##  [93] &quot;artystycznego&quot;  &quot;będąc&quot;          &quot;informację&quot;     &quot;krytyka&quot;       
+##  [97] &quot;mackiewicz&quot;     &quot;naturalne&quot;      &quot;techniki&quot;       &quot;tekstów&quot;</code></pre>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<h2 class="shout">
+Porównanie
+</h2>
+</section>
+<section id="słowa-kobiece-słowa-męskie-w-literaturze"
+class="slide level2">
+<h2>Słowa kobiece, słowa męskie (w literaturze)</h2>
+<ul>
+<li>50 powieści napisanych przez kobiety
+<ul>
+<li>Beczkowska, Deotyma, Dmochowska, Kossak, Kuncewiczowa, Mniszkówna,
+Orzeszkowa, Zapolska, …</li>
+</ul></li>
+<li>50 powieści napisanych przez mężczyzn
+<ul>
+<li>Bałucki, Berent, Dygasiński, Iwaszkiewicz, Kaczkowski, Mostowicz,
+Prus, Reymont…</li>
+</ul></li>
+<li>Porównanie słów kluczowych następującymi metodami:
+<ul>
+<li>Analiza słów kluczowych LL</li>
+<li>Krakowiana</li>
+<li>Zeta</li>
+</ul></li>
+</ul>
+</section>
+<section id="słowa-kluczowe-ll-1" class="slide level2">
+<h2>Słowa kluczowe LL</h2>
+<ul>
+<li>kobiece (?)</li>
+</ul>
+<pre><code>##  [1] &quot;barbara&quot;   &quot;bogumił&quot;   &quot;waldemar&quot;  &quot;stefcia&quot;   &quot;kaśka&quot;     &quot;andzia&quot;   
+##  [7] &quot;ordynat&quot;   &quot;kwiryna&quot;   &quot;jej&quot;       &quot;elżbieta&quot;  &quot;pani&quot;      &quot;klicki&quot;   
+## [13] &quot;mię&quot;       &quot;niki&quot;      &quot;amelka&quot;    &quot;jan&quot;       &quot;horski&quot;    &quot;agnieszka&quot;
+## [19] &quot;krępic&quot;    &quot;róża&quot;      &quot;andrzej&quot;   &quot;ordynata&quot;  &quot;stefci&quot;    &quot;meir&quot;     
+## [25] &quot;lucia&quot;     &quot;teresa&quot;    &quot;justyna&quot;   &quot;raczyńska&quot; &quot;andzi&quot;     &quot;bronka&quot;   
+## [31] &quot;wyrzekł&quot;   &quot;cechna&quot;    &quot;witold&quot;    &quot;waldemara&quot; &quot;kościesza&quot;</code></pre>
+<ul>
+<li>męskie (?)</li>
+</ul>
+<pre><code>##  [1] &quot;wokulski&quot;     &quot;ażeby&quot;        &quot;madzia&quot;       &quot;kiej&quot;         &quot;połaniecki&quot;  
+##  [6] &quot;pan&quot;          &quot;książę&quot;       &quot;który&quot;        &quot;że&quot;           &quot;zaś&quot;         
+## [11] &quot;latter&quot;       &quot;a&quot;            &quot;rzekł&quot;        &quot;mu&quot;           &quot;wilczek&quot;     
+## [16] &quot;zagłoba&quot;      &quot;począł&quot;       &quot;jędrzej&quot;      &quot;winicjusz&quot;    &quot;dyzma&quot;       
+## [21] &quot;skarbnik&quot;     &quot;madzi&quot;        &quot;odpowiedział&quot; &quot;murek&quot;        &quot;skrzetuski&quot;  
+## [26] &quot;bowiem&quot;       &quot;ramzes&quot;       &quot;solski&quot;       &quot;faraon&quot;       &quot;ada&quot;         
+## [31] &quot;flawiusz&quot;     &quot;petroniusz&quot;   &quot;tym&quot;          &quot;wokulskiego&quot;  &quot;judym&quot;</code></pre>
+</section>
+<section id="krakowiana" class="slide level2">
+<h2>Krakowiana</h2>
+<ul>
+<li>kobiece (?)</li>
+</ul>
+<pre><code>##  [1] &quot;waldemar&quot;  &quot;andzia&quot;    &quot;kwiryna&quot;   &quot;klicki&quot;    &quot;niki&quot;      &quot;kaśka&quot;    
+##  [7] &quot;amelka&quot;    &quot;horski&quot;    &quot;krępic&quot;    &quot;ordynata&quot;  &quot;meir&quot;      &quot;bogumił&quot;  
+## [13] &quot;stefcia&quot;   &quot;lucia&quot;     &quot;justyna&quot;   &quot;raczyńska&quot; &quot;andzi&quot;     &quot;cechna&quot;   
+## [19] &quot;ordynat&quot;   &quot;tagiejew&quot;  &quot;jéj&quot;       &quot;kościesza&quot; &quot;agnisia&quot;   &quot;rita&quot;     
+## [25] &quot;barbara&quot;   &quot;witold&quot;    &quot;waldemara&quot; &quot;rosomak&quot;   &quot;jania&quot;     &quot;terenia&quot;  
+## [31] &quot;trestka&quot;   &quot;elżbieta&quot;  &quot;lora&quot;      &quot;tarłówna&quot;  &quot;kaźmiérz&quot;</code></pre>
+<ul>
+<li>męskie (?)</li>
+</ul>
+<pre><code>##  [1] &quot;połaniecki&quot;  &quot;latter&quot;      &quot;wokulski&quot;    &quot;zagłoba&quot;     &quot;dyzma&quot;      
+##  [6] &quot;skarbnik&quot;    &quot;skrzetuski&quot;  &quot;solski&quot;      &quot;winicjusz&quot;   &quot;ada&quot;        
+## [11] &quot;flawiusz&quot;    &quot;petroniusz&quot;  &quot;judym&quot;       &quot;chmielnicki&quot; &quot;wilczek&quot;    
+## [16] &quot;zawiłowski&quot;  &quot;faraon&quot;      &quot;gniewosz&quot;    &quot;kergolaj&quot;    &quot;murek&quot;      
+## [21] &quot;wokulskiego&quot; &quot;nikodem&quot;     &quot;jelsky&quot;      &quot;turski&quot;      &quot;kunicki&quot;    
+## [26] &quot;jaże&quot;        &quot;bohun&quot;       &quot;madzię&quot;      &quot;borowiecki&quot;  &quot;dębicki&quot;    
+## [31] &quot;tutmozis&quot;    &quot;howard&quot;      &quot;täli&quot;        &quot;madzi&quot;       &quot;rzecki&quot;</code></pre>
+</section>
+<section id="zeta" class="slide level2">
+<h2>Zeta</h2>
+<ul>
+<li>słowa kobiece</li>
+</ul>
+<pre><code>##  [1] &quot;oczami&quot;     &quot;znów&quot;       &quot;pewno&quot;      &quot;pani&quot;       &quot;ach&quot;       
+##  [6] &quot;czuła&quot;      &quot;usta&quot;       &quot;przecież&quot;   &quot;swe&quot;        &quot;swą&quot;       
+## [11] &quot;wzrokiem&quot;   &quot;wzrok&quot;      &quot;dziewczyna&quot; &quot;oczu&quot;       &quot;chciała&quot;   
+## [16] &quot;spojrzała&quot;  &quot;panią&quot;      &quot;postać&quot;     &quot;czyż&quot;       &quot;mię&quot;       
+## [21] &quot;podniosła&quot;  &quot;dziecko&quot;    &quot;głębi&quot;      &quot;stała&quot;      &quot;dotąd&quot;     
+## [26] &quot;matka&quot;      &quot;tem&quot;        &quot;matki&quot;      &quot;sama&quot;       &quot;powoli&quot;    
+## [31] &quot;miała&quot;      &quot;myślała&quot;    &quot;nagle&quot;      &quot;ramionami&quot;</code></pre>
+<ul>
+<li>słowa męskie</li>
+</ul>
+<pre><code>##  [1] &quot;bowiem&quot;       &quot;począł&quot;       &quot;odpowiedział&quot; &quot;ażeby&quot;        &quot;którzy&quot;      
+##  [6] &quot;przecie&quot;      &quot;kazał&quot;        &quot;między&quot;       &quot;jakoż&quot;        &quot;zaś&quot;         
+## [11] &quot;ledwie&quot;       &quot;ponieważ&quot;     &quot;tysięcy&quot;      &quot;rozdział&quot;     &quot;gdyż&quot;        
+## [16] &quot;czym&quot;         &quot;dał&quot;          &quot;musiał&quot;       &quot;bóg&quot;          &quot;całkiem&quot;     
+## [21] &quot;wraz&quot;         &quot;około&quot;        &quot;rzekł&quot;        &quot;nareszcie&quot;    &quot;poszedł&quot;     
+## [26] &quot;tymczasem&quot;    &quot;drugi&quot;        &quot;wszystkim&quot;    &quot;zrobił&quot;       &quot;iż&quot;          
+## [31] &quot;jako&quot;         &quot;jeżeli&quot;       &quot;zgoła&quot;        &quot;szlachcic&quot;</code></pre>
+</section>
+<section id="lematyzacja" class="slide level2">
+<h2>Lematyzacja</h2>
+<p>Nie chodzi tutaj — u kaduka! — o herb ani o szeregi przodków
+podgolonych, z sarmackimi wąsami i przy karabelach — ani wydekoltowane
+prababki w fiokach. Ojciec i matka — otóż i cały rodowód, jak to jest u
+nas, w dziejach nowoczesnych ludzi bez wczoraj. Z konieczności wzmianka
+o jednym dziadku, z musu notka o jednym jedynym pradziadku. Chcemy
+uszanować nasyconą do pełna duchem i upodobaniem semickim awersję ludzi
+nowoczesnych do obciążania sobie pamięci wiadomościami, w którym
+kościele czy na jakim cmentarzu dany dziadek spoczywa. Otóż — ojciec
+nosił nazwisko Baryka, imię Seweryn, które na rozłogach rosyjskich
+zbytnio nie raziło. „Siewierian Grigoriewicz Baryka” — uchodziło wtedy,
+prześlizgiwało się niepostrzeżenie.</p>
+</section>
+<section id="lematyzacja-1" class="slide level2">
+<h2>Lematyzacja</h2>
+<p>nie chodzić tutaj — u kaduk — o herb ani o szereg przodek podgolony,
+z sarmacki wąs i przy karabela — ani wydekoltowany prababka w fiok.
+ojciec i matka — otóż i cały rodowód, jak to być u ja, w dzieje
+nowoczesny człowiek bez wczoraj. z konieczność wzmianka o jeden dziadek,
+z mus notka o jeden jedyny pradziadek. chcieć uszanować nasycony do
+pełen duch i upodobanie semicki awersja człowiek nowoczesny do obciążać
+sobie pamięć wiadomość, w który kościół czy na jaki cmentarz dany
+dziadek spoczywać. otóż — ojciec nosić nazwisko Baryka, imię Seweryn,
+który na rozłoga rosyjski zbytnio nie razić. „Siewierian Grigoriewicz
+Baryka” — uchodzić wtedy, prześlizgiwać się niepostrzeżenie.</p>
+</section>
+<section id="słowa-lematyzowane" class="slide level2">
+<h2>Słowa lematyzowane</h2>
+<ul>
+<li>kobiece:</li>
+</ul>
+<pre><code>##  [1] &quot;dłoń&quot;       &quot;znów&quot;       &quot;ach&quot;        &quot;dziewczyna&quot; &quot;pani&quot;      
+##  [6] &quot;suknia&quot;     &quot;wzrok&quot;      &quot;pewno&quot;      &quot;czuły&quot;      &quot;quot&quot;      
+## [11] &quot;ciemny&quot;     &quot;ramię&quot;      &quot;przecież&quot;   &quot;postać&quot;     &quot;pochylić&quot;  
+## [16] &quot;źrenica&quot;    &quot;różowy&quot;     &quot;głębia&quot;     &quot;dziecinny&quot;  &quot;podniosły&quot; 
+## [21] &quot;chłopiec&quot;   &quot;czyż&quot;       &quot;spojrzenie&quot; &quot;zauważyć&quot;   &quot;dotąd&quot;     
+## [26] &quot;tęsknota&quot;   &quot;cisza&quot;      &quot;drżeć&quot;      &quot;matka&quot;      &quot;usta&quot;      
+## [31] &quot;zobaczyć&quot;   &quot;śmiech&quot;     &quot;tema&quot;       &quot;płynąć&quot;</code></pre>
+<ul>
+<li>męskie:</li>
+</ul>
+<pre><code>##  [1] &quot;bowiem&quot;       &quot;począć&quot;       &quot;ażeby&quot;        &quot;przecie&quot;      &quot;zaś&quot;         
+##  [6] &quot;między&quot;       &quot;kazać&quot;        &quot;przypatrywać&quot; &quot;jakoż&quot;        &quot;szlachta&quot;    
+## [11] &quot;żołnierz&quot;     &quot;odpowiedzieć&quot; &quot;gdyż&quot;         &quot;ledwie&quot;       &quot;szlachcic&quot;   
+## [16] &quot;ponieważ&quot;     &quot;rozdział&quot;     &quot;drugi&quot;        &quot;czym&quot;         &quot;wraz&quot;        
+## [21] &quot;wojna&quot;        &quot;całkiem&quot;      &quot;nareszcie&quot;    &quot;rozmaity&quot;     &quot;obaczyć&quot;     
+## [26] &quot;około&quot;        &quot;jeżeli&quot;       &quot;następnie&quot;    &quot;stare&quot;        &quot;kilkanaście&quot; 
+## [31] &quot;dosyć&quot;        &quot;trzeci&quot;       &quot;tymczasem&quot;    &quot;ksiądz&quot;</code></pre>
+</section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<h2 class="shout">
+Podsumowanie
+</h2>
+</section>
+<section id="podsumowanie" class="slide level2">
+<h2>Podsumowanie</h2>
+<ul>
+<li>Słowa kluczowe to w istocie <strong>wszystkie słowa</strong>, tyle
+że uszeregowane od najbardziej do najmniej istotnego.</li>
+<li>Nie ma czytelnej granicy miedzy słowami istotnymi i
+pozostałymi.</li>
+<li>Wydobyte słowa kluczowe zależą od użytej metody.</li>
+<li>Nowa metoda (krakowiana) równie skuteczna, lecz znacznie prostsza od
+innych.</li>
+<li>Zeta jest metodą wartą bliższego oglądu.</li>
+</ul>
+</section>
+<section id="dziękuję-za-uwagę" class="slide level2">
+<h2>Dziękuję za uwagę</h2>
+<ul>
+<li><a href="mailto:maciejeder@gmail.com"
+class="email">maciejeder@gmail.com</a></li>
+<li><a href="https://twitter.com/MaciejEder">@MaciejEder</a></li>
+<li><a
+href="https://github.com/computationalstylistics">https://github.com/computationalstylistics</a></li>
+</ul>
+</section>
+
+  <!--
+  To hide progress bar from entire presentation
+  just remove “progress” element.
+  -->
+  <!-- <div class="progress"></div> -->
+  <script src="index_files/rmdshower/node_modules/shower/node_modules/shower-core/shower.min.js"></script>
+  <!-- Copyright © 2015 Yours Truly, Famous Inc. -->
+  <!-- Photos by John Carey, fiftyfootshadows.net -->
+
+    <script>renderMathInElement(document.body);</script>
+  
+  
+</body>
+</html>

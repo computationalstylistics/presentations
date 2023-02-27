@@ -10,12 +10,6 @@ output:
     highlight: espresso
     self_contained: true 
     css: ijppan_rmarkdown.css
-#output: 
-#  rmdshower::shower_presentation:
-#    self_contained: false
-#    katex: true
-#    fig_width: 9
-#    fig_height: 6
 ---
 
 
