@@ -1,7 +1,6 @@
 # presentations
 
 
-
 * Keyword analysis methods (feat. the Cracovian) [presentation](https://computationalstylistics.github.io/presentations/cracovian)
 * Boosting word frequencies for authorship attribution (CHR2022) [presentation](https://computationalstylistics.github.io/presentations/chr2022/)
 * From authorship attribution to language change (TU_Digihum) [presentation](https://computationalstylistics.github.io/presentations/TU_Digihum/)
