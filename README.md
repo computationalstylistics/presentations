@@ -8,7 +8,7 @@
 * Kwantytatywna analiza zmian językowych w polszczyźnie [presentation](https://computationalstylistics.github.io/presentations/diachronia_piotrowski_sredniopolski/)
 * CLS INFRA: an infrastructural project (LINDH-UNED) [presentation](https://computationalstylistics.github.io/presentations/lindh-uned/)
 * Zróżnicowanie stylistyczne tekstów literackich w ujęciu kwantytatywnym (PTJ2022) [presentation](https://computationalstylistics.github.io/presentations/ptj2022/)
-
+* CLS INFRA: challenges in the post-COVID era (TwinTalks4) [presentation](https://computationalstylistics.github.io/presentations/twintalks4/)
 
 
 
