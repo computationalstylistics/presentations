@@ -1,0 +1,663 @@
+---
+title: "Language change and Piotrowski's law"
+author: Maciej Eder
+date: 19.04.2023
+output: 
+  rmdshower::shower_presentation:
+    self_contained: false
+    katex: true
+    fig_width: 9
+    fig_height: 6
+---
+
+
+
+
+```{r setup, include=FALSE}
+# set global chunk options
+
+library(knitr)
+library(plotly)
+library(fmsb)
+
+x = read.csv("R_datasets/dane_diachroniczne_2017-10-23.csv", row.names=1)
+y = read.csv("R_datasets/imieslow_etc_2017-10-23.csv")
+
+dates = as.numeric(rownames(x))
+
+my.blue = rgb(0.15, 0.45, 0.96)
+my.green = rgb(0.15, 0.85, 0.27, 0.7)
+my.red = rgb(0.92, 0.3, 0.3, 0.6)
+my.grey = rgb(0,0,0,.6)
+my.orange = rgb(1,0.5,0.2,0.6) 
+my.teal = rgb(0, 0.5, 0.5, 0.7)  #### or: my.teal = rgb(0.24, 0.65, 0.75, 0.7)
+my.violet = rgb(0.75, 0.25, 0.82, 0.7)
+
+my.p.blue = "rgba(38, 115, 245, 0.7)"
+my.p.green = "rgba(38, 217,  69, 0.7)"
+my.p.red = "rgba(235, 77, 77, 0.6)"
+my.p.grey = "rgba(0, 0, 0, 0.6)"
+my.p.orange = "rgba(255, 128, 51, 0.6)"
+my.p.teal = "rgba(0, 128, 128, 0.7)"
+my.p.violet = "rgba(190, 64, 210, 0.7)"
+
+opts_chunk$set(cache=TRUE)
+```
+
+
+
+
+```{r notes, include = FALSE}
+# this is the place to put any text that won't appear on the slide
+
+my.dummy.variable = "
+
+- imiesłów: uwaga na 'pierwszy'
+- comparativus: uwaga na 'nalazszy'
+- osiewicz!
+
+"
+
+```
+
+
+
+
+
+
+
+## { .white }
+
+
+<p style="font-size: 180%; margin-bottom: 2em">
+Language change </br> and Piotrowski's law
+</p>
+<p style="font-size: 120%; margin-bottom: 0.1em;">
+Maciej Eder
+</p>
+<p style="font-size: 80%; margin-bottom: 2em;">
+Instyitute of Polish Language, Polish Academy of Sciences
+</p>
+
+
+---
+
+
+
+
+
+
+
+## Language change _en masse_
+
+![title](200MFWs_MDS_titles.png){width=600px}
+
+---
+
+
+
+
+
+
+
+## Corpus (_in statu nascendi..._)
+
+* coverage: 1380--2010
+* some periods better represented
+* 1021 texts
+* 25 mln words
+* opportunistic
+* no grammatical annotation so far
+
+
+
+
+
+
+## A. Fredro, _Trzy po trzy_ (1846)
+
+``` xml
+<tok>
+<orth>Ośmnastego</orth>
+<lex><base>ośmnasty</base><ctag>adj:sg:gen:m1:pos</ctag></lex>
+<lex><base>ośmnasty</base><ctag>adj:sg:gen:m2:pos</ctag></lex>
+<lex disamb="1"><base>ośmnasty</base><ctag>adj:sg:gen:m3:pos</ctag></lex>
+<lex><base>ośmnasty</base><ctag>adj:sg:gen:n:pos</ctag></lex>
+<lex><base>ośmnasty</base><ctag>adj:sg:acc:m1:pos</ctag></lex>
+<lex><base>ośmnasty</base><ctag>adj:sg:acc:m2:pos</ctag></lex>
+</tok>
+<tok>
+<orth>lutego</orth>
+<lex disamb="1"><base>luty</base><ctag>subst:sg:gen:m3</ctag></lex>
+</tok>
+<ns/>
+<tok>
+<orth>,</orth>
+<lex disamb="1"><base>,</base><ctag>interp</ctag></lex>
+</tok>
+<tok>
+<orth>roku</orth>
+<lex disamb="1"><base>rok</base><ctag>subst:sg:gen:m3</ctag></lex>
+<lex><base>rok</base><ctag>subst:sg:loc:m3</ctag></lex>
+<lex><base>rok</base><ctag>subst:sg:voc:m3</ctag></lex>
+</tok>
+<tok>
+<orth>1814</orth>
+<lex disamb="1"><base>1814</base><ctag>tnum:integer</ctag></lex>
+</tok>
+<ns/>
+<tok>
+<orth>,</orth>
+<lex disamb="1"><base>,</base><ctag>interp</ctag></lex>
+</tok>
+<tok>
+<orth>jechał</orth>
+<lex disamb="1"><base>jechać</base><ctag>praet:sg:m1:imperf</ctag></lex>
+<lex><base>jechać</base><ctag>praet:sg:m2:imperf</ctag></lex>
+<lex><base>jechać</base><ctag>praet:sg:m3:imperf</ctag></lex>
+</tok>
+<tok>
+<orth>na</orth>
+<lex disamb="1"><base>na</base><ctag>prep:loc</ctag></lex>
+<lex><base>na</base><ctag>prep:acc</ctag></lex>
+</tok>
+<tok>
+<orth>białym</orth>
+<lex><base>biały</base><ctag>adj:sg:inst:m1:pos</ctag></lex>
+<lex><base>biały</base><ctag>adj:sg:inst:m2:pos</ctag></lex>
+<lex><base>biały</base><ctag>adj:sg:inst:m3:pos</ctag></lex>
+<lex><base>biały</base><ctag>adj:sg:inst:n:pos</ctag></lex>
+<lex><base>biały</base><ctag>adj:sg:loc:m1:pos</ctag></lex>
+<lex disamb="1"><base>biały</base><ctag>adj:sg:loc:m2:pos</ctag></lex>
+<lex><base>biały</base><ctag>adj:sg:loc:m3:pos</ctag></lex>
+<lex><base>biały</base><ctag>adj:sg:loc:n:pos</ctag></lex>
+<lex><base>biały</base><ctag>adj:pl:dat:m1:pos</ctag></lex>
+<lex><base>biały</base><ctag>adj:pl:dat:m2:pos</ctag></lex>
+<lex><base>biały</base><ctag>adj:pl:dat:m3:pos</ctag></lex>
+<lex><base>biały</base><ctag>adj:pl:dat:f:pos</ctag></lex>
+<lex><base>biały</base><ctag>adj:pl:dat:n:pos</ctag></lex>
+</tok>
+<tok>
+<orth>koniu</orth>
+<lex disamb="1"><base>koń</base><ctag>subst:sg:loc:m2</ctag></lex>
+<lex><base>koń</base><ctag>subst:sg:voc:m2</ctag></lex>
+</tok>
+```
+
+
+
+
+
+
+## _Historyje rzymskie_ (1543)
+
+```
+Był jeden rycerz u niektórego króla, który barzo był króla rozgniewał. 
+I posłał ku królowi rycerze, aby mu gniew przeprosili. Tedy oni 
+rycerze za nim prosząc, ledwy mu łaskę uprosili tym obyczajem, 
+aby ku dworu królewskiemu zasię przyszedł jezno i pieszy a aby 
+z sobą przywiódł wiernego  przyjaciela, i też krotofilnika, 
+i nieprzyjaciela niewiernego. A odszedszy jednacze powiedzieli 
+to rycerzowi. Usłyszawszy to, rycerz barzo sie zasmucił, jako by 
+to uczynić miał. I przydało sie czasu tego, że był jednego 
+pielgrzyma na noc przyjął, i rzekł tajemnie ku żonie swej: Wiem, 
+że pielgrzymowie miewają z sobą pieniądze, a przetoż jeźli to 
+chcesz taić, tedy ja zabiję tego pielgrzyma a pieniądze jego 
+pobierzem. A ona to taić obiecała. Gdyż tedy wszytcy spali, 
+wstawszy on rycerz przed świtanim obudził onego pielgrzyma i kazał 
+mu w drogę iść, a zabiwszy cielca, zrąbał go w sztuki i włożył 
+w wór. Potym, obudziwszy swą żonę, ukazał jej wór, mówiąc, żem 
+tylko głowę, nogi a ręce włożył w ten wór, a ciałom pochował 
+w stajni, ale ten wór w tym kącie pogrzebmy. A pogrzebszy on wór, 
+ukazał jej nieco pieniędzy swych, mieniąc, żeby je od tego 
+to pielgrzyma wziął. A gdyż był dzień, aby stanął przed królem, 
+tedy wziąwszy z sobą na prawą stronę psa, a dziecię na rękę, 
+a żonę na lewą stronę, szedł na zamek. A gdyż sie przybliżał 
+do zamku pana swego, włożył prawą nogę na psa swego, jakoby 
+jadąc, a drugą nogą szedł pieszki, a tak szedł jezno i pieszki 
+na zamek. A gdyż przyszedł przed króla, uźrzawszy go król 
+ze wszytkimi około stojącemi dziwował sie, i rzekł jemu król: 
+Gdzie jest twój przyjaciel nawierniejszy? Tedy rycerz wyjąwszy 
+miecz, zaciął psa swego, który skowycząc dla boleści uciekał, 
+zatym go zawołał, a pies zasie przyszedł ku niemu. I rzekł 
+rycerz: To jest mój przyjaciel nawierniejszy. Rzekł jemu król: 
+Prawdę mówisz. Ale gdzie jest twój krotofilnik?
+```
+
+
+
+
+## Corpus: coverage
+
+```{r fig-1, echo = FALSE, message = FALSE}
+sredni.wynik = c()
+for(i in unique(y$rok)) {
+   sredni.wynik = c( sredni.wynik, sum(y$dlugosc[y$rok == i]) )
+}
+suppressWarnings(library(bindrcpp))
+p = plot_ly(x = unique(y$rok), y = sredni.wynik, name = 'number of words', type = 'bar') %>%
+       layout(
+           xaxis = list(range = c(1350, 2050)),
+           yaxis = list(zeroline = FALSE))
+p
+```
+
+
+
+
+
+## Adverbial participle
+
+```{r fig-2, echo = FALSE, message = FALSE}
+wynik = y$imieslow / y$dlugosc
+sredni.wynik = c()
+for(i in unique(y$rok)) {
+   sredni.wynik = c( sredni.wynik, mean(wynik[y$rok == i]) )
+}
+p = plot_ly(x = unique(y$rok), y = sredni.wynik, name = 'imiesłów uprzedni', type = 'scatter', mode = 'markers') %>%
+       add_trace(y = lowess(sredni.wynik, f=1/2)$y, name = 'imiesłów uprzedni', mode = 'lines', line = list(width = 3)) %>%
+       layout(
+           xaxis = list(range = c(1350, 2050)),
+           yaxis = list(range = c(-0.001, 0.01), zeroline = FALSE))
+p
+```
+
+
+
+
+
+
+## Conjunction _że_
+
+```{r fig-4, echo = FALSE, message = FALSE}
+wynik = y$ze / y$dlugosc
+sredni.wynik = c()
+for(i in unique(y$rok)) {
+   sredni.wynik = c( sredni.wynik, mean(wynik[y$rok == i]) )
+}
+p = plot_ly(x = unique(y$rok), y = sredni.wynik, name = 'spójnik że', type = 'scatter', mode = 'markers') %>%
+       add_trace(y = lowess(sredni.wynik, f=1/2)$y, name = 'spójnik że', mode = 'lines', line = list(width = 3)) %>%
+       layout(
+           xaxis = list(range = c(1350, 2050)),
+           yaxis = list(zeroline = FALSE))
+p
+```
+
+
+
+
+
+## Hold on...
+
+* the conjunction _że_ used to have its synonyms
+* namely, the conjunction _iż_ (_iże_, _hiż_, _hiże_)
+* lots of examples, even in the early centuries
+
+
+
+
+
+## Conjunction _iż(e)_
+
+```{r fig-4a, echo = FALSE, message = FALSE}
+wynik = y$iz / y$dlugosc
+sredni.wynik = c()
+for(i in unique(y$rok)) {
+   sredni.wynik = c( sredni.wynik, mean(wynik[y$rok == i]) )
+}
+p = plot_ly(x = unique(y$rok), y = sredni.wynik, name = 'spójnik iż(e)', type = 'scatter', mode = 'markers') %>%
+       add_trace(y = lowess(sredni.wynik, f=1/2)$y, name = 'spójnik iż(e)', mode = 'lines', line = list(color = my.p.green, width = 3)) %>%
+       layout(
+           xaxis = list(range = c(1350, 2050)),
+           yaxis = list(zeroline = FALSE))
+p
+```
+
+
+
+
+
+## Conjunctions _że_ / _iż(e)_
+
+```{r fig-5, echo = FALSE, message = FALSE}
+wynik = y$ze / y$dlugosc
+sredni.wynik = c()
+for(i in unique(y$rok)) {
+   sredni.wynik = c( sredni.wynik, mean(wynik[y$rok == i]) )
+}
+wynik = y$iz / y$dlugosc
+sredni.wynik.iz = c()
+for(i in unique(y$rok)) {
+   sredni.wynik.iz = c( sredni.wynik.iz, mean(wynik[y$rok == i]) )
+}
+
+p = plot_ly(x = unique(y$rok), y = sredni.wynik, name = 'spójnik że', type = 'scatter', mode = 'markers') %>%
+       add_trace(y = lowess(sredni.wynik, f=1/2)$y, name = 'spójnik że', mode = 'lines', line = list(width = 3)) %>%
+       add_trace(y = sredni.wynik.iz, name = 'spójnik iż(e)', mode = 'markers', marker = list(color = my.p.red)) %>%
+       add_trace(y = lowess(sredni.wynik.iz, f=1/2)$y, name = 'spójnik iż(e)', mode = 'lines', line = list(color = my.p.green, width = 3)) %>%
+       layout(
+           xaxis = list(range = c(1350, 2050)),
+           yaxis = list(zeroline = FALSE))
+p
+```
+
+
+
+
+## Dynamics of language change
+
+* linear evolution
+* sudden earthquake (e.g. a word takes over suddenly)
+* phase change
+    * one word is being pushed away by another words
+    * we can measure the proportion of the two forms over time
+    * e.g. _iż(e)_ : _że_ in 1400 is 100% : 0%, in 1645 27% : 73%, in 1990 1% : 99% etc.
+* can we model the change mathematically?
+
+
+
+
+
+## Mathematical model and the laws of language
+
+* Can we describe patterns with a formalized language?
+* Model: an ideal representation of actual data
+* How to interpret the observations not fitting the model?
+* Model as a compression of data: it cannot be reverted
+
+
+
+
+
+
+
+## An example: Zipf's law
+
+```{r laws1, echo = FALSE, message = FALSE}
+#a = tolower(unlist(strsplit(readLines("1510_Rozm2u.txt"), "\\s+")))
+#a = gsub("[[:punct:]]", "", a)
+#a = gsub("[0-9]", "", a)
+#a = a[nchar(a) > 0]
+#Freqs = sort(table(a), decreasing=T)
+#Words = names(Freqs)
+#Lengths = nchar(Words)
+#Rozm = cbind(Freqs, Lengths)
+#rownames(Rozm) = Words
+#save(Rozm, file = "R_datasets/Rozm_freqs.Rdata")
+
+load("R_datasets/Rozm_freqs.Rdata")
+p = plot_ly(y = Rozm[1:300,1], type = "scatter", mode = "markers", text = rownames(Rozm)[1:300])
+p
+```
+
+
+
+
+
+
+## Zipf's law on a log-log scale
+
+```{r laws2, echo = FALSE, message = FALSE}
+p = plot_ly(y = Rozm[,1], type = "scatter", mode = "markers", text = rownames(Rozm)) %>%
+        layout(xaxis = list(type = "log"), yaxis = list(type = "log"))
+p
+```
+
+
+
+
+
+## Can the change be modeled as well?
+
+* the changes begins among a small group of people
+* it gradually "affects" other people
+* then the change accelerates
+* still, some conservative users stick to the old form
+* but sooner or later, they will all die
+
+
+
+
+## Piotrowski's law
+
+* Piotrovskaja, A.A. & Piotrovskij, R.G. (1974). Matematičeskie modeli v diachronii i tekstoobrazovanii. w: _Statistika reči i avtomatičeskij analiz teksta_, 361-400. Leningrad: Nauka. 
+* conceptually: this is a logistic regression
+* mathematical model:
+
+$$p(y) = \frac{1}{1 + e^{-(a + bx)}}$$
+
+
+
+
+
+
+
+
+## the changes to be scrutinized
+
+* więtszy > większy
+* -bychmy, -bych > -byśmy, -bym
+* barzo > bardzo 
+* na- > naj- 
+* iż(e) / że
+* wszytko > wszystko 
+* abo > albo 
+
+
+
+
+
+
+## _więtszy_ > _większy_
+
+```{r fig-10, echo = FALSE, message = FALSE}
+model = glm(x$wiekszy ~ dates, family=quasibinomial(logit))
+r2 = round(NagelkerkeR2(model)$R2, 3)
+annotation <- list(x = 2050, y = 0.1, text = paste("<i>R</i><sup>2</sup> = ", r2), showarrow = F)
+p = plot_ly(x = dates, y = x$wiekszy, name = 'więtszy > większy', type = 'scatter', mode = 'markers') %>%
+       add_trace(y = model$fitted, name = 'więtszy > większy', mode = 'lines', line = list(color = my.p.blue, width = 3)) %>%
+       layout(
+           xaxis = list(range = c(1350, 2050)),
+           yaxis = list(range = c(-0.1, 1.1), zeroline = FALSE),
+           annotations = annotation)
+p
+```
+
+
+
+
+## _-bychmy_, _-bych_ > _-byśmy_, _-bym_
+
+```{r fig-11, echo = FALSE, message = FALSE}
+model = glm(x$bysmy_bym ~ dates, family=quasibinomial(logit))
+r2 = round(NagelkerkeR2(model)$R2, 3)
+annotation <- list(x = 2050, y = 0.1, text = paste("<i>R</i><sup>2</sup> = ", r2), showarrow = F)
+p = plot_ly(x = dates, y = x$bysmy_bym, name = '-bychmy > -byśmy', type = 'scatter', mode = 'markers') %>%
+       add_trace(y = model$fitted, name = '-bychmy > -byśmy', mode = 'lines', line = list(color = my.p.green, width = 3)) %>%
+       layout(
+           xaxis = list(range = c(1350, 2050)),
+           yaxis = list(range = c(-0.1, 1.1), zeroline = FALSE),
+           annotations = annotation)
+p
+```
+
+
+
+## _barzo-_ > _bardzo_
+
+```{r fig-12, echo = FALSE, message = FALSE}
+model = glm(x$bardzo ~ dates, family=quasibinomial(logit))
+r2 = round(NagelkerkeR2(model)$R2, 3)
+annotation <- list(x = 2050, y = 0.1, text = paste("<i>R</i><sup>2</sup> = ", r2), showarrow = F)
+p = plot_ly(x = dates, y = x$bardzo, name = 'barzo > bardzo', type = 'scatter', mode = 'markers') %>%
+       add_trace(y = model$fitted, name = 'barzo > bardzo', mode = 'lines', line = list(color = my.p.red, width = 3)) %>%
+       layout(
+           xaxis = list(range = c(1350, 2050)),
+           yaxis = list(range = c(-0.1, 1.1), zeroline = FALSE),
+           annotations = annotation)
+p
+```
+
+
+
+
+## _na-_ > _naj-_
+
+```{r fig-13, echo = FALSE, message = FALSE}
+model = glm(x$naj ~ dates, family=quasibinomial(logit))
+r2 = round(NagelkerkeR2(model)$R2, 3)
+annotation <- list(x = 2050, y = 0.1, text = paste("<i>R</i><sup>2</sup> = ", r2), showarrow = F)
+p = plot_ly(x = dates, y = x$naj, name = 'na- > naj-', type = 'scatter', mode = 'markers') %>%
+       add_trace(y = model$fitted, name = 'na- > naj-', mode = 'lines', line = list(color = my.p.grey, width = 3)) %>%
+       layout(
+           xaxis = list(range = c(1350, 2050)),
+           yaxis = list(range = c(-0.1, 1.1), zeroline = FALSE),
+           annotations = annotation)
+p
+```
+
+
+
+
+
+## _iż(e)_ / _że_
+
+```{r fig-14, echo = FALSE, message = FALSE}
+model = glm(x$ze ~ dates, family=quasibinomial(logit))
+r2 = round(NagelkerkeR2(model)$R2, 3)
+annotation <- list(x = 2050, y = 0.1, text = paste("<i>R</i><sup>2</sup> = ", r2), showarrow = F)
+p = plot_ly(x = dates, y = x$ze, name = 'iż(e) / że', type = 'scatter', mode = 'markers') %>%
+       add_trace(y = model$fitted, name = 'iż(e) / że', mode = 'lines', line = list(color = my.p.orange, width = 3)) %>%
+       layout(
+           xaxis = list(range = c(1350, 2050)),
+           yaxis = list(range = c(-0.1, 1.1), zeroline = FALSE),
+           annotations = annotation)
+p
+```
+
+
+
+
+
+
+
+## _wszytko_ > _wszystko_
+
+```{r fig-15, echo = FALSE, message = FALSE}
+model = glm(x$wszystko ~ dates, family = quasibinomial(logit))
+model1 = glm(x$wszystko ~ poly(dates, 4), family = quasibinomial(logit))
+r2 = round(NagelkerkeR2(model)$R2, 3)
+annotation <- list(x = 2050, y = 0.1, text = paste("<i>R</i><sup>2</sup> = ", r2), showarrow = F)
+p = plot_ly(x = dates, y = x$wszystko, name = 'wszytko > wszystko', type = 'scatter', mode = 'markers') %>%
+       add_trace(y = model$fitted, name = 'wszytko > wszystko', mode = 'lines', line = list(color = my.p.teal, width = 3, dash = 'dash')) %>%
+       #add_trace(y = lowess(x$wszystko, f=1/7)$y, name = 'wszytko > wszystko', mode = 'lines', line = list(color = my.p.teal, width = 3)) %>%
+       add_trace(y = model1$fitted, name = 'wszytko > wszystko', mode = 'lines', line = list(color = my.p.teal, width = 3)) %>%       layout(
+           xaxis = list(range = c(1350, 2050)),
+           yaxis = list(range = c(-0.1, 1.1), zeroline = FALSE),
+           annotations = annotation)
+p
+```
+
+
+## _abo_ > _albo_
+
+does the model always work?
+
+
+## _abo_ > _albo_
+
+```{r fig-16, echo = FALSE, message = FALSE}
+model = glm(x$albo ~ dates, family = quasibinomial(logit))
+model1 = glm(x$albo ~ poly(dates, 6), family = quasibinomial(logit))
+r2 = round(NagelkerkeR2(model)$R2, 3)
+annotation <- list(x = 2050, y = 0.1, text = paste("<i>R</i><sup>2</sup> = ", r2), showarrow = F)
+p = plot_ly(x = dates, y = x$albo, name = 'abo > albo', type = 'scatter', mode = 'markers') %>%
+#       add_trace(y = model$fitted, name = 'abo > albo', mode = 'lines', line = list(color = my.p.violet, width = 3, dash = 'dash'))  %>%
+       add_trace(y = model1$fitted, name = 'abo > albo', mode = 'lines', line = list(color = my.p.violet, width = 3)) %>%
+       layout(
+           xaxis = list(range = c(1350, 2050)),
+           yaxis = list(range = c(-0.1, 1.1), zeroline = FALSE),
+           annotations = annotation)
+p
+```
+
+
+
+
+## preliminary conclusions (or questions?)
+
+* why some changes follow the model, while some don't?
+* is then Piotrowski's law an actual language law?
+* how big a fit needs to be to make us accept the model?
+* what have we learnt about the evolution of Polish?
+
+
+
+
+## 5 changes together
+
+```{r fig-20, echo = FALSE, message = FALSE}
+model.wiekszy = glm(x$wiekszy ~ dates, family = quasibinomial(logit))
+model.bysmy_bym = glm(x$bysmy_bym ~ dates, family = quasibinomial(logit))
+model.bardzo = glm(x$bardzo ~ dates, family = quasibinomial(logit))
+model.naj = glm(x$naj ~ dates, family = quasibinomial(logit))
+model.ze = glm(x$ze ~ dates, family = quasibinomial(logit))
+
+p = plot_ly(x = dates, y = x$albo, name = " ", type = 'scatter', mode = 'markers', marker = list(color = 'transparent'), showlegend = TRUE) %>%
+       add_trace(y = model.wiekszy$fitted, name = 'więtszy > większy', mode = 'lines', line = list(color = my.p.blue, width = 3)) %>%
+       add_trace(y = model.bysmy_bym$fitted, name = '-bychmy > -byśmy', mode = 'lines', line = list(color = my.p.green, width = 3)) %>%
+       add_trace(y = model.bardzo$fitted, name = 'barzo > bardzo', mode = 'lines', line = list(color = my.p.red, width = 3)) %>%
+       add_trace(y = model.naj$fitted, name = 'na- > naj-', mode = 'lines', line = list(color = my.p.grey, width = 3)) %>%
+       add_trace(y = model.ze$fitted, name = 'iż(e) / że', mode = 'lines', line = list(color = my.p.orange, width = 3)) %>%
+       layout(
+           xaxis = list(range = c(1350, 2050)),
+           yaxis = list(range = c(-0.1, 1.1), zeroline = FALSE))
+p
+```
+
+
+
+
+
+
+## 7 changes together
+
+```{r fig-21, echo = FALSE, message = FALSE}
+model.wiekszy = glm(x$wiekszy ~ dates, family = quasibinomial(logit))
+model.bysmy_bym = glm(x$bysmy_bym ~ dates, family = quasibinomial(logit))
+model.bardzo = glm(x$bardzo ~ dates, family = quasibinomial(logit))
+model.naj = glm(x$naj ~ dates, family = quasibinomial(logit))
+model.ze = glm(x$ze ~ dates, family = quasibinomial(logit))
+model.wszystko = glm(x$wszystko ~ poly(dates, 4), family = quasibinomial(logit))
+model.albo = glm(x$albo ~ poly(dates, 4), family = quasibinomial(logit))
+
+p = plot_ly(x = dates, y = x$albo, name = " ", type = 'scatter', mode = 'markers', marker = list(color = 'transparent'), showlegend = TRUE) %>%
+       add_trace(y = model.wiekszy$fitted, name = 'więtszy > większy', mode = 'lines', line = list(color = my.p.blue, width = 3)) %>%
+       add_trace(y = model.bysmy_bym$fitted, name = '-bychmy > -byśmy', mode = 'lines', line = list(color = my.p.green, width = 3)) %>%
+       add_trace(y = model.bardzo$fitted, name = 'barzo > bardzo', mode = 'lines', line = list(color = my.p.red, width = 3)) %>%
+       add_trace(y = model.naj$fitted, name = 'na- > naj-', mode = 'lines', line = list(color = my.p.grey, width = 3)) %>%
+       add_trace(y = model.ze$fitted, name = 'iż(e) / że', mode = 'lines', line = list(color = my.p.orange, width = 3)) %>%
+       add_trace(y = model.wszystko$fitted, name = 'wszytko > wszystko', mode = 'lines', line = list(color = my.p.teal, width = 3)) %>%
+       add_trace(y = model.albo$fitted, name = 'abo > albo', mode = 'lines', line = list(color = my.p.violet, width = 3)) %>%
+       layout(
+           xaxis = list(range = c(1350, 2050)),
+           yaxis = list(range = c(-0.1, 1.1), zeroline = FALSE))
+p
+```
+
+
+
+
+
+
+
+## Conclusions
+
+* traditional periodization (old-Polish, middle-Polish, new-Polish) seems to be oversimplified
+* difficult to define clear-cut periods of the history of Polish
+* should be expect that the other changes also followed Piotrowski's law?
+* difficult to say why the model fails sometimes.
+
+
+
+

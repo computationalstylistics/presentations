@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Words that (might) matter, or keywords extraction methods</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="index_files/shower-ribbon/package/styles/screen-4x3.css">
+  <link rel="stylesheet" href="index_files/rmdshower/style-common.css">
+  <link rel="stylesheet" href="index_files/rmdshower/style-ribbon.css">
+  <link rel="stylesheet" href="index_files/shower-ribbon/style-override.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.js"></script>
+  <script src="index_files/rmdshower/auto-render.min.js" type="text/javascript"></script>
+  
+  
+  
+  
+      <script src="index_files/header-attrs-2.14/header-attrs.js"></script>
+  
+</head>
+
+<body class="shower list">
+
+  <header class="caption">
+    <h1>Words that (might) matter, or keywords extraction methods</h1>
+    <p>Maciej Eder (<a>maciej.eder@ijp.pan.pl</a>)</p>
+  </header>
+
+  
+  
+<section id="section" class="slide level2 white">
+<h2 class="white"></h2>
+<p class="black" style="font-size: 180%">
+<b>Introduction to Distributional Semantics</b> </br> <b>Meaningful
+words</b>
+</p>
+<p class="black" style="font-size: 120%">
+Maciej Eder
+</p>
+<p class="black" style="font-size: 80%; margin-bottom: 10em;">
+Institute of Polish Language (Polish Academy of Sciences)
+</p>
+<p class="black">
+Padova, 17.04.2023
+</p>
+</section>
+<section id="motivation" class="slide level2">
+<h2>Motivation</h2>
+<ul>
+<li>Information retrieval:
+<ul>
+<li>How to “read” a big collection of documents, e.g. an archive?</li>
+<li>How to get relevant websites using search engines?</li>
+<li>How to fine-grain the results for ‘apple’ (1. a fruit, 2. a
+company)</li>
+</ul></li>
+<li>Linguistics:
+<ul>
+<li>What is the underlying model for defining word meaning?</li>
+</ul></li>
+</ul>
+</section>
+<section id="meaning-defined-by-the-context" class="slide level2">
+<h2>Meaning defined by the context</h2>
+<blockquote>
+<p>The meaning of words lies in their use.</p>
+</blockquote>
+<p>(Wittgenstein 1953: 80, 109)</p>
+<blockquote>
+<p>You shall know a word by the company it keeps.</p>
+</blockquote>
+<p>(Firth 1962: 11)</p>
+</section>
+<section id="distributional-semantics" class="slide level2">
+<h2>Distributional semantics</h2>
+<ul>
+<li>A set of methods that make <strong>no assumption</strong> as to
+words’ relations and/or functions</li>
+<li>Meaning of the words is <strong>inferred</strong> from their:
+<ul>
+<li>Frequency</li>
+<li>Context</li>
+</ul></li>
+<li>These methods include:
+<ul>
+<li>Keyword analysis</li>
+<li>Collocations</li>
+<li>Topic modeling</li>
+<li>Word embeddings</li>
+</ul></li>
+</ul>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<h2 class="shout">
+Keywords
+</h2>
+</section>
+<section id="does-an-ideal-keyword-exist" class="slide level2">
+<h2>Does an ideal keyword exist?</h2>
+<ul>
+<li>information retrieval:
+<ul>
+<li>“meaningful” words</li>
+<li>what a given text is about</li>
+</ul></li>
+<li>stylometry:
+<ul>
+<li>is the stylistic layer also important?</li>
+<li>if a given author/genre overuses the word “the”, should that be
+captured? neglected?</li>
+</ul></li>
+</ul>
+</section>
+<section id="basic-assumptions" class="slide level2">
+<h2>Basic assumptions</h2>
+<ul>
+<li>Words are unevenly distributed in two text collections.</li>
+<li>Distribution of a word in text corpora will <em>always</em>
+differ.</li>
+<li>The real problem is to identify differences that are
+<em>significant</em>.</li>
+<li>Keyword = a word significantly more frequent in a given text.</li>
+</ul>
+</section>
+<section id="a-simple-idea" class="slide level2">
+<h2>A simple idea…</h2>
+<p>I have just returned from a visit to my landlord – the solitary
+neighbour that I shall be troubled with.</p>
+<p>neighbour solitary troubled landlord visit returned just shall from I
+have be with my that a to the</p>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-1-1.png" width="864" /></p>
+</section>
+<section id="bronte-the-wuthering-heights" class="slide level2">
+<h2>Bronte, <em>The Wuthering Heights</em></h2>
+<p>heathcliff, linton, catherine, hareton, earnshaw, cathy, edgar,
+ellen, heights, hindley, nelly, ll, grange, i, wuthering, t, joseph,
+isabella, master, gimmerton, zillah, m, exclaimed, he, thrushcross, and,
+answered, yah, kenneth, ve, maister, lockwood, kitchen, you, dean,
+moors, replied, cried, him, muttered, lintons, papa, she, till,
+commenced, on, wer, ech, shoo, leant, hearth, bonny, door, stairs, hell,
+me, crags, moor, wouldn, fiend, settle, jabez, penistone, fire, ye, its,
+bid, nowt, naught, yer, hush, mistress, grew, lad, compelled, minny,
+won, hisseln, skulker, soa, wisht, cousin, lattice, didn, yon, minute,
+lass, needn, inquired, snow, branderham, flaysome, gooid, sud, thear,
+affirming, interrupted, couldn, window, …, …, …, <strong>a, in,
+the</strong></p>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<h2 class="shout">
+Frequencies?
+</h2>
+</section>
+<section id="frequencies-in-two-texts" class="slide level2">
+<h2>Frequencies in two texts</h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-3-1.png" width="864" /></p>
+</section>
+<section id="differences-between-frequencies" class="slide level2">
+<h2>Differences between frequencies</h2>
+<table>
+<thead>
+<tr class="header">
+<th>the</th>
+<th>and</th>
+<th>to</th>
+<th>i</th>
+<th>of</th>
+<th>…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>3.557</td>
+<td>2.938</td>
+<td>3.398</td>
+<td>1.696</td>
+<td>2.965</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td>3.919</td>
+<td>4.068</td>
+<td>2.988</td>
+<td>3.078</td>
+<td>1.905</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<p>the difference between the values:</p>
+<table>
+<thead>
+<tr class="header">
+<th>the</th>
+<th>and</th>
+<th>to</th>
+<th>i</th>
+<th>of</th>
+<th>…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>-0.362</td>
+<td>-1.130</td>
+<td>0.410</td>
+<td>-1.382</td>
+<td>1.059</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="differences-between-frequencies-1" class="slide level2">
+<h2>Differences between frequencies</h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-4-1.png" width="864" /></p>
+</section>
+<section id="the-most-distinctive-words" class="slide level2">
+<h2>The most distinctive words</h2>
+<pre><code>##   [1] &quot;of&quot;          &quot;was&quot;         &quot;her&quot;         &quot;elizabeth&quot;   &quot;to&quot;         
+##   [6] &quot;be&quot;          &quot;mr&quot;          &quot;had&quot;         &quot;not&quot;         &quot;darcy&quot;      
+##  [11] &quot;she&quot;         &quot;very&quot;        &quot;which&quot;       &quot;in&quot;          &quot;all&quot;        
+##  [16] &quot;that&quot;        &quot;they&quot;        &quot;bennet&quot;      &quot;their&quot;       &quot;but&quot;        
+##  [21] &quot;been&quot;        &quot;such&quot;        &quot;jane&quot;        &quot;bingley&quot;     &quot;could&quot;      
+##  [26] &quot;much&quot;        &quot;am&quot;          &quot;so&quot;          &quot;with&quot;        &quot;mrs&quot;        
+##  [31] &quot;as&quot;          &quot;were&quot;        &quot;them&quot;        &quot;have&quot;        &quot;for&quot;        
+##  [36] &quot;is&quot;          &quot;by&quot;          &quot;sister&quot;      &quot;it&quot;          &quot;wickham&quot;    
+##  [41] &quot;what&quot;        &quot;will&quot;        &quot;collins&quot;     &quot;herself&quot;     &quot;most&quot;       
+##  [46] &quot;miss&quot;        &quot;soon&quot;        &quot;this&quot;        &quot;lydia&quot;       &quot;who&quot;        
+##  [51] &quot;any&quot;         &quot;dear&quot;        &quot;family&quot;      &quot;lady&quot;        &quot;every&quot;      
+##  [56] &quot;must&quot;        &quot;know&quot;        &quot;without&quot;     &quot;though&quot;      &quot;more&quot;       
+##  [61] &quot;letter&quot;      &quot;lizzy&quot;       &quot;other&quot;       &quot;think&quot;       &quot;longbourn&quot;  
+##  [66] &quot;many&quot;        &quot;good&quot;        &quot;gardiner&quot;    &quot;mother&quot;      &quot;do&quot;         
+##  [71] &quot;no&quot;          &quot;may&quot;         &quot;great&quot;       &quot;hope&quot;        &quot;well&quot;       
+##  [76] &quot;than&quot;        &quot;ladies&quot;      &quot;sisters&quot;     &quot;time&quot;        &quot;netherfield&quot;
+##  [81] &quot;manner&quot;      &quot;friend&quot;      &quot;can&quot;         &quot;aunt&quot;        &quot;kitty&quot;      
+##  [86] &quot;charlotte&quot;   &quot;feelings&quot;    &quot;daughter&quot;    &quot;before&quot;      &quot;however&quot;    
+##  [91] &quot;opinion&quot;     &quot;colonel&quot;     &quot;lucas&quot;       &quot;whom&quot;        &quot;marriage&quot;   
+##  [96] &quot;always&quot;      &quot;might&quot;       &quot;nothing&quot;     &quot;indeed&quot;      &quot;happiness&quot;</code></pre>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<h2 class="shout">
+Keywords LL
+</h2>
+</section>
+<section id="keywords-analysis" class="slide level2">
+<h2>Keywords analysis</h2>
+<ul>
+<li>log likelihood used to capture the differences</li>
+<li>implementation: AntConc, WordSmith Tools, etc.</li>
+</ul>
+</section>
+<section id="keywords-analysis-1" class="slide level2">
+<h2>Keywords analysis</h2>
+<pre><code>##   [1] &quot;elizabeth&quot;     &quot;darcy&quot;         &quot;bennet&quot;        &quot;jane&quot;         
+##   [5] &quot;bingley&quot;       &quot;of&quot;            &quot;wickham&quot;       &quot;collins&quot;      
+##   [9] &quot;very&quot;          &quot;mr&quot;            &quot;lydia&quot;         &quot;which&quot;        
+##  [13] &quot;such&quot;          &quot;sister&quot;        &quot;was&quot;           &quot;their&quot;        
+##  [17] &quot;lizzy&quot;         &quot;much&quot;          &quot;am&quot;            &quot;longbourn&quot;    
+##  [21] &quot;be&quot;            &quot;all&quot;           &quot;gardiner&quot;      &quot;had&quot;          
+##  [25] &quot;been&quot;          &quot;most&quot;          &quot;ladies&quot;        &quot;netherfield&quot;  
+##  [29] &quot;they&quot;          &quot;kitty&quot;         &quot;her&quot;           &quot;charlotte&quot;    
+##  [33] &quot;colonel&quot;       &quot;lucas&quot;         &quot;mrs&quot;           &quot;sisters&quot;      
+##  [37] &quot;dear&quot;          &quot;family&quot;        &quot;not&quot;           &quot;herself&quot;      
+##  [41] &quot;meryton&quot;       &quot;opinion&quot;       &quot;marriage&quot;      &quot;pemberley&quot;    
+##  [45] &quot;letter&quot;        &quot;soon&quot;          &quot;daughters&quot;     &quot;aunt&quot;         
+##  [49] &quot;bingley^s&quot;     &quot;rosings&quot;       &quot;town&quot;          &quot;could&quot;        
+##  [53] &quot;darcy^s&quot;       &quot;lady&quot;          &quot;party&quot;         &quot;hertfordshire&quot;
+##  [57] &quot;daughter&quot;      &quot;them&quot;          &quot;de&quot;            &quot;william&quot;      
+##  [61] &quot;girls&quot;         &quot;miss&quot;          &quot;elizabeth^s&quot;   &quot;forster&quot;      
+##  [65] &quot;lydia^s&quot;       &quot;happiness&quot;     &quot;without&quot;       &quot;many&quot;         
+##  [69] &quot;bourgh&quot;        &quot;mother&quot;        &quot;so&quot;            &quot;every&quot;        
+##  [73] &quot;but&quot;           &quot;gentlemen&quot;     &quot;general&quot;       &quot;known&quot;        
+##  [77] &quot;feelings&quot;      &quot;she&quot;           &quot;therefore&quot;     &quot;sister^s&quot;     
+##  [81] &quot;london&quot;        &quot;hurst&quot;         &quot;wickham^s&quot;     &quot;officers&quot;     
+##  [85] &quot;fitzwilliam&quot;   &quot;were&quot;          &quot;whom&quot;          &quot;manner&quot;       
+##  [89] &quot;ladyship&quot;      &quot;bennet^s&quot;      &quot;civility&quot;      &quot;friend&quot;       
+##  [93] &quot;ball&quot;          &quot;mary&quot;          &quot;jane^s&quot;        &quot;hope&quot;         
+##  [97] &quot;certainly&quot;     &quot;will&quot;          &quot;any&quot;           &quot;that&quot;</code></pre>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<h2 class="shout">
+Zeta
+</h2>
+</section>
+<section id="zeta-the-background" class="slide level2">
+<h2>Zeta: the background</h2>
+<p><img src="img/Diagram1.png" height="300" /></p>
+</section>
+<section id="zeta-the-solution" class="slide level2">
+<h2>Zeta: the solution</h2>
+<p><img src="img/Diagram2.png" height="300" /></p>
+<p><span class="math display">\[\zeta_{(a,b)} = \left(\frac{f_a -
+f_b}{100}\right) +1\]</span></p>
+<p>(Burrows, 2007; Craig, 2009)</p>
+</section>
+<section id="zeta-outcomes" class="slide level2">
+<h2>Zeta: outcomes</h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-7-1.png" width="864" /></p>
+</section>
+<section id="zetas-words" class="slide level2">
+<h2>Zeta’s words</h2>
+<pre><code>##   [1] &quot;elizabeth&quot;     &quot;jane&quot;          &quot;darcy&quot;         &quot;bennet&quot;       
+##   [5] &quot;longbourn&quot;     &quot;opinion&quot;       &quot;wickham&quot;       &quot;bingley&quot;      
+##   [9] &quot;lizzy&quot;         &quot;town&quot;          &quot;sister&quot;        &quot;lydia&quot;        
+##  [13] &quot;ladies&quot;        &quot;netherfield&quot;   &quot;sisters&quot;       &quot;meryton&quot;      
+##  [17] &quot;general&quot;       &quot;therefore&quot;     &quot;darcy^s&quot;       &quot;marriage&quot;     
+##  [21] &quot;party&quot;         &quot;london&quot;        &quot;certainly&quot;     &quot;bingley^s&quot;    
+##  [25] &quot;hertfordshire&quot; &quot;aunt&quot;          &quot;carriage&quot;      &quot;known&quot;        
+##  [29] &quot;settled&quot;       &quot;others&quot;        &quot;collins&quot;       &quot;kitty&quot;        
+##  [33] &quot;pemberley&quot;     &quot;daughters&quot;     &quot;elizabeth^s&quot;   &quot;jane^s&quot;       
+##  [37] &quot;sister^s&quot;      &quot;engaged&quot;       &quot;perfectly&quot;     &quot;feelings&quot;     
+##  [41] &quot;lucas&quot;         &quot;bennet^s&quot;      &quot;importance&quot;    &quot;credit&quot;       
+##  [45] &quot;manners&quot;       &quot;happiness&quot;     &quot;able&quot;          &quot;behaviour&quot;    
+##  [49] &quot;wickham^s&quot;     &quot;girls&quot;         &quot;most&quot;          &quot;civility&quot;     
+##  [53] &quot;sensible&quot;      &quot;satisfied&quot;     &quot;mentioned&quot;     &quot;acquaintance&quot; 
+##  [57] &quot;daughter&quot;      &quot;affection&quot;     &quot;attention&quot;     &quot;whom&quot;         
+##  [61] &quot;seeing&quot;        &quot;charlotte&quot;     &quot;rosings&quot;       &quot;attentions&quot;   
+##  [65] &quot;depend&quot;        &quot;excellent&quot;     &quot;believed&quot;      &quot;assured&quot;      
+##  [69] &quot;particularly&quot;  &quot;necessary&quot;     &quot;regard&quot;        &quot;likely&quot;       
+##  [73] &quot;conversation&quot;  &quot;colonel&quot;       &quot;many&quot;          &quot;added&quot;        
+##  [77] &quot;praise&quot;        &quot;understanding&quot; &quot;mary&quot;          &quot;highly&quot;       
+##  [81] &quot;anyone&quot;        &quot;address&quot;       &quot;concern&quot;       &quot;fortune&quot;      
+##  [85] &quot;assure&quot;        &quot;agreeable&quot;     &quot;honour&quot;        &quot;consequence&quot;  
+##  [89] &quot;given&quot;         &quot;possible&quot;      &quot;mother&quot;        &quot;gardiner&quot;     
+##  [93] &quot;de&quot;            &quot;lydia^s&quot;       &quot;bourgh&quot;        &quot;gentlemen&quot;    
+##  [97] &quot;pleasing&quot;      &quot;eldest&quot;        &quot;particulars&quot;   &quot;subject&quot;</code></pre>
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<h2 class="shout">
+TF–IDF
+</h2>
+</section>
+<section id="tfidf" class="slide level2">
+<h2>TF–IDF</h2>
+<ul>
+<li>Term frequency x inversed document frequency</li>
+<li>IDF: a weighting factor to boost <strong>important</strong>
+frequencies</li>
+<li>important being the ones that appear in few texts and yet, are
+frequent</li>
+</ul>
+<p><span class="math display">\[ TFIDF_{w} = f_{w} \times \log
+\frac{N}{n_{t}} \]</span></p>
+</section>
+<section id="tfidfs-words" class="slide level2">
+<h2>TF–IDF’s words</h2>
+<pre><code>##   [1] &quot;darcy&quot;         &quot;bennet&quot;        &quot;bingley&quot;       &quot;elizabeth&quot;    
+##   [5] &quot;wickham&quot;       &quot;collins&quot;       &quot;lydia&quot;         &quot;longbourn&quot;    
+##   [9] &quot;gardiner&quot;      &quot;netherfield&quot;   &quot;lucas&quot;         &quot;lizzy&quot;        
+##  [13] &quot;meryton&quot;       &quot;pemberley&quot;     &quot;bingley^s&quot;     &quot;rosings&quot;      
+##  [17] &quot;kitty&quot;         &quot;darcy^s&quot;       &quot;hertfordshire&quot; &quot;elizabeth^s&quot;  
+##  [21] &quot;forster&quot;       &quot;lydia^s&quot;       &quot;bourgh&quot;        &quot;wickham^s&quot;    
+##  [25] &quot;fitzwilliam&quot;   &quot;jane&quot;          &quot;catherine&quot;     &quot;bennet^s&quot;     
+##  [29] &quot;phillips&quot;      &quot;hunsford&quot;      &quot;brighton&quot;      &quot;collins^s&quot;    
+##  [33] &quot;derbyshire&quot;    &quot;hurst&quot;         &quot;charlotte&quot;     &quot;colonel&quot;      
+##  [37] &quot;officers&quot;      &quot;william&quot;       &quot;kent&quot;          &quot;lucases&quot;      
+##  [41] &quot;gardiner^s&quot;    &quot;denny&quot;         &quot;charlotte^s&quot;   &quot;ladyship&quot;     
+##  [45] &quot;judgement&quot;     &quot;catherine^s&quot;   &quot;de&quot;            &quot;jane^s&quot;       
+##  [49] &quot;bennets&quot;       &quot;lambton&quot;       &quot;reynolds&quot;      &quot;maria&quot;        
+##  [53] &quot;gracechurch&quot;   &quot;etc&quot;           &quot;anyone&quot;        &quot;ladyship^s&quot;   
+##  [57] &quot;eliza&quot;         &quot;jenkinson&quot;     &quot;parsonage&quot;     &quot;elopement&quot;    
+##  [61] &quot;behaviour&quot;     &quot;georgiana&quot;     &quot;gardiners&quot;     &quot;entail&quot;       
+##  [65] &quot;caroline&quot;      &quot;regiment&quot;      &quot;bingleys&quot;      &quot;collinses&quot;    
+##  [69] &quot;enumerating&quot;   &quot;fitzwilliam^s&quot; &quot;lucas^s&quot;       &quot;phillips^s&quot;   
+##  [73] &quot;cousin&quot;        &quot;saturday&quot;      &quot;shire&quot;         &quot;militia&quot;      
+##  [77] &quot;corps&quot;         &quot;james^s&quot;       &quot;lakes&quot;         &quot;bourgh^s&quot;     
+##  [81] &quot;clapham&quot;       &quot;fishing&quot;       &quot;newcastle&quot;     &quot;younge&quot;       
+##  [85] &quot;ladies&quot;        &quot;niece&quot;         &quot;exposing&quot;      &quot;felicity&quot;     
+##  [89] &quot;imprudence&quot;    &quot;uncommonly&quot;    &quot;assembly&quot;      &quot;wednesday&quot;    
+##  [93] &quot;nieces&quot;        &quot;engagements&quot;   &quot;louisa&quot;        &quot;twelvemonth&quot;  
+##  [97] &quot;gratifying&quot;    &quot;william^s&quot;     &quot;annesley&quot;      &quot;caroline^s&quot;</code></pre>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<h2 class="shout">
+A new method
+</h2>
+</section>
+<section id="an-ideal-measure" class="slide level2">
+<h2>An ideal measure</h2>
+<ol type="1">
+<li>will automatically extract meaningful words for a text A and B
+<ul>
+<li>by “automatically” we mean that the technique will be
+unsupervised</li>
+<li>by “meaningful” we mean that an extracted keyword brings much
+semantic information about a given subset of texts.</li>
+</ul></li>
+<li>will be able to distinguish if the texts to be compared differ
+substantially, or only marginally.</li>
+<li>will not require any computation-intense algorithms;</li>
+<li>will be conceptually simple;</li>
+<li>will have an intuitive linguistic interpretation;</li>
+</ol>
+</section>
+<section id="an-ideal-measure-cont." class="slide level2">
+<h2>An ideal measure (cont.)</h2>
+<ol start="6" type="1">
+<li>will not make any statistical assumptions, i.e. will be
+non-parametric;</li>
+<li>will allow for significance testing of the identified keywords;</li>
+<li>will not require any hyperparameters, or at least any arbitrarily
+chosen hyperparameters;</li>
+<li>will correct for frequent words.</li>
+</ol>
+</section>
+<section id="a-new-measure" class="slide level2">
+<h2>A new measure</h2>
+<ul>
+<li>Given the above constrains, we propose a simple measure of keyness
+that relies on:
+<ol type="1">
+<li>words’ frequencies,</li>
+<li>words’ positions on a frequency list.</li>
+</ol></li>
+<li>Since (2) is directly derivable from (1), the only thing that the
+measure requires is two lists of word frequencies.</li>
+<li>Mathematically, then, the only assumption we formulate is that there
+exist two texts of a finite length of <span
+class="math inline">\(\lambda \in \mathbb{N}\)</span>.</li>
+</ul>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<p><img src="img/sci_rep.png" height="600" /></p>
+</section>
+<section id="shakespeare-vs.-conan-doyle" class="slide level2">
+<h2>Shakespeare vs. Conan Doyle</h2>
+<table>
+<thead>
+<tr class="header">
+<th>word</th>
+<th>count</th>
+<th>word</th>
+<th>count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>the</td>
+<td>27595</td>
+<td>the</td>
+<td>28662</td>
+</tr>
+<tr class="even">
+<td>and</td>
+<td>26735</td>
+<td>and</td>
+<td>14109</td>
+</tr>
+<tr class="odd">
+<td>I</td>
+<td>22538</td>
+<td>of</td>
+<td>13229</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr class="odd">
+<td>northerly</td>
+<td>1</td>
+<td>revolvers</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="frequency-and-position" class="slide level2">
+<h2>Frequency <strong>and</strong> position</h2>
+<p><span class="math display">\[P_{r(x)} =
+\frac{1}{N}\sum_{i=1}^{r(x)}f(i)\]</span></p>
+<p>which also guarantees that the values are scaled into the range {0,
+1}.</p>
+</section>
+<section id="frequency-and-position-1" class="slide level2">
+<h2>Frequency <strong>and</strong> position</h2>
+<p>a simpler and more elegant version of the above:</p>
+<p><span class="math display">\[P_{r(x)} = \left(
+\frac{1}{N}\sum_{i=1}^{r(x)}f(x_{i}) \right) - f(x)\]</span></p>
+<p>which is of course equal to:</p>
+<p><span class="math display">\[P_{r(x)} =
+\frac{1}{N}\sum_{i=1}^{r(x-1)}f(x_{i})\]</span></p>
+</section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<p><img src="img/Fig-5.png" height="600" /></p>
+</section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+<p><img src="img/Fig-6.png" height="600" /></p>
+</section>
+<section id="the-cracovian" class="slide level2">
+<h2>The cracovian</h2>
+<p>Having normalized the frequencies/positions of the words, one can
+easily compute the distance between the same word between two sets
+(texts or subcorpora), say A and B, by simply estimating their
+difference. This can be defined as</p>
+<p><span class="math display">\[\delta_{x,AB} = \| P_{r(x),A} -
+P_{r(x),B} \|\]</span></p>
+</section>
+<section id="cumulative-sums" class="slide level2">
+<h2>Cumulative sums</h2>
+<p>The above geometric interpretation can be also solved algebraically.
+In this interpretation, the position <span
+class="math inline">\(P_{r(x)}\)</span> of a given word is
+<strong>simply a cumulative sum of frequencies of all the preceding
+words</strong>.</p>
+</section>
+<section id="the-words" class="slide level2">
+<h2>The words</h2>
+<pre><code>##   [1] &quot;elizabeth&quot;     &quot;darcy&quot;         &quot;bennet&quot;        &quot;jane&quot;         
+##   [5] &quot;bingley&quot;       &quot;wickham&quot;       &quot;collins&quot;       &quot;lydia&quot;        
+##   [9] &quot;lizzy&quot;         &quot;longbourn&quot;     &quot;gardiner&quot;      &quot;ladies&quot;       
+##  [13] &quot;netherfield&quot;   &quot;kitty&quot;         &quot;charlotte&quot;     &quot;colonel&quot;      
+##  [17] &quot;lucas&quot;         &quot;sisters&quot;       &quot;meryton&quot;       &quot;pemberley&quot;    
+##  [21] &quot;daughters&quot;     &quot;bingley^s&quot;     &quot;rosings&quot;       &quot;opinion&quot;      
+##  [25] &quot;darcy^s&quot;       &quot;marriage&quot;      &quot;hertfordshire&quot; &quot;de&quot;           
+##  [29] &quot;william&quot;       &quot;elizabeth^s&quot;   &quot;forster&quot;       &quot;lydia^s&quot;      
+##  [33] &quot;girls&quot;         &quot;bourgh&quot;        &quot;town&quot;          &quot;sister^s&quot;     
+##  [37] &quot;gentlemen&quot;     &quot;sister&quot;        &quot;hurst&quot;         &quot;wickham^s&quot;    
+##  [41] &quot;fitzwilliam&quot;   &quot;officers&quot;      &quot;ladyship&quot;      &quot;bennet^s&quot;     
+##  [45] &quot;party&quot;         &quot;jane^s&quot;        &quot;attentions&quot;    &quot;phillips&quot;     
+##  [49] &quot;ball&quot;          &quot;hunsford&quot;      &quot;brighton&quot;      &quot;collins^s&quot;    
+##  [53] &quot;derbyshire&quot;    &quot;mary&quot;          &quot;aunt&quot;          &quot;importance&quot;   
+##  [57] &quot;depend&quot;        &quot;eliza&quot;         &quot;pleasing&quot;      &quot;eldest&quot;       
+##  [61] &quot;general&quot;       &quot;match&quot;         &quot;particulars&quot;   &quot;understanding&quot;
+##  [65] &quot;civility&quot;      &quot;compliment&quot;    &quot;praise&quot;        &quot;niece&quot;        
+##  [69] &quot;regiment&quot;      &quot;concerned&quot;     &quot;connections&quot;   &quot;felicity&quot;     
+##  [73] &quot;maria&quot;         &quot;charlotte^s&quot;   &quot;known&quot;         &quot;parsonage&quot;    
+##  [77] &quot;saturday&quot;      &quot;street&quot;        &quot;highly&quot;        &quot;dearest&quot;      
+##  [81] &quot;daughter&quot;      &quot;london&quot;        &quot;scheme&quot;        &quot;favour&quot;       
+##  [85] &quot;happiness&quot;     &quot;dancing&quot;       &quot;fortune&quot;       &quot;engagement&quot;   
+##  [89] &quot;prevailed&quot;     &quot;resentment&quot;    &quot;caroline&quot;      &quot;relations&quot;    
+##  [93] &quot;partner&quot;       &quot;kent&quot;          &quot;pounds&quot;        &quot;lucases&quot;      
+##  [97] &quot;occurred&quot;      &quot;excellent&quot;     &quot;etc&quot;           &quot;gardiner^s&quot;</code></pre>
+</section>
+<section id="similar-yet-not-identical" class="slide level2">
+<h2>Similar yet not identical</h2>
+<pre><code>##        freqs         zeta            tfidf           cracovian      
+##   [1,] &quot;of&quot;          &quot;elizabeth&quot;     &quot;darcy&quot;         &quot;elizabeth&quot;    
+##   [2,] &quot;was&quot;         &quot;jane&quot;          &quot;bennet&quot;        &quot;darcy&quot;        
+##   [3,] &quot;her&quot;         &quot;darcy&quot;         &quot;bingley&quot;       &quot;bennet&quot;       
+##   [4,] &quot;elizabeth&quot;   &quot;bennet&quot;        &quot;elizabeth&quot;     &quot;jane&quot;         
+##   [5,] &quot;to&quot;          &quot;longbourn&quot;     &quot;wickham&quot;       &quot;bingley&quot;      
+##   [6,] &quot;be&quot;          &quot;opinion&quot;       &quot;collins&quot;       &quot;wickham&quot;      
+##   [7,] &quot;mr&quot;          &quot;wickham&quot;       &quot;lydia&quot;         &quot;collins&quot;      
+##   [8,] &quot;had&quot;         &quot;bingley&quot;       &quot;longbourn&quot;     &quot;lydia&quot;        
+##   [9,] &quot;not&quot;         &quot;lizzy&quot;         &quot;gardiner&quot;      &quot;lizzy&quot;        
+##  [10,] &quot;darcy&quot;       &quot;town&quot;          &quot;netherfield&quot;   &quot;longbourn&quot;    
+##  [11,] &quot;she&quot;         &quot;sister&quot;        &quot;lucas&quot;         &quot;gardiner&quot;     
+##  [12,] &quot;very&quot;        &quot;lydia&quot;         &quot;lizzy&quot;         &quot;ladies&quot;       
+##  [13,] &quot;which&quot;       &quot;ladies&quot;        &quot;meryton&quot;       &quot;netherfield&quot;  
+##  [14,] &quot;in&quot;          &quot;netherfield&quot;   &quot;pemberley&quot;     &quot;kitty&quot;        
+##  [15,] &quot;all&quot;         &quot;sisters&quot;       &quot;bingley^s&quot;     &quot;charlotte&quot;    
+##  [16,] &quot;that&quot;        &quot;meryton&quot;       &quot;rosings&quot;       &quot;colonel&quot;      
+##  [17,] &quot;they&quot;        &quot;general&quot;       &quot;kitty&quot;         &quot;lucas&quot;        
+##  [18,] &quot;bennet&quot;      &quot;therefore&quot;     &quot;darcy^s&quot;       &quot;sisters&quot;      
+##  [19,] &quot;their&quot;       &quot;darcy^s&quot;       &quot;hertfordshire&quot; &quot;meryton&quot;      
+##  [20,] &quot;but&quot;         &quot;marriage&quot;      &quot;elizabeth^s&quot;   &quot;pemberley&quot;    
+##  [21,] &quot;been&quot;        &quot;party&quot;         &quot;forster&quot;       &quot;daughters&quot;    
+##  [22,] &quot;such&quot;        &quot;london&quot;        &quot;lydia^s&quot;       &quot;bingley^s&quot;    
+##  [23,] &quot;jane&quot;        &quot;certainly&quot;     &quot;bourgh&quot;        &quot;rosings&quot;      
+##  [24,] &quot;bingley&quot;     &quot;bingley^s&quot;     &quot;wickham^s&quot;     &quot;opinion&quot;      
+##  [25,] &quot;could&quot;       &quot;hertfordshire&quot; &quot;fitzwilliam&quot;   &quot;darcy^s&quot;      
+##  [26,] &quot;much&quot;        &quot;aunt&quot;          &quot;jane&quot;          &quot;marriage&quot;     
+##  [27,] &quot;am&quot;          &quot;carriage&quot;      &quot;catherine&quot;     &quot;hertfordshire&quot;
+##  [28,] &quot;so&quot;          &quot;known&quot;         &quot;bennet^s&quot;      &quot;de&quot;           
+##  [29,] &quot;with&quot;        &quot;settled&quot;       &quot;phillips&quot;      &quot;william&quot;      
+##  [30,] &quot;mrs&quot;         &quot;others&quot;        &quot;hunsford&quot;      &quot;elizabeth^s&quot;  
+##  [31,] &quot;as&quot;          &quot;collins&quot;       &quot;brighton&quot;      &quot;forster&quot;      
+##  [32,] &quot;were&quot;        &quot;kitty&quot;         &quot;collins^s&quot;     &quot;lydia^s&quot;      
+##  [33,] &quot;them&quot;        &quot;pemberley&quot;     &quot;derbyshire&quot;    &quot;girls&quot;        
+##  [34,] &quot;have&quot;        &quot;daughters&quot;     &quot;hurst&quot;         &quot;bourgh&quot;       
+##  [35,] &quot;for&quot;         &quot;elizabeth^s&quot;   &quot;charlotte&quot;     &quot;town&quot;         
+##  [36,] &quot;is&quot;          &quot;jane^s&quot;        &quot;colonel&quot;       &quot;sister^s&quot;     
+##  [37,] &quot;by&quot;          &quot;sister^s&quot;      &quot;officers&quot;      &quot;gentlemen&quot;    
+##  [38,] &quot;sister&quot;      &quot;engaged&quot;       &quot;william&quot;       &quot;sister&quot;       
+##  [39,] &quot;it&quot;          &quot;perfectly&quot;     &quot;kent&quot;          &quot;hurst&quot;        
+##  [40,] &quot;wickham&quot;     &quot;feelings&quot;      &quot;lucases&quot;       &quot;wickham^s&quot;    
+##  [41,] &quot;what&quot;        &quot;lucas&quot;         &quot;gardiner^s&quot;    &quot;fitzwilliam&quot;  
+##  [42,] &quot;will&quot;        &quot;bennet^s&quot;      &quot;denny&quot;         &quot;officers&quot;     
+##  [43,] &quot;collins&quot;     &quot;importance&quot;    &quot;charlotte^s&quot;   &quot;ladyship&quot;     
+##  [44,] &quot;herself&quot;     &quot;credit&quot;        &quot;ladyship&quot;      &quot;bennet^s&quot;     
+##  [45,] &quot;most&quot;        &quot;manners&quot;       &quot;judgement&quot;     &quot;party&quot;        
+##  [46,] &quot;miss&quot;        &quot;happiness&quot;     &quot;catherine^s&quot;   &quot;jane^s&quot;       
+##  [47,] &quot;soon&quot;        &quot;able&quot;          &quot;de&quot;            &quot;attentions&quot;   
+##  [48,] &quot;this&quot;        &quot;behaviour&quot;     &quot;jane^s&quot;        &quot;phillips&quot;     
+##  [49,] &quot;lydia&quot;       &quot;wickham^s&quot;     &quot;bennets&quot;       &quot;ball&quot;         
+##  [50,] &quot;who&quot;         &quot;girls&quot;         &quot;lambton&quot;       &quot;hunsford&quot;     
+##  [51,] &quot;any&quot;         &quot;most&quot;          &quot;reynolds&quot;      &quot;brighton&quot;     
+##  [52,] &quot;dear&quot;        &quot;civility&quot;      &quot;maria&quot;         &quot;collins^s&quot;    
+##  [53,] &quot;family&quot;      &quot;sensible&quot;      &quot;gracechurch&quot;   &quot;derbyshire&quot;   
+##  [54,] &quot;lady&quot;        &quot;satisfied&quot;     &quot;etc&quot;           &quot;mary&quot;         
+##  [55,] &quot;every&quot;       &quot;mentioned&quot;     &quot;anyone&quot;        &quot;aunt&quot;         
+##  [56,] &quot;must&quot;        &quot;acquaintance&quot;  &quot;ladyship^s&quot;    &quot;importance&quot;   
+##  [57,] &quot;know&quot;        &quot;daughter&quot;      &quot;eliza&quot;         &quot;depend&quot;       
+##  [58,] &quot;without&quot;     &quot;affection&quot;     &quot;jenkinson&quot;     &quot;eliza&quot;        
+##  [59,] &quot;though&quot;      &quot;attention&quot;     &quot;parsonage&quot;     &quot;pleasing&quot;     
+##  [60,] &quot;more&quot;        &quot;whom&quot;          &quot;elopement&quot;     &quot;eldest&quot;       
+##  [61,] &quot;letter&quot;      &quot;seeing&quot;        &quot;behaviour&quot;     &quot;general&quot;      
+##  [62,] &quot;lizzy&quot;       &quot;charlotte&quot;     &quot;georgiana&quot;     &quot;match&quot;        
+##  [63,] &quot;other&quot;       &quot;rosings&quot;       &quot;gardiners&quot;     &quot;particulars&quot;  
+##  [64,] &quot;think&quot;       &quot;attentions&quot;    &quot;entail&quot;        &quot;understanding&quot;
+##  [65,] &quot;longbourn&quot;   &quot;depend&quot;        &quot;caroline&quot;      &quot;civility&quot;     
+##  [66,] &quot;many&quot;        &quot;excellent&quot;     &quot;regiment&quot;      &quot;compliment&quot;   
+##  [67,] &quot;good&quot;        &quot;believed&quot;      &quot;bingleys&quot;      &quot;praise&quot;       
+##  [68,] &quot;gardiner&quot;    &quot;assured&quot;       &quot;collinses&quot;     &quot;niece&quot;        
+##  [69,] &quot;mother&quot;      &quot;particularly&quot;  &quot;enumerating&quot;   &quot;regiment&quot;     
+##  [70,] &quot;do&quot;          &quot;necessary&quot;     &quot;fitzwilliam^s&quot; &quot;concerned&quot;    
+##  [71,] &quot;no&quot;          &quot;regard&quot;        &quot;lucas^s&quot;       &quot;connections&quot;  
+##  [72,] &quot;may&quot;         &quot;likely&quot;        &quot;phillips^s&quot;    &quot;felicity&quot;     
+##  [73,] &quot;great&quot;       &quot;conversation&quot;  &quot;cousin&quot;        &quot;maria&quot;        
+##  [74,] &quot;hope&quot;        &quot;colonel&quot;       &quot;saturday&quot;      &quot;charlotte^s&quot;  
+##  [75,] &quot;well&quot;        &quot;many&quot;          &quot;shire&quot;         &quot;known&quot;        
+##  [76,] &quot;than&quot;        &quot;added&quot;         &quot;militia&quot;       &quot;parsonage&quot;    
+##  [77,] &quot;ladies&quot;      &quot;praise&quot;        &quot;corps&quot;         &quot;saturday&quot;     
+##  [78,] &quot;sisters&quot;     &quot;understanding&quot; &quot;james^s&quot;       &quot;street&quot;       
+##  [79,] &quot;time&quot;        &quot;mary&quot;          &quot;lakes&quot;         &quot;highly&quot;       
+##  [80,] &quot;netherfield&quot; &quot;highly&quot;        &quot;bourgh^s&quot;      &quot;dearest&quot;      
+##  [81,] &quot;manner&quot;      &quot;anyone&quot;        &quot;clapham&quot;       &quot;daughter&quot;     
+##  [82,] &quot;friend&quot;      &quot;address&quot;       &quot;fishing&quot;       &quot;london&quot;       
+##  [83,] &quot;can&quot;         &quot;concern&quot;       &quot;newcastle&quot;     &quot;scheme&quot;       
+##  [84,] &quot;aunt&quot;        &quot;fortune&quot;       &quot;younge&quot;        &quot;favour&quot;       
+##  [85,] &quot;kitty&quot;       &quot;assure&quot;        &quot;ladies&quot;        &quot;happiness&quot;    
+##  [86,] &quot;charlotte&quot;   &quot;agreeable&quot;     &quot;niece&quot;         &quot;dancing&quot;      
+##  [87,] &quot;feelings&quot;    &quot;honour&quot;        &quot;exposing&quot;      &quot;fortune&quot;      
+##  [88,] &quot;daughter&quot;    &quot;consequence&quot;   &quot;felicity&quot;      &quot;engagement&quot;   
+##  [89,] &quot;before&quot;      &quot;given&quot;         &quot;imprudence&quot;    &quot;prevailed&quot;    
+##  [90,] &quot;however&quot;     &quot;possible&quot;      &quot;uncommonly&quot;    &quot;resentment&quot;   
+##  [91,] &quot;opinion&quot;     &quot;mother&quot;        &quot;assembly&quot;      &quot;caroline&quot;     
+##  [92,] &quot;colonel&quot;     &quot;gardiner&quot;      &quot;wednesday&quot;     &quot;relations&quot;    
+##  [93,] &quot;lucas&quot;       &quot;de&quot;            &quot;nieces&quot;        &quot;partner&quot;      
+##  [94,] &quot;whom&quot;        &quot;lydia^s&quot;       &quot;engagements&quot;   &quot;kent&quot;         
+##  [95,] &quot;marriage&quot;    &quot;bourgh&quot;        &quot;louisa&quot;        &quot;pounds&quot;       
+##  [96,] &quot;always&quot;      &quot;gentlemen&quot;     &quot;twelvemonth&quot;   &quot;lucases&quot;      
+##  [97,] &quot;might&quot;       &quot;pleasing&quot;      &quot;gratifying&quot;    &quot;occurred&quot;     
+##  [98,] &quot;nothing&quot;     &quot;eldest&quot;        &quot;william^s&quot;     &quot;excellent&quot;    
+##  [99,] &quot;indeed&quot;      &quot;particulars&quot;   &quot;annesley&quot;      &quot;etc&quot;          
+## [100,] &quot;happiness&quot;   &quot;subject&quot;       &quot;caroline^s&quot;    &quot;gardiner^s&quot;</code></pre>
+</section>
+<section id="section-10" class="slide level2">
+<h2></h2>
+<h2 class="shout">
+Comparison
+</h2>
+</section>
+<section id="gender-keywords-19th-century" class="slide level2">
+<h2>Gender keywords (19th century)</h2>
+<ul>
+<li>12 novels by female authors
+<ul>
+<li>Anne Bronte, Jane Austen, Charlotte Bronte, Emily Bronte, George
+Eliot</li>
+</ul></li>
+<li>12 novels by male authors
+<ul>
+<li>Charles Dickens, Henry Fielding, Samuel Richardson, William
+Thackeray, Anthony Trollope</li>
+</ul></li>
+<li>A comparison of keywords returned by:
+<ul>
+<li>LL keywords analysis methdod</li>
+<li>Cracovian</li>
+<li>Zeta</li>
+</ul></li>
+</ul>
+</section>
+<section id="ll-keywords" class="slide level2">
+<h2>LL keywords</h2>
+<ul>
+<li>female (?)</li>
+</ul>
+<pre><code>##  [1] &quot;maggie&quot;     &quot;adam&quot;       &quot;lydgate&quot;    &quot;dorothea&quot;   &quot;emma&quot;      
+##  [6] &quot;lucy&quot;       &quot;hetty&quot;      &quot;elinor&quot;     &quot;tulliver&quot;   &quot;jane&quot;      
+## [11] &quot;elizabeth&quot;  &quot;casaubon&quot;   &quot;bulstrode&quot;  &quot;rosamond&quot;   &quot;marianne&quot;  
+## [16] &quot;weston&quot;     &quot;fred&quot;       &quot;dinah&quot;      &quot;catherine&quot;  &quot;heathcliff&quot;
+## [21] &quot;was&quot;        &quot;darcy&quot;      &quot;tom&quot;        &quot;poyser&quot;     &quot;harriet&quot;   
+## [26] &quot;philip&quot;     &quot;felt&quot;       &quot;seemed&quot;     &quot;knightley&quot;  &quot;brooke&quot;    
+## [31] &quot;its&quot;        &quot;fairfax&quot;    &quot;linton&quot;     &quot;glegg&quot;      &quot;elton&quot;</code></pre>
+<ul>
+<li>male (?)</li>
+</ul>
+<pre><code>##  [1] &quot;upon&quot;      &quot;lady&quot;      &quot;thou&quot;      &quot;lovelace&quot;  &quot;jones&quot;     &quot;phineas&quot;  
+##  [7] &quot;my&quot;        &quot;pen&quot;       &quot;lord&quot;      &quot;dear&quot;      &quot;sir&quot;       &quot;major&quot;    
+## [13] &quot;letter&quot;    &quot;howe&quot;      &quot;laura&quot;     &quot;harlowe&quot;   &quot;honour&quot;    &quot;madam&quot;    
+## [19] &quot;duke&quot;      &quot;george&quot;    &quot;that&quot;      &quot;belford&quot;   &quot;crawley&quot;   &quot;pendennis&quot;
+## [25] &quot;sophia&quot;    &quot;clarissa&quot;  &quot;lopez&quot;     &quot;micawber&quot;  &quot;pamela&quot;    &quot;b&quot;        
+## [31] &quot;finn&quot;      &quot;so&quot;        &quot;peggotty&quot;  &quot;your&quot;      &quot;captain&quot;</code></pre>
+</section>
+<section id="cracovian" class="slide level2">
+<h2>Cracovian</h2>
+<ul>
+<li>female (?)</li>
+</ul>
+<pre><code>##  [1] &quot;maggie&quot;      &quot;lydgate&quot;     &quot;adam&quot;        &quot;dorothea&quot;    &quot;hetty&quot;      
+##  [6] &quot;lucy&quot;        &quot;elinor&quot;      &quot;tulliver&quot;    &quot;casaubon&quot;    &quot;rosamond&quot;   
+## [11] &quot;bulstrode&quot;   &quot;marianne&quot;    &quot;weston&quot;      &quot;emma&quot;        &quot;dinah&quot;      
+## [16] &quot;elizabeth&quot;   &quot;heathcliff&quot;  &quot;darcy&quot;       &quot;poyser&quot;      &quot;catherine&quot;  
+## [21] &quot;fred&quot;        &quot;knightley&quot;   &quot;brooke&quot;      &quot;philip&quot;      &quot;fairfax&quot;    
+## [26] &quot;glegg&quot;       &quot;elton&quot;       &quot;linton&quot;      &quot;graham&quot;      &quot;bennet&quot;     
+## [31] &quot;seth&quot;        &quot;garth&quot;       &quot;harriet&quot;     &quot;middlemarch&quot; &quot;ladislaw&quot;</code></pre>
+<ul>
+<li>male (?)</li>
+</ul>
+<pre><code>##  [1] &quot;lovelace&quot;    &quot;phineas&quot;     &quot;jones&quot;       &quot;major&quot;       &quot;howe&quot;       
+##  [6] &quot;harlowe&quot;     &quot;belford&quot;     &quot;crawley&quot;     &quot;pendennis&quot;   &quot;clarissa&quot;   
+## [11] &quot;lopez&quot;       &quot;micawber&quot;    &quot;sophia&quot;      &quot;pamela&quot;      &quot;laura&quot;      
+## [16] &quot;finn&quot;        &quot;peggotty&quot;    &quot;duke&quot;        &quot;allworthy&quot;   &quot;thou&quot;       
+## [21] &quot;amelia&quot;      &quot;clavering&quot;   &quot;osborne&quot;     &quot;copperfield&quot; &quot;pen&quot;        
+## [26] &quot;wharton&quot;     &quot;traddles&quot;    &quot;bounderby&quot;   &quot;dobbin&quot;      &quot;rawdon&quot;     
+## [31] &quot;solmes&quot;      &quot;b&quot;           &quot;jarndyce&quot;    &quot;dora&quot;        &quot;eleanor&quot;</code></pre>
+</section>
+<section id="zeta" class="slide level2">
+<h2>Zeta</h2>
+<ul>
+<li>women are from Venus…</li>
+</ul>
+<pre><code>##  [1] &quot;felt&quot;      &quot;feelings&quot;  &quot;feel&quot;      &quot;feeling&quot;   &quot;tone&quot;      &quot;seemed&quot;   
+##  [7] &quot;sense&quot;     &quot;rose&quot;      &quot;chapter&quot;   &quot;quiet&quot;     &quot;oh&quot;        &quot;minutes&quot;  
+## [13] &quot;cold&quot;      &quot;glance&quot;    &quot;yes&quot;       &quot;deep&quot;      &quot;entered&quot;   &quot;silence&quot;  
+## [19] &quot;looked&quot;    &quot;added&quot;     &quot;its&quot;       &quot;smile&quot;     &quot;turned&quot;    &quot;something&quot;
+## [25] &quot;seated&quot;    &quot;scarcely&quot;  &quot;speaking&quot;  &quot;suddenly&quot;  &quot;longer&quot;    &quot;strong&quot;   
+## [31] &quot;i^ve&quot;      &quot;paused&quot;    &quot;towards&quot;   &quot;continued&quot;</code></pre>
+<ul>
+<li>…and men are from Mars</li>
+</ul>
+<pre><code>##  [1] &quot;honour&quot;    &quot;lord&quot;      &quot;favour&quot;    &quot;although&quot;  &quot;friend&quot;    &quot;lady&quot;     
+##  [7] &quot;dear&quot;      &quot;letter&quot;    &quot;upon&quot;      &quot;dearest&quot;   &quot;honest&quot;    &quot;gentleman&quot;
+## [13] &quot;lovelace&quot;  &quot;occasion&quot;  &quot;sir&quot;       &quot;sex&quot;       &quot;letters&quot;   &quot;london&quot;   
+## [19] &quot;harlowe&quot;   &quot;worthy&quot;    &quot;whom&quot;      &quot;story&quot;     &quot;therefore&quot; &quot;pen&quot;      
+## [25] &quot;thou&quot;      &quot;madam&quot;     &quot;creature&quot;  &quot;tis&quot;       &quot;wretch&quot;    &quot;beloved&quot;  
+## [31] &quot;clarissa&quot;  &quot;howe&quot;      &quot;written&quot;   &quot;write&quot;</code></pre>
+</section>
+<section id="section-11" class="slide level2">
+<h2></h2>
+<h2 class="shout">
+Collocations
+</h2>
+</section>
+<section id="collocations-in-corpus-linguistics" class="slide level2">
+<h2>Collocations in corpus linguistics</h2>
+<ul>
+<li>A collocation is a pair of words that co-occur more often than would
+be expected by chance.</li>
+<li>Typical collocations are idioms, as <em>hot potato</em>, and phrasal
+verbs.</li>
+<li>Word frequencies used to calculate co-occurence probabilities.</li>
+</ul>
+</section>
+<section id="word-frequencies-as-probabilities" class="slide level2">
+<h2>Word frequencies as probabilities</h2>
+<ul>
+<li>Probability of finding a word A in a corpus is <span
+class="math inline">\(P(A)\)</span></li>
+<li>Probability of finding a word B in a corpus is <span
+class="math inline">\(P(B)\)</span></li>
+<li>Probability of finding them together is <span
+class="math inline">\(P(A) \times P(B)\)</span></li>
+</ul>
+<p>An example: <span class="math display">\[ P(A) = 0.001 \quad\quad
+P(B) = 0.002 \quad\quad P(A) \times P(B) = 0.000002 \]</span></p>
+</section>
+<section id="collocations-in-corpus-linguistics-1" class="slide level2">
+<h2>Collocations in corpus linguistics</h2>
+<ul>
+<li>However, some words tend to ‘like’ each other…</li>
+<li>… despite their theoretical probabilities.</li>
+<li><em>Cf.</em>:</li>
+</ul>
+<p>strong tea — *powerful tea</p>
+<p>powerful computer — *strong computer</p>
+</section>
+<section id="section-12" class="slide level2">
+<h2></h2>
+<h2 class="shout">
+Topic modeling
+</h2>
+</section>
+<section id="whats-the-aim" class="slide level2">
+<h2>What’s the aim?</h2>
+<ul>
+<li>To discover hidden thematic structure in large collections of
+texts…</li>
+<li>… without any prior knowledge about word meanings or grammar.</li>
+</ul>
+</section>
+<section id="assumptions" class="slide level2">
+<h2>Assumptions</h2>
+<ul>
+<li>Certain words tend to occur more frequently in a text covering a
+given topic than in other texts.</li>
+<li>Texts are usually about many topics.</li>
+<li>A topic is a recurring pattern of co-occurring words.</li>
+</ul>
+</section>
+<section id="what-is-a-topic" class="slide level2">
+<h2>What is a topic?</h2>
+<blockquote>
+<p>We formally define a topic to be a distribution over a fixed
+vocabulary. For example, the <em>genetics</em> topic has words about
+genetics with high probability and the evolutionary biology topic has
+words about <em>evolutionary biology</em> with high probability.</p>
+</blockquote>
+<p>(Blei 2012, 78)</p>
+</section>
+<section id="section-13" class="slide level2">
+<h2></h2>
+<p><img src="img_and_data/lda_blei_1.png" class="cover"></p>
+</section>
+<section id="latent-dirichlet-allocation-lda" class="slide level2">
+<h2>Latent Dirichlet Allocation (LDA)</h2>
+<ul>
+<li>Each <strong>topic</strong> is a distribution over words</li>
+<li>Each <strong>document</strong> is a mixture of corpus-wide
+topics</li>
+<li>Each <strong>word</strong> is drawn from one of those topics</li>
+</ul>
+</section>
+<section id="latent-dirichlet-allocation-lda-1" class="slide level2">
+<h2>Latent Dirichlet Allocation (LDA)</h2>
+<ul>
+<li>in reality, we only observe the documents</li>
+<li>the other structure are <strong>hidden variables</strong></li>
+<li>the goal is <strong>to infer</strong> the hidden variables</li>
+</ul>
+</section>
+<section id="section-14" class="slide level2">
+<h2></h2>
+<p><img src="img_and_data/lda_blei_2.png" class="cover"></p>
+</section>
+<section id="assumptions-cont." class="slide level2">
+<h2>Assumptions (cont.)</h2>
+<ul>
+<li>The order of words is not relevant (“bag of words”)</li>
+<li>The order of documents is not relevant</li>
+<li>The number of topics is fixed and known in advance</li>
+</ul>
+</section>
+<section id="a-topic-50-top-words" class="slide level2">
+<h2>A topic (50 top words)</h2>
+<p>fight soldier arms war soldiers field fly sword horse valiant march
+battle brave messenger arm army trumpet valour kings camp alarum walls
+join wars slain tent forces gates drum courage trumpets lion town fought
+foes english armour city saint guard colours victory herald swords fame
+armed country wounds plain safe …</p>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-20-1.png" width="864" /></p>
+</section>
+<section id="section-15" class="slide level2">
+<h2></h2>
+<h2 class="shout">
+Shakespeare
+</h2>
+</section>
+<section id="topics-in-the-shakespearean-canon" class="slide level2">
+<h2>Topics in the Shakespearean canon</h2>
+<ul>
+<li>a corpus of 42 texts by Shakespeare…</li>
+<li>… sliced into samples of 1000 words each</li>
+<li>topic model inferred:
+<ul>
+<li>LDA algorithm</li>
+<li>25 topics</li>
+<li>excluded speakers’ names</li>
+<li>excluded common stop words</li>
+<li>topics visualized using wordclouds</li>
+</ul></li>
+</ul>
+</section>
+<section id="fights-swords-topic-6" class="slide level2">
+<h2>Fights &amp; swords (topic 6)</h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-21-1.png" width="864" /></p>
+</section>
+<section id="family-relations-topic-21" class="slide level2">
+<h2>Family relations (topic 21)</h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-22-1.png" width="864" /></p>
+</section>
+<section id="tears-sorrow-topic-24" class="slide level2">
+<h2>Tears &amp; sorrow (topic 24)</h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-23-1.png" width="864" /></p>
+</section>
+<section id="night-sleep-topic-23" class="slide level2">
+<h2>Night &amp; sleep (topic 23)</h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-24-1.png" width="864" /></p>
+</section>
+<section id="face-kisses-topic-8" class="slide level2">
+<h2>Face &amp; kisses (topic 8)</h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-25-1.png" width="864" /></p>
+</section>
+<section id="love-topic-5" class="slide level2">
+<h2>Love (topic 5)</h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-26-1.png" width="864" /></p>
+</section>
+<section id="the-elements-topic-10" class="slide level2">
+<h2>The elements (topic 10)</h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-27-1.png" width="864" /></p>
+</section>
+<section id="people-topic-15" class="slide level2">
+<h2>People? (topic 15)</h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-28-1.png" width="864" /></p>
+</section>
+<section id="a-mixture-of-everything-topic-17" class="slide level2">
+<h2>A mixture of everything? (topic 17)</h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-29-1.png" width="864" /></p>
+</section>
+<section id="how-to-interpret-topics" class="slide level2">
+<h2>How to interpret topics?</h2>
+<blockquote>
+<p>Indeed calling these models “topic models” is retrospective – the
+topics that emerge from the inference algorithm are interpretable for
+almost any collection that is analyzed. The fact that these look like
+topics has to do with the statistical structure of observed language and
+how it interacts with the specific probabilistic assumptions of LDA.</p>
+</blockquote>
+<p>(Blei 2012, 79)</p>
+</section>
+<section id="topics-in-documents" class="slide level2">
+<h2>Topics in documents</h2>
+<ul>
+<li>Each document contains (many) topics.</li>
+<li>The proportions of these topics can be plotted.</li>
+</ul>
+</section>
+<section id="the-climax-of-romeo-and-juliet" class="slide level2">
+<h2>The climax of <em>Romeo and Juliet</em></h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-30-1.png" width="864" /></p>
+</section>
+<section id="the-beginnig-of-the-tempest" class="slide level2">
+<h2>The beginnig of <em>The Tempest</em></h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-31-1.png" width="864" /></p>
+</section>
+<section id="a-midsummer-nights-dream" class="slide level2">
+<h2><em>A Midsummer Night’s Dream</em></h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-32-1.png" width="864" /></p>
+</section>
+<section id="topics-vs.-genres" class="slide level2">
+<h2>Topics vs. genres</h2>
+<ul>
+<li>Proportions of topics can be used as features in machine
+learning.</li>
+<li>Will the topic structure corroborate the traditional division into
+Shakespearean genres?
+<ul>
+<li>red: comedies</li>
+<li>orange: tragedies</li>
+<li>green: histories</li>
+<li>black: romances</li>
+<li>blue: poetry</li>
+</ul></li>
+</ul>
+</section>
+<section id="topics-vs.-genres-cluster-analysis" class="slide level2">
+<h2>Topics vs. genres – cluster analysis</h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-33-1.png" width="864" /></p>
+</section>
+<section id="topics-vs.-genres-pca" class="slide level2">
+<h2>Topics vs. genres – PCA</h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-34-1.png" width="864" /></p>
+</section>
+<section id="topics-vs.-genres-pca-1" class="slide level2">
+<h2>Topics vs. genres – PCA</h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-35-1.png" width="864" /></p>
+</section>
+<section id="topics-vs.-genres-1" class="slide level2">
+<h2>Topics vs. genres</h2>
+<p><img src="img_and_data/topics_in_docs.png" class="cover"></p>
+</section>
+<section id="titus-andronicus" class="slide level2">
+<h2><em>Titus Andronicus</em></h2>
+<p><img src="img_and_data/topics_titus.png" class="cover"></p>
+</section>
+<section id="the-tempest" class="slide level2">
+<h2><em>The Tempest</em></h2>
+<p><img src="img_and_data/topics_tempest.png" class="cover"></p>
+</section>
+<section id="hamlet" class="slide level2">
+<h2><em>Hamlet</em></h2>
+<p><img src="img_and_data/topics_hamlet.png" class="cover"></p>
+</section>
+<section id="thank-you" class="slide level2">
+<h2>Thank you!</h2>
+<ul>
+<li><a href="mailto:maciej.eder@ijp.pan.pl"
+class="email">maciej.eder@ijp.pan.pl</a></li>
+<li><a href="https://twitter.com/MaciejEder">@MaciejEder</a></li>
+<li><a
+href="https://github.com/computationalstylistics">https://github.com/computationalstylistics</a></li>
+</ul>
+</section>
+<section id="appendix" class="slide level2 ijppan_section">
+<h2 class="ijppan_section">Appendix</h2>
+</section>
+<section id="intersection-of-the-two-sets" class="slide level2">
+<h2>Intersection of the two sets</h2>
+<pre><code>##   [1] &quot;sisters&quot;       &quot;opinion&quot;       &quot;marriage&quot;      &quot;girls&quot;        
+##   [5] &quot;town&quot;          &quot;sister^s&quot;      &quot;sister&quot;        &quot;party&quot;        
+##   [9] &quot;ball&quot;          &quot;mary&quot;          &quot;aunt&quot;          &quot;general&quot;      
+##  [13] &quot;match&quot;         &quot;understanding&quot; &quot;civility&quot;      &quot;compliment&quot;   
+##  [17] &quot;praise&quot;        &quot;known&quot;         &quot;street&quot;        &quot;highly&quot;       
+##  [21] &quot;daughter&quot;      &quot;london&quot;        &quot;scheme&quot;        &quot;favour&quot;       
+##  [25] &quot;happiness&quot;     &quot;dancing&quot;       &quot;fortune&quot;       &quot;engagement&quot;   
+##  [29] &quot;resentment&quot;    &quot;relations&quot;     &quot;partner&quot;       &quot;pounds&quot;       
+##  [33] &quot;excellent&quot;     &quot;evident&quot;       &quot;invitation&quot;    &quot;letter&quot;       
+##  [37] &quot;wholly&quot;        &quot;anyone&quot;        &quot;settled&quot;       &quot;sensible&quot;     
+##  [41] &quot;women&quot;         &quot;extraordinary&quot; &quot;therefore&quot;     &quot;agreeable&quot;    
+##  [45] &quot;madam&quot;         &quot;tuesday&quot;       &quot;possibility&quot;   &quot;fortunate&quot;    
+##  [49] &quot;credit&quot;        &quot;endeavour&quot;     &quot;dear&quot;          &quot;most&quot;         
+##  [53] &quot;success&quot;       &quot;concern&quot;       &quot;others&quot;        &quot;family&quot;       
+##  [57] &quot;grateful&quot;      &quot;assure&quot;        &quot;belief&quot;        &quot;engaged&quot;      
+##  [61] &quot;carriage&quot;      &quot;gratitude&quot;     &quot;terms&quot;         &quot;honour&quot;       
+##  [65] &quot;virtue&quot;        &quot;enjoyment&quot;     &quot;advantage&quot;     &quot;unlucky&quot;      
+##  [69] &quot;feelings&quot;      &quot;acknowledged&quot;  &quot;tolerable&quot;     &quot;inquiries&quot;    
+##  [73] &quot;such&quot;          &quot;motive&quot;        &quot;objections&quot;    &quot;likewise&quot;     
+##  [77] &quot;expectation&quot;   &quot;noble&quot;         &quot;moments&quot;       &quot;attended&quot;     
+##  [81] &quot;whom&quot;          &quot;address&quot;       &quot;manners&quot;       &quot;satisfied&quot;    
+##  [85] &quot;degree&quot;        &quot;valuable&quot;      &quot;remarkably&quot;    &quot;believed&quot;     
+##  [89] &quot;assured&quot;       &quot;very&quot;          &quot;uncle^s&quot;       &quot;respect&quot;      
+##  [93] &quot;thousand&quot;      &quot;situation&quot;     &quot;overcome&quot;      &quot;drawing-room&quot; 
+##  [97] &quot;visitors&quot;      &quot;design&quot;        &quot;receiving&quot;     &quot;affair&quot;</code></pre>
+<p>Jane Austen, <em>Pride and Prejudice</em></p>
+</section>
+<section id="words-for-the-other-set" class="slide level2">
+<h2>Words for the other set</h2>
+<pre><code>##   [1] &quot;i^m&quot;       &quot;don^t&quot;     &quot;you^ll&quot;    &quot;won^t&quot;     &quot;kitchen&quot;   &quot;master&quot;   
+##   [7] &quot;lad&quot;       &quot;papa&quot;      &quot;bid&quot;       &quot;can^t&quot;     &quot;black&quot;     &quot;fire&quot;     
+##  [13] &quot;bed&quot;       &quot;chamber&quot;   &quot;lie&quot;       &quot;exclaimed&quot; &quot;whispered&quot; &quot;there^s&quot;  
+##  [19] &quot;o&quot;         &quot;cry&quot;       &quot;hands&quot;     &quot;hair&quot;      &quot;fell&quot;      &quot;hearth&quot;   
+##  [25] &quot;god&quot;       &quot;arm&quot;       &quot;soul&quot;      &quot;boy&quot;       &quot;dark&quot;      &quot;old&quot;      
+##  [31] &quot;remarked&quot;  &quot;feet&quot;      &quot;answered&quot;  &quot;wind&quot;      &quot;fingers&quot;   &quot;dead&quot;     
+##  [37] &quot;earth&quot;     &quot;lay&quot;       &quot;chair&quot;     &quot;mouth&quot;     &quot;rough&quot;     &quot;tongue&quot;   
+##  [43] &quot;corner&quot;    &quot;seized&quot;    &quot;white&quot;     &quot;fit&quot;       &quot;death&quot;     &quot;mistress&quot; 
+##  [49] &quot;teeth&quot;     &quot;shut&quot;      &quot;crying&quot;    &quot;hold&quot;      &quot;door&quot;      &quot;die&quot;      
+##  [55] &quot;sleep&quot;     &quot;held&quot;      &quot;water&quot;     &quot;grew&quot;      &quot;horse&quot;     &quot;hurt&quot;     
+##  [61] &quot;afternoon&quot; &quot;darling&quot;   &quot;th&quot;        &quot;breath&quot;    &quot;hand&quot;      &quot;face&quot;     
+##  [67] &quot;gaze&quot;      &quot;show&quot;      &quot;presently&quot; &quot;round&quot;     &quot;rose&quot;      &quot;catherine&quot;
+##  [73] &quot;watch&quot;     &quot;to-night&quot;  &quot;sprang&quot;    &quot;mine&quot;      &quot;kill&quot;      &quot;presence&quot; 
+##  [79] &quot;hate&quot;      &quot;frame&quot;     &quot;child&quot;     &quot;departed&quot;  &quot;minute&quot;    &quot;endure&quot;   
+##  [85] &quot;ear&quot;       &quot;bit&quot;       &quot;stepped&quot;   &quot;top&quot;       &quot;bitter&quot;    &quot;passion&quot;  
+##  [91] &quot;master^s&quot;  &quot;seat&quot;      &quot;window&quot;    &quot;hat&quot;       &quot;died&quot;      &quot;sit&quot;      
+##  [97] &quot;settle&quot;    &quot;ah&quot;        &quot;got&quot;       &quot;lock&quot;</code></pre>
+<p>Emily Bronte, <em>Wuthering Heights</em></p>
+</section>
+
+  <!--
+  To hide progress bar from entire presentation
+  just remove “progress” element.
+  -->
+  <!-- <div class="progress"></div> -->
+  <script src="index_files/rmdshower/node_modules/shower/node_modules/shower-core/shower.min.js"></script>
+  <!-- Copyright © 2015 Yours Truly, Famous Inc. -->
+  <!-- Photos by John Carey, fiftyfootshadows.net -->
+
+    <script>renderMathInElement(document.body);</script>
+  
+  
+</body>
+</html>
