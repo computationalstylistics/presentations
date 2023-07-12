@@ -6,7 +6,7 @@
 * From authorship attribution to language change (TU_Digihum) [presentation](https://computationalstylistics.github.io/presentations/TU_Digihum/)
 * Introduction to topic modeling [presentation](https://computationalstylistics.github.io/presentations/topic_modeling_intro/)
 * Kwantytatywna analiza zmian językowych w polszczyźnie [presentation](https://computationalstylistics.github.io/presentations/diachronia_piotrowski_sredniopolski/)
-* CLS INFRA: an infrastructural project (LINDH-UNED) [presentation](https://computationalstylistics.github.io/presentations/lindh-uned/)
+* CLS INFRA: an infrastructural project (IAUPE2023) [presentation](https://computationalstylistics.github.io/presentations/clsinfra_intro/)
 * Zróżnicowanie stylistyczne tekstów literackich w ujęciu kwantytatywnym (PTJ2022) [presentation](https://computationalstylistics.github.io/presentations/ptj2022/)
 * CLS INFRA: challenges in the post-COVID era (TwinTalks4) [presentation](https://computationalstylistics.github.io/presentations/twintalks4/)
 
