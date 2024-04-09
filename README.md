@@ -9,7 +9,7 @@
 * CLS INFRA: an infrastructural project (IAUPE2023) [presentation](https://computationalstylistics.github.io/presentations/clsinfra_intro/)
 * Zróżnicowanie stylistyczne tekstów literackich w ujęciu kwantytatywnym (PTJ2022) [presentation](https://computationalstylistics.github.io/presentations/ptj2022/)
 * CLS INFRA: challenges in the post-COVID era (TwinTalks4) [presentation](https://computationalstylistics.github.io/presentations/twintalks4/)
-
+* CLS INFRA and Open Science [presentation](https://computationalstylistics.github.io/presentations/OpenScience2024)
 
 
 
