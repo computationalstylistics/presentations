@@ -10,6 +10,8 @@
 * Zróżnicowanie stylistyczne tekstów literackich w ujęciu kwantytatywnym (PTJ2022) [presentation](https://computationalstylistics.github.io/presentations/ptj2022/)
 * CLS INFRA: challenges in the post-COVID era (TwinTalks4) [presentation](https://computationalstylistics.github.io/presentations/twintalks4/)
 * CLS INFRA and Open Science [presentation](https://computationalstylistics.github.io/presentations/OpenScience2024)
+* SIG-DLS workshop at DH2024 [brief intro](https://computationalstylistics.github.io/presentations/sig-dls_2024/)
+* Manhattan, Euclidean, and their Siblings (DH2024) [presentation](https://computationalstylistics.github.io/presentations/norms_dh2024/)
 
 
 
