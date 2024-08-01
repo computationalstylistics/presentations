@@ -87,6 +87,19 @@ format:
 
 
 
+## Some initiatives
+
+* SIG-DLS
+* Computational Stylistics Group
+* Federation of Stylometry Labs
+* COST Action "Distant Reading"
+* CLS INFRA
+* _Journal of Computational Literary Studies_
+* _Cultural Analytics_
+...
+
+
+
 
 
 # SIG-DLS

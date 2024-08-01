@@ -32,6 +32,39 @@ format:
 
 
 
+## Why text analysis?
+
+* Authorship attribution
+* Forensic linguistics
+* Register analysis
+* Genre recognition
+* Gender differences
+* Translatorial signal
+* Early vs. mature style
+* Style evolution
+* Detecting dementia
+* ...
+
+
+## From words to features
+
+> ‘It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.’ </br> (J. Austen, _Pride and Prejudice_)
+
+<p>“<span style="color: red;">the</span>” = 4.25%</p>
+<p>“<span style="color: red;">in</span>” = 3.45%</p>
+<p>“<span style="color: red;">of</span>” = 1.81%</p>
+<p>“<span style="color: red;">to</span>” = 1.44%</p>
+<p>“<span style="color: red;">a</span>” = 1.37%</p>
+<p>“<span style="color: red;">was</span>” = 1.17%</p>
+<p><span style="color: red;">. . .</span></p>
+
+
+## From features to similarities
+
+
+
+
+
 # theory
 
 
