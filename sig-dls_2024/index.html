@@ -8,7 +8,7 @@
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.554">
+  <meta name="generator" content="quarto-1.5.56">
 
   <meta name="dcterms.date" content="2024-05-08">
   <title>Computational Literary Studies:  How To Do Research Responsibly</title>
@@ -409,13 +409,41 @@
 <h1>SIG-DLS</h1>
 
 </section>
-<section id="what-do-we-want-to-present" class="slide level2">
-<h2>what do we want to present?</h2>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p><img data-src="https://dls.hypotheses.org/files/2018/02/cropped-6.png" height="400"></p>
+<p>The Digital Literary Stylistics Special Interest Group (SIG-DLS)…</p>
+<p>… brings together researchers from different perspectives to discuss theoretical, methodological and technical issues of doing digital style analysis, share resources, and organize events and initiatives.</p>
+</section>
+<section id="special-interest-group" class="slide level2">
+<h2>Special Interest Group</h2>
+<ul>
+<li>history
+<ul>
+<li>devised during a workshop at DH2016</li>
+<li>founded in 2017</li>
+<li>part of ADHO (with nine other SIGs)</li>
+<li>175 members (2 Aug 2024)</li>
+</ul></li>
+<li>activities
+<ul>
+<li>mailing list</li>
+<li>website (dls.hypotheses.org)</li>
+<li>pre-conference events (…here comes the fifth!)</li>
+<li>endorsements and liaisons</li>
+</ul></li>
+</ul>
 </section></section>
 <section>
 <section id="cls-infra" class="title-slide slide level1 center">
 <h1>CLS INFRA</h1>
 
+</section>
+<section id="section-2" class="slide level2 no-background">
+<h2></h2>
+
+<img data-src="https://clsinfra.io/wp-content/uploads/2021/09/CLS-INFRA_Linear-Long-Logo-Rev-Col.png" class="r-stretch"><p>Computational Literary Studies Infrastructure (CLS INFRA) is a four-year partnership to build a shared resource of high-quality data, tools and knowledge to aid new approaches to studying literature in the digital age.</p>
+<p>This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 101004984.</p>
 </section>
 <section id="cls-infra-project" class="slide level2">
 <h2>CLS INFRA project</h2>
@@ -436,7 +464,6 @@
 <ul>
 <li>training schools</li>
 <li>short-term research stays</li>
-<li>collaboration with COST Action</li>
 </ul></li>
 </ul>
 </section>
@@ -489,7 +516,20 @@
 <li>two calls every year</li>
 </ul>
 </section>
-<section id="section-1" class="slide level2 no-background">
+<section id="the-community-is-growing" class="slide level2">
+<h2>The community is growing</h2>
+<ul>
+<li>SIG-DLS</li>
+<li>Computational Stylistics Group</li>
+<li>Federation of Stylometry Labs</li>
+<li>COST Action “Distant Reading”</li>
+<li>CLS INFRA</li>
+<li><em>Journal of Computational Literary Studies</em></li>
+<li><em>Cultural Analytics</em></li>
+<li>…</li>
+</ul>
+</section>
+<section id="section-3" class="slide level2 no-background">
 <h2></h2>
 
 <img data-src="https://clsinfra.io/wp-content/uploads/2021/09/CLS-INFRA_Linear-Long-Logo-Rev-Col.png" class="r-stretch"><div class="quarto-auto-generated-content">
@@ -740,18 +780,7 @@
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -783,7 +812,29 @@
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
           var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -791,7 +842,7 @@
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
         // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
         for (var i=0; i<links.length; i++) {
           const link = links[i];
           if (!isInternal(link.href)) {

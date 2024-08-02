@@ -87,25 +87,33 @@ format:
 
 
 
-## Some initiatives
-
-* SIG-DLS
-* Computational Stylistics Group
-* Federation of Stylometry Labs
-* COST Action "Distant Reading"
-* CLS INFRA
-* _Journal of Computational Literary Studies_
-* _Cultural Analytics_
-...
-
-
 
 
 
 # SIG-DLS
 
 
-## what do we want to present?
+## 
+
+![](https://dls.hypotheses.org/files/2018/02/cropped-6.png){height=400}
+
+The Digital Literary Stylistics Special Interest Group (SIG-DLS)...
+
+... brings together researchers from different perspectives to discuss theoretical, methodological and technical issues of doing digital style analysis, share resources, and organize events and initiatives.
+
+
+## Special Interest Group
+
+* history
+	* devised during a workshop at DH2016
+    * founded in 2017
+    * part of ADHO (with nine other SIGs)
+    * 175 members (2 Aug 2024)
+* activities
+    * mailing list
+    * website (dls.hypotheses.org)
+    * pre-conference events (...here comes the fifth!)
+    * endorsements and liaisons
 
 
 
@@ -113,6 +121,14 @@ format:
 # CLS INFRA
 
 
+
+## { .no-background }
+
+![](https://clsinfra.io/wp-content/uploads/2021/09/CLS-INFRA_Linear-Long-Logo-Rev-Col.png)
+
+Computational Literary Studies Infrastructure (CLS INFRA) is a four-year partnership to build a shared resource of high-quality data, tools and knowledge to aid new approaches to studying literature in the digital age.
+
+This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 101004984.
 
 
 
@@ -129,7 +145,6 @@ format:
 * network of scholars
     * training schools
     * short-term research stays
-    * collaboration with COST Action
 
 
 
@@ -181,6 +196,16 @@ format:
 
 
 
+## The community is growing
+
+* SIG-DLS
+* Computational Stylistics Group
+* Federation of Stylometry Labs
+* COST Action "Distant Reading"
+* CLS INFRA
+* _Journal of Computational Literary Studies_
+* _Cultural Analytics_
+* ...
 
 
 
