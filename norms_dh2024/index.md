@@ -26,10 +26,6 @@ format:
 
 # introduction
 
-##
-
-[a few slides on why comparing texts is a big thing: the audience might be quite diverse, including total newbies]
-
 
 
 ## Why text analysis?
@@ -44,6 +40,13 @@ format:
 * Style evolution
 * Detecting dementia
 * ...
+
+
+## How two compare a collection of texts?
+
+* Extracting valuable (i.e. countable) language features from texts
+* Comparing these features by means of multivariate analysis
+
 
 
 ## From words to features
@@ -61,8 +64,14 @@ format:
 
 ## From features to similarities
 
-
-
+<!--
+```{r, echo = FALSE, message = FALSE}
+library(stylo)
+data(galbraith)
+rownames(galbraith) = gsub("_[0-9]+", "", rownames(galbraith))
+round(galbraith[1:20,1:8], 3)
+```
+-->
 
 
 # theory
