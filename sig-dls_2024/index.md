@@ -16,7 +16,7 @@ format:
 
 
 
-# introduction 
+# general info 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,7 +50,7 @@ format:
 * 16:00-16:30 Open mic
 
 
-# general introduction
+# introduction
 
 
 ## First, what CLS is about
