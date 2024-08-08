@@ -127,7 +127,7 @@ sum(abs(difference))
 ## Manhattan vs. Euclidean
 
 
-![](img/manhattan_distance.jpg){height=500}
+![](img/ManhEuclid.png){height=500}
 
 
 
