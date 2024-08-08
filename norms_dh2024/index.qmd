@@ -105,7 +105,7 @@ subtract the values vertically:
 ```{r, echo = FALSE, message = FALSE}
 difference = galbraith[13, 1:11] - galbraith[24, 1:11]
 difference = t(as.matrix(difference))
-rownames(difference) = "        "
+rownames(difference) = "      "
 difference
 ```
 
@@ -335,6 +335,8 @@ mfw   |  Manhattan | Lp distance       | Cosine
 ![](img/results_PL_neg.png){height=600}
 
 
+## Triangle inequality broken
 
+![](img/triangle_inequality_broken.png){height=500}
 
 
