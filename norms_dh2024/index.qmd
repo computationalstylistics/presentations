@@ -289,12 +289,51 @@ Therefore:
 
 
 
-## Thank you!
+## Questions?
 
 
 Sources of the texts: the ELTeC corpus, and the package `stylo`.
 
 The code and the datasets: [https://github.com/computationalstylistics/beyond_Manhattan](https://github.com/computationalstylistics/beyond_Manhattan)
+
+
+
+
+# appendix
+
+
+## L _p_ distances vs. Cosine Delta
+
+English novels:
+
+mfw   | Manhattan | Lp distance       | Cosine 
+------|-----------|-------------------| ------
+100   | 0.625     | 0.625 (_p_ = 0.9) | 0.666  
+500   | 0.814     | 0.823 (_p_ = 0.6) | 0.865
+1000  | 0.833     | 0.871 (_p_ = 0.3) | 0.892
+
+
+Polish novels:
+
+mfw   |  Manhattan | Lp distance       | Cosine 
+------|------------|-------------------|--------
+100   | 0.655      | 0.659 (_p_ = 0.8) | 0.684  
+500   | 0.760      | 0.769 (_p_ = 0.6) | 0.840
+1000  | 0.751      | 0.835 (_p_ = 0.1) | 0.842
+
+
+
+
+## 99 English novels by 33 authors
+
+![](img/results_EN_neg.png){height=600}
+
+
+
+## 99 Polish novels by 33 authors
+
+![](img/results_PL_neg.png){height=600}
+
 
 
 

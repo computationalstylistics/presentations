@@ -637,10 +637,88 @@ tolkien_lord1 5.624 3.782 2.074 2.597 1.916 1.313 1.492 1.419 1.221 0.825 0.872<
 <li>Small <span class="math inline">\(p\)</span> norms might be one way of effectively utilizing long feature vectors.</li>
 </ul>
 </section>
-<section id="thank-you" class="slide level2">
-<h2>Thank you!</h2>
+<section id="questions" class="slide level2">
+<h2>Questions?</h2>
 <p>Sources of the texts: the ELTeC corpus, and the package <code>stylo</code>.</p>
 <p>The code and the datasets: <a href="https://github.com/computationalstylistics/beyond_Manhattan">https://github.com/computationalstylistics/beyond_Manhattan</a></p>
+</section></section>
+<section>
+<section id="appendix" class="title-slide slide level1 center">
+<h1>appendix</h1>
+
+</section>
+<section id="l-p-distances-vs.-cosine-delta" class="slide level2">
+<h2>L <em>p</em> distances vs.&nbsp;Cosine Delta</h2>
+<p>English novels:</p>
+<table>
+<thead>
+<tr class="header">
+<th>mfw</th>
+<th>Manhattan</th>
+<th>Lp distance</th>
+<th>Cosine</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>100</td>
+<td>0.625</td>
+<td>0.625 (<em>p</em> = 0.9)</td>
+<td>0.666</td>
+</tr>
+<tr class="even">
+<td>500</td>
+<td>0.814</td>
+<td>0.823 (<em>p</em> = 0.6)</td>
+<td>0.865</td>
+</tr>
+<tr class="odd">
+<td>1000</td>
+<td>0.833</td>
+<td>0.871 (<em>p</em> = 0.3)</td>
+<td>0.892</td>
+</tr>
+</tbody>
+</table>
+<p>Polish novels:</p>
+<table>
+<thead>
+<tr class="header">
+<th>mfw</th>
+<th>Manhattan</th>
+<th>Lp distance</th>
+<th>Cosine</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>100</td>
+<td>0.655</td>
+<td>0.659 (<em>p</em> = 0.8)</td>
+<td>0.684</td>
+</tr>
+<tr class="even">
+<td>500</td>
+<td>0.760</td>
+<td>0.769 (<em>p</em> = 0.6)</td>
+<td>0.840</td>
+</tr>
+<tr class="odd">
+<td>1000</td>
+<td>0.751</td>
+<td>0.835 (<em>p</em> = 0.1)</td>
+<td>0.842</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="english-novels-by-33-authors-1" class="slide level2">
+<h2>99 English novels by 33 authors</h2>
+<p><img data-src="img/results_EN_neg.png" height="600"></p>
+</section>
+<section id="polish-novels-by-33-authors-1" class="slide level2">
+<h2>99 Polish novels by 33 authors</h2>
+<p><img data-src="img/results_PL_neg.png" height="600"></p>
 <div class="quarto-auto-generated-content">
 <p><img src="csg.png" class="slide-logo"></p>
 <div class="footer footer-default">
