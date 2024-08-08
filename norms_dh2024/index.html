@@ -362,10 +362,6 @@ Jeremi Ochab
 <h1>introduction</h1>
 
 </section>
-<section id="section" class="slide level2">
-<h2></h2>
-<p>[a few slides on why comparing texts is a big thing: the audience might be quite diverse, including total newbies]</p>
-</section>
 <section id="why-text-analysis" class="slide level2">
 <h2>Why text analysis?</h2>
 <ul>
@@ -379,6 +375,25 @@ Jeremi Ochab
 <li>Style evolution</li>
 <li>Detecting dementia</li>
 <li>…</li>
+</ul>
+</section>
+<section id="how-two-compare-a-collection-of-texts" class="slide level2">
+<h2>How two compare a collection of texts?</h2>
+<ul>
+<li>Extracting valuable (i.e.&nbsp;countable) language features from texts
+<ul>
+<li>frequencies of words 👈</li>
+<li>frequencies of syllables</li>
+<li>versification patterns</li>
+<li>distribution of topics</li>
+<li>…</li>
+</ul></li>
+<li>Comparing these features by means of multivariate analysis
+<ul>
+<li>distance-based methods 👈</li>
+<li>neural networks</li>
+<li>…</li>
+</ul></li>
 </ul>
 </section>
 <section id="from-words-to-features" class="slide level2">
@@ -410,15 +425,76 @@ Jeremi Ochab
 </section>
 <section id="from-features-to-similarities" class="slide level2">
 <h2>From features to similarities</h2>
-</section></section>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>                       the   and    to    of     a   was     I    in
+coben_breaker        3.592 1.175 2.163 1.376 2.519 1.502 1.445 1.176
+coben_dropshot       3.588 1.179 2.122 1.269 2.375 1.567 1.497 1.040
+coben_fadeaway       3.931 1.445 2.200 1.213 2.306 1.323 1.330 1.198
+coben_falsemove      3.625 1.613 2.134 1.237 2.401 1.375 1.346 1.109
+coben_goneforgood    3.834 1.817 2.153 1.176 1.962 1.733 3.814 1.131
+coben_nosecondchance 4.098 1.589 2.271 1.206 1.992 1.758 3.855 1.151
+coben_tellnoone      4.102 1.790 2.031 1.246 2.176 1.418 3.499 1.162
+galbraith_cuckoos    4.523 2.267 2.494 2.179 2.141 1.656 1.127 1.380
+lewis_battle         5.051 3.405 2.138 2.138 1.960 1.511 0.902 1.284
+lewis_caspian        4.865 3.592 2.153 2.144 2.168 1.353 1.115 1.212
+lewis_chair          4.973 3.221 1.997 2.103 2.354 1.405 1.073 1.214
+lewis_horse          4.885 3.487 2.306 2.224 2.322 1.403 1.195 1.298
+lewis_lion           5.141 3.699 2.295 2.185 2.100 1.346 0.813 1.162
+lewis_nephew         4.482 2.856 2.070 2.231 2.311 1.571 1.179 1.355
+lewis_voyage         5.222 3.279 2.261 2.114 2.244 1.583 1.048 1.153
+rowling_casual       4.749 2.639 2.625 2.108 1.763 1.646 0.561 1.443
+rowling_chamber      4.415 2.344 2.352 1.877 2.001 1.481 0.882 1.168
+rowling_goblet       4.483 2.426 2.486 2.022 1.791 1.423 0.849 1.117
+rowling_hallows      4.696 2.473 2.244 1.870 1.449 1.126 0.525 0.995</code></pre>
+</div>
+</div>
+</section>
+<section id="what-we-hope-to-get" class="slide level2">
+<h2>What we hope to get</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section></section>
 <section>
 <section id="theory" class="title-slide slide level1 center">
 <h1>theory</h1>
 
 </section>
 <section id="what-is-a-distance" class="slide level2">
-<h2>what is a distance?</h2>
-<p>[here 1-2 slides on the notion of similarity that can be represented as a distance]</p>
+<h2>What is a distance?</h2>
+<p>take any two texts:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>                the   and    to    of     a   was     I    in    he  said   you
+lewis_lion    5.141 3.699 2.295 2.185 2.100 1.346 0.813 1.162 1.087 1.426 1.141
+tolkien_lord1 5.624 3.782 2.074 2.597 1.916 1.313 1.492 1.419 1.221 0.825 0.872</code></pre>
+</div>
+</div>
+<p>subtract the values vertically:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>            the    and    to     of     a   was      I     in     he  said
+         -0.483 -0.083 0.221 -0.412 0.184 0.033 -0.679 -0.257 -0.134 0.601
+           you
+         0.269</code></pre>
+</div>
+</div>
+<p>then drop the minuses:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>                the   and    to    of     a   was     I    in    he  said   you
+              0.483 0.083 0.221 0.412 0.184 0.033 0.679 0.257 0.134 0.601 0.269</code></pre>
+</div>
+</div>
+<p>sum up the obtained values:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3.356</code></pre>
+</div>
+</div>
+</section>
+<section id="manhattan-vs.-euclidean" class="slide level2">
+<h2>Manhattan vs.&nbsp;Euclidean</h2>
+<p><img data-src="img/manhattan_distance.jpg" height="500"></p>
 </section>
 <section id="euclidean-distance" class="slide level2">
 <h2>Euclidean distance</h2>
@@ -473,7 +549,7 @@ Jeremi Ochab
 <h1>research question</h1>
 
 </section>
-<section id="section-1" class="slide level2">
+<section id="section" class="slide level2">
 <h2></h2>
 <h2>
 🧐 How do the norms from a wide range beyond L1 and L2 affect text classification?
@@ -503,7 +579,8 @@ Jeremi Ochab
 <section id="method" class="slide level2">
 <h2>Method</h2>
 <ul>
-<li>A supervised classification experiment was designed, with</li>
+<li>A supervised classification experiment was designed</li>
+<li>Aimed at authorship attribution</li>
 <li>leave-one-out cross-validation scenario
 <ul>
 <li>100 independent bootstrap iterations…</li>
@@ -781,6 +858,44 @@ Jeremi Ochab
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
