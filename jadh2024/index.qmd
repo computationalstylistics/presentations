@@ -1,0 +1,441 @@
+---
+title: "Textual Similarities "
+subtitle: "From Authorship Attribution to Distant Reading"
+author: 
+    name: Maciej Eder | マチェイ・エデル 
+    affiliation: Polish Academy of Sciences | ポーランド科学アカデミー
+#    email: (<a>maciej.eder@ijp.pan.pl</a>)
+city: 東京
+date: 2024-09-19
+date-format: "DD/MM/YYYY"
+#      </br>Polish Open Science conference, Kraków, 10–12.04.2024
+#output:
+#  revealjs::revealjs_presentation:
+#    transition: fade
+#    highlight: espresso
+#    self_contained: true 
+#    css: clsinfra_rmarkdown.css
+format: 
+  revealjs:
+    multiplex: false
+    theme: ["pp.scss"]
+    logo: logo_ijp.png
+    css: big_logo.css
+    #css: clsinfra_rmarkdown.css
+    slide-number: c/t
+    #incremental: true
+---
+
+
+
+
+# introduction
+
+
+## Text analysis: two approaches
+
+- focusing on the content
+    - what my corpus is about?
+    - how to "read" through a large library
+    - approaches: topic modeling, keywords analysis
+- focusing on stylistic similarities
+    - why my texts form groups?
+    - how to detect different stylistics "signals"
+    - approaches: multivariate text classification methods
+
+
+
+## Theoretical foundations
+
+- "Computation into criticism" (John Burrows)
+- "Algorithmic criticism" (Steve Ramsay)
+- "Distant reading" (Franco Moretti)
+- "Macroanalysis" (Matt Jockers)
+- "Riddle of literary quality" (Karina van Dalen-Oskam)
+
+
+
+
+## Why text analysis?
+
+* Authorship attribution
+* Forensic linguistics
+* Register analysis
+* Genre recognition
+* Gender differences
+* Translatorial signal
+* Early vs. mature style
+* Style evolution
+* Detecting dementia
+* ...
+
+
+
+## What makes them different?
+
+text A:
+
+    I have just returned from a visit to my landlord - the solitary neighbour that I shall be troubled with. This is certainly a beautiful country! In all England, I do not believe that I could have fixed on a situation so completely removed from the stir of society. A perfect misanthropist's heaven: and Mr. Heathcliff and I are such a suitable pair to divide the desolation between us. A capital fellow!
+
+
+text B:
+
+    OF MANS First Disobedience, and the Fruit
+    Of that Forbidden Tree, whose mortal tast
+    Brought Death into the World, and all our woe,
+    With loss of Eden, till one greater Man
+    Restore us, and regain the blissful Seat,
+    Sing Heav'nly Muse, that on the secret top
+    Of Oreb, or of Sinai, didst inspire
+    That Shepherd, who first taught the chosen Seed,
+    In the Beginning how the Heav'ns and Earth
+    Rose out of Chaos: or if Sion Hill
+    Delight thee more, and Siloa's Brook that flow'd
+    Fast by the Oracle of God; I thence
+    Invoke thy aid to my adventrous Song,
+
+
+## How two compare a set of texts?
+
+* Extracting valuable (i.e. countable) language features from texts
+  * frequencies of words 👈
+  * frequencies of syllables
+  * versification patterns
+  * distribution of topics
+  * ...
+* Comparing these features by means of multivariate analysis
+  * distance-based methods 👈
+  * neural networks
+  * ...
+
+
+
+## From words to features
+
+> ‘It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.’ </br> (J. Austen, _Pride and Prejudice_)
+
+<p>“<span style="color: red;">the</span>” = 3.52%</p>
+<p>“<span style="color: red;">to</span>” = 3.39%</p>
+<p>“<span style="color: red;">of</span>” = 2.94%</p>
+<p>“<span style="color: red;">a</span>” = 1.59%</p>
+<p>“<span style="color: red;">in</span>” = 1.53%</p>
+<p>“<span style="color: red;">was</span>” = 1.50%</p>
+<p><span style="color: red;">. . .</span></p>
+
+
+## From features to similarities
+
+
+```{r, echo = FALSE, message = FALSE}
+library(stylo)
+data(galbraith)
+data(lee)
+round(galbraith[1:19,1:8], 3)
+```
+
+
+
+## What we hope to get 
+
+```{r, echo = FALSE, message = FALSE, fig.align = "center"}
+stylo(frequencies = galbraith, gui = FALSE, analysis.type = "BCT", mfw.min = 100, mfw.max = 1000, titles.on.graphs = FALSE)
+```
+
+
+
+
+# software (feat. 'stylo')
+
+
+
+## Text analysis software
+
+- Mallet
+- Gensim
+- sklearn
+- Excel
+- Statistica
+- JGAAP
+- stylo 👈
+- ...
+
+
+
+## stylo: a package for text analysis
+
+- an R package
+- written in R and run in R
+- simple
+- fast
+- offers a few extensions
+- runs in command-line mode,
+- however, requires only three lines of code
+- no programming skills needed!
+
+
+## How to run stylo
+
+``` {R, eval = FALSE, echo = TRUE}
+library(stylo)
+setwd("the/path/to/my/corpus")
+stylo()
+```
+
+
+## Graphical User Interface (GUI)
+
+![](https://raw.githubusercontent.com/computationalstylistics/stylo_nutshell/master/img/stylo_1.png){height=400}
+
+
+
+## Set your parameters
+
+![](https://raw.githubusercontent.com/computationalstylistics/stylo_nutshell/master/img/stylo_2.png){height=400}
+
+
+
+
+## Hierarchical cluster analysis
+
+``` {r, echo = FALSE, message = FALSE, fig.align = "center"}
+stylo(frequencies = galbraith, gui = FALSE, mfw.min = 100, mfw.max = 100, titles.on.graphs = FALSE)
+```
+
+## Multidimensional scaling
+
+``` {r, echo = FALSE, message = FALSE, fig.align = "center"}
+stylo(frequencies = galbraith, gui = FALSE, analysis.type = "MDS", mfw.min = 100, mfw.max = 100, titles.on.graphs = FALSE)
+```
+
+
+
+
+## 66 English Victorian novels
+
+![](https://computationalstylistics.github.io/assets/img/66_English_novels_network.png){height=550}
+
+
+
+## A more demanding language?
+
+＜助詞＞ も  ＜助詞＞ ゆめすけ ＜名詞＞ と  ＜助詞＞ かえな  ＜名詞＞ よぶ ＜動詞＞ る  ＜助動詞＞ て ＜助詞＞ なごやさんざ ＜名詞＞ かがのやつ  ＜名詞＞ など ＜助詞＞ と  ＜助詞＞ ななつもん  ＜名詞＞ の  ＜助詞＞ ひし ＜名詞＞ に  ＜助詞＞ くみす  ＜動詞＞ て  ＜助詞＞ み  ＜名詞＞ は  ＜助詞＞ さけ ＜名詞＞ に  ＜助詞＞ ひたす  ＜動詞＞ いちじょうどおり ＜名詞＞ よ  ＜名詞＞ ふく ＜動詞＞ て  ＜助詞＞ もどりばし  ＜名詞＞ ある ＜連体詞＞ とき  ＜名詞＞ は  ＜助詞＞ わかしゅ ＜名詞＞ でたち  ＜名詞＞ すがた  ＜名詞＞ を  ＜助詞＞ かう ＜動詞＞ て  ＜助詞＞ すみぞめ ＜名詞＞ の  ＜助詞＞ ながそで ＜名詞＞ または  ＜副詞＞ たてがみかつら  ＜名詞＞ ばけもの ＜名詞＞ が  ＜助詞＞ とおる  ＜動詞＞ と  ＜助詞＞ は  ＜助詞＞ まことなり  ＜形容動詞＞ これ ＜名詞＞ ぞ  ＜助詞＞ かし ＜助詞＞ それ ＜名詞＞ も  ＜助詞＞ ひこしち ＜名詞＞ が  ＜助詞＞ かお ＜名詞＞ す  ＜動詞＞ て  ＜助詞＞ ねがわくは  ＜副詞＞ かみころす  ＜動詞＞ る  ＜助動詞＞ て ＜助詞＞ も  ＜助詞＞ と  ＜助詞＞ かよう  ＜動詞＞ ば  ＜助詞＞ なお ＜副詞＞ みすつ  ＜動詞＞ かたし
+
+
+## Japanese texts tokenized
+
+けす た ところ が こい の はじまり さくら も ちる に なげく つき は かぎり あり て いるさやま ここ に たじまのくに かね ほる さと の ほとり に うきよ の こと を ほか に なす て しきどう ふたつ に ぬ て も さむ て も ゆめすけ と かえな よぶ る て なごやさんざ かがのやつ など と ななつもん の ひし に くみす て み は さけ に ひたす いちじょうどおり よ ふく て もどりばし ある とき は わかしゅ でたち すがた を かう て すみぞめ の ながそで または たてがみかつら ばけもの が とおる と は まことなり これ ぞ かし それ も ひこしち が かお す て ねがわくは かみころす る て も と かよう ば なお みすつ かたし て その ころ な たかし なか に も かずらき かおる さんせき おもいおもいに みうけ す て さが に ひきこむ あるいは ひがしやま の かたかげ または ふじのもり ひそかなり すむ なす て ちぎり かさなる て この うち の はら より むまる て よのすけ と な に よぶ あらわなり かく しるす まで も なし しる ひと は しる ぞ かし ふたり の ちょうあい ちょうちちょうち かぶり の あたま も さだまる よつ の とし の しもつき は かみおき はかまぎ の はる も すぐ て ほうそう の かみ いのる ば あと なし むつ の とし ふ て あく ば 
+
+
+## A few lines of code used
+
+``` {R, eval = FALSE, echo = TRUE}
+corpus = load.corpus(corpus.dir = "~/Nextcloud/laboratorium/stylo_R_package/testing_stylo/japanese_test/corpus")
+corpus_clean = lapply(corpus, function(x){gsub("(＜.+?＞)|\t", "", x)})
+parsed_corpus = parse.corpus(corpus_clean)
+freqlist = make.frequency.list(parsed_corpus)[1:1000]
+data = make.table.of.frequencies(parsed_corpus, freqlist)
+stylo(frequencies = data)
+```
+
+
+## From tokens to results
+
+![](img/jp_network.png){height=550}
+
+
+# stylo's extensions
+
+## Words distributed unevenly
+
+![](https://raw.githubusercontent.com/computationalstylistics/presentations/refs/heads/master/cracovian_alt/img/Diagram1.png){height=400}
+
+## Zeta method to extract keywords 
+
+![](https://raw.githubusercontent.com/computationalstylistics/presentations/refs/heads/master/cracovian_alt/img/Diagram2.png){height=400}
+
+
+## Women are from Venus . . .
+
+- _Female words_: feelings glance effort paused feeling surprise noticed pause
+consciousness dared enjoyment tone listen exclaimed features seated continually anxiety solitude inward apparently painful entrance respectable relief closed watching feel bent peculiar rain suddenly cheerful clear trees aspect watched plan slight doubtles reached smile brow vague quiet mere movement gathered suffering entered listened observed warm exertion minutes change . . .
+
+- _Male words_: story although lord bosom honour honest duke parliament city score enemy coach coat inn thousand breast bill dozen lordship guilty court ain legs bottle captain fight pen battle sum nevertheless reader virtue order innocent condition infinite castle widow england accident readers laws fellows hundred service king stories persons ladyship fly street dearest honours member fortune government wig drank papers wretch described honourable pocket
+
+
+
+
+## Sequential analysis
+
+![](img/sampling.png){height=400}
+
+
+
+## Roman de la Rose
+
+- 13th-century French allegorical poem
+- mixed authorship:
+    - Guillaume de Lorris (ca. 1230)
+    - Jean de Meun (ca. 1275)
+- The takeover point known (after the line 4,058)
+
+
+
+## Roman de la Rose sequentially
+
+![](https://raw.githubusercontent.com/computationalstylistics/stylo_nutshell/master/img/rolling-svm_100-features_5000-per-slice.png){height=450}
+
+
+
+
+# uncertainty everywhere
+
+
+## Risk of being oversimplistic
+
+- fast results, expecially using default parameters
+- tempting to use ‘stylo’ as a simple problem-solver
+- tacit assumption that statistics "tells the truth"
+- tendency to forget about uncertainty in the dataset
+
+
+
+## Word frequencies agin
+
+> ‘It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.’ </br> (J. Austen, _Pride and Prejudice_)
+
+<p>“<span style="color: red;">the</span>” = 3.52%</p>
+<p>“<span style="color: red;">to</span>” = 3.39%</p>
+<p>“<span style="color: red;">of</span>” = 2.94%</p>
+<p>“<span style="color: red;">a</span>” = 1.59%</p>
+<p>“<span style="color: red;">in</span>” = 1.53%</p>
+<p>“<span style="color: red;">was</span>” = 1.50%</p>
+<p><span style="color: red;">. . .</span></p>
+
+
+## What is a word frequency, really?
+
+- frequency of "the" in _Pride and Prejudice_ is **3.52%**
+- however, if we devide the text into 122 chunks of 1,000 words:
+    - 2.3, 4.2, 4.4, 2.9, 3.3, 2.9, 2.6, 4, 3.5, 4.5, 2.2, 3.1, 2.8, 4, 3.3, 3.9, 2.8, 4.1, 3.3, 3.6, 3.4, 5.3, 6.1, 3.8, 3.2, 3.6, 3.8, 4.3, 2.9, 3.6, 3.7, 3.9, 4.2, 3.8, 2.8, 3.2, 4.5, 3.8, 3.9, 3.6, 3.5, 3.5, 2.4, 3.5, 3, 2.7, 1.9, 3.8, 4.8, 4.9, 4.7, 3.2, 5.8, 4.6, 2.5, 3.9, 4, 2.8, 3.4, 3.4, 6, 4.2, 3.5, 2.9, 5.4, 3.5, 3.1, 3.7, 3.5, 4.8, 2.7, 3.8, 4, 2.9, 4.3, 5.8, 3.8, 5, 5.6, 3.6, 3.8, 3.7, 4.4, 4.4, 2.5, 2.6, 2,1 etc.
+- max value: 6.1%
+- min value: 1.9%
+- what is the frequency of "the", after all???
+
+
+## Frequency is a distribution
+
+``` {r, echo = FALSE, message = FALSE, fig.align = "center"}
+data(novels)
+parsed_corpus = parse.corpus(novels)
+samples4 = make.samples(parsed_corpus[[4]], sample.size = 1000, sampling = "normal.sampling")
+the_4 = sapply(samples4, function(x) sum(x == "the")) / 1000 * 100
+hist(the_4, main = "", xlab = "frequency of the word \"the\"", ylab = "number of samples")
+```
+
+
+## Distribution of the word 'the'
+
+``` {r, echo = FALSE, message = FALSE, fig.align = "center"}
+dens = density(the_4)
+max_y = max(dens$y)
+max_x = max(dens$x)
+min_x = min(dens$x)
+plot(NULL, ylim = c(0, max_y), xlim = c(min_x, max_x), ylab = "density", xlab = "frequency of the word \"the\"")
+polygon(dens, col = rgb(0, 1, 0, 0.3))
+```
+
+
+## Arithmetic mean
+
+``` {r, echo = FALSE, message = FALSE, fig.align = "center"}
+plot(NULL, ylim = c(0, max_y), xlim = c(min_x, max_x), ylab = "density", xlab = "frequency of the word \"the\"")
+polygon(dens, col = rgb(0, 1, 0, 0.3))
+abline(v = mean(the_4), col = rgb(1, 0, 0, 0.5), lwd = 5)
+```
+
+
+## Point estimates?
+
+``` {r, echo = FALSE, message = FALSE, fig.align = "center"}
+freqlist = make.frequency.list(parsed_corpus)[1:1000]
+freqs = suppressMessages(make.table.of.frequencies(parsed_corpus, freqlist))
+stylo(frequencies = freqs, gui = FALSE, analysis.type = "MDS", mfw.min = 100, mfw.max = 100, titles.on.graphs = FALSE)
+```
+
+
+## Point estimates are misleading
+
+``` {r, echo = FALSE, message = FALSE, fig.align = "center"}
+parsed_corpus = parse.corpus(novels, sample.size = 1000, sampling = "random.sampling", number.of.samples = 15)
+stylo(parsed.corpus = parsed_corpus, gui = FALSE, analysis.type = "MDS", mfw.min = 100, mfw.max = 100, titles.on.graphs = FALSE)
+```
+
+## The distributions are unknown
+
+- which features should be choosen
+    - 100 most frequent words?
+    - or perhaps 1,000 most frequent words?
+    - or maybe character 3-grams are better?
+- which parameters should be preferred
+    - Cosine Delta distance?
+    - Burrows Delta distance?
+    - minmax distance?
+- the results will always be slightly different
+- . . . and the distributions are unknown
+
+
+## Exploring different features
+
+```{r, echo = FALSE, message = FALSE, fig.align = "center"}
+stylo(frequencies = lee, gui = FALSE, analysis.type = "BCT", mfw.min = 100, mfw.max = 1000, titles.on.graphs = FALSE)
+```
+
+
+
+## Sampling from the features
+
+
+```{r, echo = FALSE, message = FALSE}
+data(galbraith)
+round(galbraith[1:19,1:8], 3)
+```
+
+
+## General Imposters method
+
+Testing the textual similarities of _The Sound and the Fury_:
+
+```{r, echo = FALSE, message = TRUE}
+data(lee)
+# getting the 8th row from the dataset (it contains frequencies for Galbraith):
+my_text_to_be_tested = lee[10, 1:100]
+# building the reference set so that it does not contain the 8th row
+my_frequency_table = lee[-c(10), 1:100]
+# launching the imposters method:
+imposters(reference.set = my_frequency_table, test = my_text_to_be_tested)
+```
+
+
+# conclusions
+
+
+## Closing remarks 
+
+- 'stylo' has been around for some time
+- it became a _de facto_ standard in text classification
+- easy to use, but sometimes too easy
+- mind that statistics does not tell The Truth
+- several features that are in fact distributions
+- several parameters that are in fact distributions
+- suggestion: use 'stylo' with care!
+
+
+
+
+
+
+
+
+# ありがとうございます
+
+
