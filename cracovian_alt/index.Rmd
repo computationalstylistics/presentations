@@ -1,9 +1,6 @@
 ---
-title: "Words that (might) matter, or keywords extraction methods"
+title: "Extracting keywords and topics from text collections"
 author: Maciej Eder (<a>maciej.eder@ijp.pan.pl</a>)
-date: 27.02.2023
-      </br></br></br>Using and Developing Software for Keyness Analysis
-      </br>University of Trier, 27–28.02.2023
 output: 
   rmdshower::shower_presentation:
     self_contained: false
@@ -37,7 +34,7 @@ opts_chunk$set(cache=TRUE)
 ## { .white }
 
 <p class="black" style="font-size: 180%">
-<b>Introduction to  Distributional Semantics</b> </br> <b>Meaningful words</b>
+<b>Extracting keywords and topics</b> </br> <b>from text collections</b>
 </p>
 <p class="black" style="font-size: 120%">
 Maciej Eder
@@ -46,7 +43,7 @@ Maciej Eder
 Institute of Polish Language (Polish Academy of Sciences)
 </p>
 <p class="black">
-Padova, 17.04.2023
+Verona, 19.11.2024
 </p>
 
 
