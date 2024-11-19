@@ -2,6 +2,7 @@
 
 
 * Keyword analysis methods (feat. the Cracovian) [presentation](https://computationalstylistics.github.io/presentations/cracovian)
+* Extracting keywords and topics from text collections [presentation](https://computationalstylistics.github.io/presentations/cracovian_alt)
 * Boosting word frequencies for authorship attribution (CHR2022) [presentation](https://computationalstylistics.github.io/presentations/chr2022/)
 * From authorship attribution to language change (TU_Digihum) [presentation](https://computationalstylistics.github.io/presentations/TU_Digihum/)
 * Introduction to topic modeling [presentation](https://computationalstylistics.github.io/presentations/topic_modeling_intro/)
