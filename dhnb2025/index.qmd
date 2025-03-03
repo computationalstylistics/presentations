@@ -5,7 +5,7 @@ author:
     name: Maciej Eder
     affiliation: Polish Academy of Sciences | University of Tartu
 #    email: (<a>maciej.eder@ijp.pan.pl</a>)
-date: 2024-09-19
+date: 2025-03-05
 date-format: "DD/MM/YYYY"
 #      </br>Polish Open Science conference, Kraków, 10–12.04.2024
 #output:
