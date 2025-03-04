@@ -34,11 +34,12 @@ format:
 
 
 
+
 ## Blaise Pascal: two infinities
 
-- Imaginary journey to the far end (?) of the Universe
-- Imaginary journey into our own body
-- One finds no limits there
+- imaginary journey to the far end (?) of the Universe
+- imaginary journey into our own body
+- one finds no limits there
 
 
 
@@ -49,7 +50,7 @@ format:
 
 
 
-## Revolution in the humanities
+## revolution in the humanities
 
 - new tools: computer & the internet
 - new resources: millions of books digitized
@@ -58,12 +59,11 @@ format:
 
 
 
+
 # text analysis
 
 
-
-
-## Text analysis: two approaches
+## text analysis: two approaches
 
 - focusing on the content
     - what my corpus is about?
@@ -76,7 +76,7 @@ format:
 
 
 
-## Theoretical foundations
+## theoretical foundations
 
 - "Computation into criticism" (John Burrows)
 - "Algorithmic criticism" (Steve Ramsay)
@@ -87,17 +87,17 @@ format:
 
 
 
-## Why text analysis?
+## why text analysis?
 
-* Authorship attribution
-* Forensic linguistics
-* Register analysis
-* _Genre recognition_
-* Gender differences
-* Translatorial signal
-* Early vs. mature style
-* Style evolution
-* Detecting dementia
+* authorship attribution
+* forensic linguistics
+* register analysis
+* genre recognition
+* gender differences
+* translatorial signal
+* early vs. mature style
+* style evolution
+* detecting dementia
 * ...
 
 
@@ -126,22 +126,22 @@ text B:
     Invoke thy aid to my adventrous Song,
 
 
-## How to compare a set of texts?
+## how to compare a set of texts?
 
-* Extracting valuable (i.e. countable) language features from texts
+* extracting valuable (i.e. countable) language features from texts
   * frequencies of words 👈
   * frequencies of syllables
   * versification patterns
   * distribution of topics
   * ...
-* Comparing these features by means of multivariate analysis
+* comparing these features by means of multivariate analysis
   * distance-based methods 👈
   * neural networks
   * ...
 
 
 
-## From words to features
+## from words to features
 
 > ‘It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.’ </br> (J. Austen, _Pride and Prejudice_)
 
@@ -154,7 +154,7 @@ text B:
 <p><span style="color: red;">. . .</span></p>
 
 
-## From features to similarities
+## from features to similarities
 
 
 ```{r, echo = FALSE, message = FALSE}
@@ -166,7 +166,7 @@ round(galbraith[1:19,1:8], 3)
 
 
 
-## What we hope to get 
+## what we hope to get 
 
 ```{r, echo = FALSE, message = FALSE, fig.align = "center"}
 stylo(frequencies = galbraith, gui = FALSE, analysis.type = "BCT", mfw.min = 100, mfw.max = 1000, titles.on.graphs = FALSE)
@@ -174,9 +174,7 @@ stylo(frequencies = galbraith, gui = FALSE, analysis.type = "BCT", mfw.min = 100
 
 
 
-
 # software (feat. 'stylo')
-
 
 
 ## Text analysis software
@@ -204,7 +202,7 @@ stylo(frequencies = galbraith, gui = FALSE, analysis.type = "BCT", mfw.min = 100
 - no programming skills needed!
 
 
-## How to run stylo
+## how to run stylo
 
 ``` {R, eval = FALSE, echo = TRUE}
 library(stylo)
@@ -213,31 +211,30 @@ stylo()
 ```
 
 
-## Graphical User Interface (GUI)
+## graphical User Interface (GUI)
 
 ![](https://raw.githubusercontent.com/computationalstylistics/stylo_nutshell/master/img/stylo_1.png){height=400}
 
 
 
-## Set your parameters
+## set your parameters
 
 ![](https://raw.githubusercontent.com/computationalstylistics/stylo_nutshell/master/img/stylo_2.png){height=400}
 
 
 
 
-## Hierarchical cluster analysis
+## hierarchical cluster analysis
 
 ``` {r, echo = FALSE, message = FALSE, fig.align = "center"}
 stylo(frequencies = galbraith, gui = FALSE, mfw.min = 100, mfw.max = 100, titles.on.graphs = FALSE)
 ```
 
-## Multidimensional scaling
+## multidimensional scaling
 
 ``` {r, echo = FALSE, message = FALSE, fig.align = "center"}
 stylo(frequencies = galbraith, gui = FALSE, analysis.type = "MDS", mfw.min = 100, mfw.max = 100, titles.on.graphs = FALSE)
 ```
-
 
 
 
@@ -247,7 +244,7 @@ stylo(frequencies = galbraith, gui = FALSE, analysis.type = "MDS", mfw.min = 100
 
 
 
-## A more demanding language?
+## a more demanding language?
 
 ＜助詞＞ も  ＜助詞＞ ゆめすけ ＜名詞＞ と  ＜助詞＞ かえな  ＜名詞＞ よぶ ＜動詞＞ る  ＜助動詞＞ て ＜助詞＞ なごやさんざ ＜名詞＞ かがのやつ  ＜名詞＞ など ＜助詞＞ と  ＜助詞＞ ななつもん  ＜名詞＞ の  ＜助詞＞ ひし ＜名詞＞ に  ＜助詞＞ くみす  ＜動詞＞ て  ＜助詞＞ み  ＜名詞＞ は  ＜助詞＞ さけ ＜名詞＞ に  ＜助詞＞ ひたす  ＜動詞＞ いちじょうどおり ＜名詞＞ よ  ＜名詞＞ ふく ＜動詞＞ て  ＜助詞＞ もどりばし  ＜名詞＞ ある ＜連体詞＞ とき  ＜名詞＞ は  ＜助詞＞ わかしゅ ＜名詞＞ でたち  ＜名詞＞ すがた  ＜名詞＞ を  ＜助詞＞ かう ＜動詞＞ て  ＜助詞＞ すみぞめ ＜名詞＞ の  ＜助詞＞ ながそで ＜名詞＞ または  ＜副詞＞ たてがみかつら  ＜名詞＞ ばけもの ＜名詞＞ が  ＜助詞＞ とおる  ＜動詞＞ と  ＜助詞＞ は  ＜助詞＞ まことなり  ＜形容動詞＞ これ ＜名詞＞ ぞ  ＜助詞＞ かし ＜助詞＞ それ ＜名詞＞ も  ＜助詞＞ ひこしち ＜名詞＞ が  ＜助詞＞ かお ＜名詞＞ す  ＜動詞＞ て  ＜助詞＞ ねがわくは  ＜副詞＞ かみころす  ＜動詞＞ る  ＜助動詞＞ て ＜助詞＞ も  ＜助詞＞ と  ＜助詞＞ かよう  ＜動詞＞ ば  ＜助詞＞ なお ＜副詞＞ みすつ  ＜動詞＞ かたし
 
@@ -269,14 +266,14 @@ stylo(frequencies = data)
 ```
 
 
-## From tokens to results
+## from tokens to results
 
 ![](img/jp_network.png){height=550}
 
 
 # stylo's extensions
 
-## Words distributed unevenly
+## words distributed unevenly
 
 ![](https://raw.githubusercontent.com/computationalstylistics/presentations/refs/heads/master/cracovian_alt/img/Diagram1.png){height=400}
 
@@ -285,7 +282,7 @@ stylo(frequencies = data)
 ![](https://raw.githubusercontent.com/computationalstylistics/presentations/refs/heads/master/cracovian_alt/img/Diagram2.png){height=400}
 
 
-## Women are from Venus . . .
+## women are from Venus . . .
 
 - _Female words_: feelings glance effort paused feeling surprise noticed pause
 consciousness dared enjoyment tone listen exclaimed features seated continually anxiety solitude inward apparently painful entrance respectable relief closed watching feel bent peculiar rain suddenly cheerful clear trees aspect watched plan slight doubtles reached smile brow vague quiet mere movement gathered suffering entered listened observed warm exertion minutes change . . .
@@ -295,7 +292,7 @@ consciousness dared enjoyment tone listen exclaimed features seated continually 
 
 
 
-## Sequential analysis
+## sequential analysis
 
 ![](img/sampling.png){height=400}
 
@@ -321,7 +318,7 @@ consciousness dared enjoyment tone listen exclaimed features seated continually 
 # uncertainty everywhere
 
 
-## Risk of being oversimplistic
+## risk of being oversimplistic
 
 - fast results, expecially using default parameters
 - tempting to use ‘stylo’ as a simple problem-solver
@@ -330,7 +327,7 @@ consciousness dared enjoyment tone listen exclaimed features seated continually 
 
 
 
-## Word frequencies agin
+## word frequencies agin
 
 > ‘It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.’ </br> (J. Austen, _Pride and Prejudice_)
 
@@ -343,7 +340,7 @@ consciousness dared enjoyment tone listen exclaimed features seated continually 
 <p><span style="color: red;">. . .</span></p>
 
 
-## What is a word frequency, really?
+## what is a word frequency, really?
 
 - frequency of "the" in _Pride and Prejudice_ is <span style="color: red;">3.52%</span>
 - however, if we devide the text into 122 chunks of 1,000 words:
@@ -353,7 +350,7 @@ consciousness dared enjoyment tone listen exclaimed features seated continually 
 - what is the frequency of "the", after all???
 
 
-## Frequency is a distribution
+## frequency is a distribution
 
 ``` {r, echo = FALSE, message = FALSE, fig.align = "center"}
 data(novels)
@@ -364,7 +361,7 @@ hist(the_4, main = "", xlab = "frequency of the word \"the\"", ylab = "number of
 ```
 
 
-## Distribution of the word 'the'
+## distribution of the word 'the'
 
 ``` {r, echo = FALSE, message = FALSE, fig.align = "center"}
 dens = density(the_4)
@@ -376,7 +373,7 @@ polygon(dens, col = rgb(0, 1, 0, 0.3))
 ```
 
 
-## Arithmetic mean
+## arithmetic mean
 
 ``` {r, echo = FALSE, message = FALSE, fig.align = "center"}
 plot(NULL, ylim = c(0, max_y), xlim = c(min_x, max_x), ylab = "density", xlab = "frequency of the word \"the\"")
@@ -385,7 +382,7 @@ abline(v = mean(the_4), col = rgb(1, 0, 0, 0.5), lwd = 5)
 ```
 
 
-## Point estimates?
+## point estimates?
 
 ``` {r, echo = FALSE, message = FALSE, fig.align = "center"}
 freqlist = make.frequency.list(parsed_corpus)[1:1000]
@@ -394,14 +391,14 @@ stylo(frequencies = freqs, gui = FALSE, analysis.type = "MDS", mfw.min = 100, mf
 ```
 
 
-## Point estimates are misleading
+## point estimates are misleading
 
 ``` {r, echo = FALSE, message = FALSE, fig.align = "center"}
 parsed_corpus = parse.corpus(novels, sample.size = 1000, sampling = "random.sampling", number.of.samples = 15)
 stylo(parsed.corpus = parsed_corpus, gui = FALSE, analysis.type = "MDS", mfw.min = 100, mfw.max = 100, titles.on.graphs = FALSE)
 ```
 
-## The distributions are unknown
+## the distributions are unknown
 
 - which features should be choosen
     - 100 most frequent words?
@@ -415,7 +412,7 @@ stylo(parsed.corpus = parsed_corpus, gui = FALSE, analysis.type = "MDS", mfw.min
 - . . . and the distributions are unknown
 
 
-## Exploring different features
+## exploring different features
 
 ```{r, echo = FALSE, message = FALSE, fig.align = "center"}
 stylo(frequencies = lee, gui = FALSE, analysis.type = "BCT", mfw.min = 100, mfw.max = 1000, titles.on.graphs = FALSE)
@@ -423,7 +420,7 @@ stylo(frequencies = lee, gui = FALSE, analysis.type = "BCT", mfw.min = 100, mfw.
 
 
 
-## Sampling from the features
+## sampling from the features
 
 
 ```{r, echo = FALSE, message = FALSE}
@@ -450,7 +447,7 @@ imposters(reference.set = my_frequency_table, test = my_text_to_be_tested)
 # conclusions
 
 
-## Closing remarks 
+## closing remarks 
 
 - 'stylo' has been around for some time
 - it became a _de facto_ standard in text classification
@@ -458,14 +455,12 @@ imposters(reference.set = my_frequency_table, test = my_text_to_be_tested)
 - mind that statistics does not tell The Truth
 - several features that are in fact distributions
 - several parameters that are in fact distributions
-- suggestion: use 'stylo' with care!
+- suggestion: use tools with care!
 
 
 
 
 
+# thank you!
 
-
-
-# 
 
