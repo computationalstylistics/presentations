@@ -16,7 +16,7 @@ date-format: "DD/MM/YYYY"
 #    css: clsinfra_rmarkdown.css
 format: 
   revealjs:
-    multiplex: false
+    multiplex: true
     theme: ["pp.scss"]
     logo: logo_ijp.png
     css: big_logo.css
