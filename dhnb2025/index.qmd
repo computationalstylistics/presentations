@@ -53,9 +53,57 @@ format:
 ## revolution in the humanities
 
 - new tools: computer & the internet
-- new resources: millions of books digitized
+- new resources: research infrastructures, several datasets
 - new methods: data mining, machine learning
 - new disciplines: Digital Humanities
+
+
+
+
+# infrastructures in DH
+
+
+
+## { .no-background }
+
+![](https://clsinfra.io/wp-content/uploads/2021/09/CLS-INFRA_Linear-Long-Logo-Col.png)
+
+Computational Literary Studies Infrastructure (CLS INFRA) is a four-year partnership to build a shared resource of high-quality data, tools and knowledge to aid new approaches to studying literature in the digital age.
+
+This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 101004984.
+
+
+
+## CLS INFRA project
+
+* text collections (corpora)
+    * quality
+    * metadata
+    * conversion
+* methodology
+    * tools (NLP, datavis, ...)
+    * methodological considerations
+    * bibliographic survey
+* network of scholars
+    * training schools
+    * short-term research stays
+
+
+
+## ELTeC corpus
+
+![](https://raw.githubusercontent.com/computationalstylistics/presentations/master/clsinfra_intro/img/eltec.png){height=600}
+
+
+## DraCor programmable corpora
+
+![](https://raw.githubusercontent.com/computationalstylistics/presentations/master/clsinfra_intro/img/dracor.png){height=600}
+
+
+## survey of methods
+
+![](https://raw.githubusercontent.com/computationalstylistics/presentations/master/clsinfra_intro/img/grid.png){height=600}
+
 
 
 
@@ -184,6 +232,7 @@ stylo(frequencies = galbraith, gui = FALSE, analysis.type = "BCT", mfw.min = 100
 - sklearn
 - Excel
 - Statistica
+- Orange Data Mining
 - JGAAP
 - stylo 👈
 - ...
@@ -193,12 +242,12 @@ stylo(frequencies = galbraith, gui = FALSE, analysis.type = "BCT", mfw.min = 100
 ## stylo: a package for text analysis
 
 - an R package
-- written in R and run in R
+- written in R and runs in R
 - simple
 - fast
 - offers a few extensions
-- runs in command-line mode,
-- however, requires only three lines of code
+- runs in command-line mode 😱
+- . . . but requires only three lines of code
 - no programming skills needed!
 
 
@@ -211,7 +260,7 @@ stylo()
 ```
 
 
-## graphical User Interface (GUI)
+## graphical user interface (GUI)
 
 ![](https://raw.githubusercontent.com/computationalstylistics/stylo_nutshell/master/img/stylo_1.png){height=400}
 
@@ -243,32 +292,6 @@ stylo(frequencies = galbraith, gui = FALSE, analysis.type = "MDS", mfw.min = 100
 ![](https://computationalstylistics.github.io/assets/img/66_English_novels_network.png){height=550}
 
 
-
-## a more demanding language?
-
-＜助詞＞ も  ＜助詞＞ ゆめすけ ＜名詞＞ と  ＜助詞＞ かえな  ＜名詞＞ よぶ ＜動詞＞ る  ＜助動詞＞ て ＜助詞＞ なごやさんざ ＜名詞＞ かがのやつ  ＜名詞＞ など ＜助詞＞ と  ＜助詞＞ ななつもん  ＜名詞＞ の  ＜助詞＞ ひし ＜名詞＞ に  ＜助詞＞ くみす  ＜動詞＞ て  ＜助詞＞ み  ＜名詞＞ は  ＜助詞＞ さけ ＜名詞＞ に  ＜助詞＞ ひたす  ＜動詞＞ いちじょうどおり ＜名詞＞ よ  ＜名詞＞ ふく ＜動詞＞ て  ＜助詞＞ もどりばし  ＜名詞＞ ある ＜連体詞＞ とき  ＜名詞＞ は  ＜助詞＞ わかしゅ ＜名詞＞ でたち  ＜名詞＞ すがた  ＜名詞＞ を  ＜助詞＞ かう ＜動詞＞ て  ＜助詞＞ すみぞめ ＜名詞＞ の  ＜助詞＞ ながそで ＜名詞＞ または  ＜副詞＞ たてがみかつら  ＜名詞＞ ばけもの ＜名詞＞ が  ＜助詞＞ とおる  ＜動詞＞ と  ＜助詞＞ は  ＜助詞＞ まことなり  ＜形容動詞＞ これ ＜名詞＞ ぞ  ＜助詞＞ かし ＜助詞＞ それ ＜名詞＞ も  ＜助詞＞ ひこしち ＜名詞＞ が  ＜助詞＞ かお ＜名詞＞ す  ＜動詞＞ て  ＜助詞＞ ねがわくは  ＜副詞＞ かみころす  ＜動詞＞ る  ＜助動詞＞ て ＜助詞＞ も  ＜助詞＞ と  ＜助詞＞ かよう  ＜動詞＞ ば  ＜助詞＞ なお ＜副詞＞ みすつ  ＜動詞＞ かたし
-
-
-## Japanese texts tokenized
-
-けす た ところ が こい の はじまり さくら も ちる に なげく つき は かぎり あり て いるさやま ここ に たじまのくに かね ほる さと の ほとり に うきよ の こと を ほか に なす て しきどう ふたつ に ぬ て も さむ て も ゆめすけ と かえな よぶ る て なごやさんざ かがのやつ など と ななつもん の ひし に くみす て み は さけ に ひたす いちじょうどおり よ ふく て もどりばし ある とき は わかしゅ でたち すがた を かう て すみぞめ の ながそで または たてがみかつら ばけもの が とおる と は まことなり これ ぞ かし それ も ひこしち が かお す て ねがわくは かみころす る て も と かよう ば なお みすつ かたし て その ころ な たかし なか に も かずらき かおる さんせき おもいおもいに みうけ す て さが に ひきこむ あるいは ひがしやま の かたかげ または ふじのもり ひそかなり すむ なす て ちぎり かさなる て この うち の はら より むまる て よのすけ と な に よぶ あらわなり かく しるす まで も なし しる ひと は しる ぞ かし ふたり の ちょうあい ちょうちちょうち かぶり の あたま も さだまる よつ の とし の しもつき は かみおき はかまぎ の はる も すぐ て ほうそう の かみ いのる ば あと なし むつ の とし ふ て あく ば 
-
-
-## A few lines of code used
-
-``` {R, eval = FALSE, echo = TRUE}
-corpus = load.corpus(corpus.dir = "~/Nextcloud/laboratorium/stylo_R_package/testing_stylo/japanese_test/corpus")
-corpus_clean = lapply(corpus, function(x){gsub("(＜.+?＞)|\t", "", x)})
-parsed_corpus = parse.corpus(corpus_clean)
-freqlist = make.frequency.list(parsed_corpus)[1:1000]
-data = make.table.of.frequencies(parsed_corpus, freqlist)
-stylo(frequencies = data)
-```
-
-
-## from tokens to results
-
-![](img/jp_network.png){height=550}
 
 
 # stylo's extensions
@@ -318,11 +341,13 @@ consciousness dared enjoyment tone listen exclaimed features seated continually 
 # uncertainty everywhere
 
 
-## risk of being oversimplistic
+## risk of being overly simplistic
 
-- fast results, expecially using default parameters
-- tempting to use ‘stylo’ as a simple problem-solver
+- fast results, especially using default parameters
+- tempting to apply a tool as a simple problem-solver
 - tacit assumption that statistics "tells the truth"
+  - humanists tend to overestimate numbers, plots, and maps
+  - hard scientists tend to underestimate language variation
 - tendency to forget about uncertainty in the dataset
 
 
