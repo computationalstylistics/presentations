@@ -1,5 +1,5 @@
 ---
-title: "Text Analysis Made Simple </br> (Kind of)"
+title: "Text Analysis Made Simple </br> (kind of)"
 subtitle: "Ten Years of Stylo"
 author: 
     name: Maciej Eder

@@ -13,8 +13,7 @@
 * CLS INFRA and Open Science [presentation](https://computationalstylistics.github.io/presentations/OpenScience2024)
 * SIG-DLS workshop at DH2024 [brief intro](https://computationalstylistics.github.io/presentations/sig-dls_2024/)
 * Manhattan, Euclidean, and their Siblings (DH2024) [presentation](https://computationalstylistics.github.io/presentations/norms_dh2024/)
-* Text analysis is easy (DHNB2025) [presentation](https://computationalstylistics.github.io/presentations/dhnb2025/)
 * Computational stylistics (DigiTS kick-off) [presentation](https://computationalstylistics.github.io/presentations/DigiTS_kickoff_2025/)
-
+* Text analysis made simple (ccls2025) [presentation](https://computationalstylistics.github.io/presentations/ccls2025/index-speaker.html)
 
 
