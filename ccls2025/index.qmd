@@ -1,0 +1,494 @@
+---
+title: "Text Analysis Made Simple </br> (Kind of)"
+subtitle: "Ten Years of Stylo"
+author: 
+    name: Maciej Eder
+    affiliation: Polish Academy of Sciences | University of Tartu
+#    email: (<a>maciej.eder@ijp.pan.pl</a>)
+date: 2025-07-03
+date-format: "DD/MM/YYYY"
+#      </br>JCLS conference, Kraków, 3–4.07.2025
+#output:
+#  revealjs::revealjs_presentation:
+#    transition: fade
+#    highlight: espresso
+#    self_contained: true 
+#    css: clsinfra_rmarkdown.css
+format: 
+  revealjs:
+    multiplex: true
+    theme: ["pp.scss"]
+    logo: logo_ijp.png
+    css: big_logo.css
+    #css: clsinfra_rmarkdown.css
+    slide-number: c/t
+    #incremental: true
+---
+
+
+
+# [https://tinyurl.com/ccls2025](https://tinyurl.com/ccls2025)
+
+
+
+# introduction
+
+
+
+
+## Blaise Pascal: two infinities
+
+- imaginary journey to the far end (?) of the Universe
+- imaginary journey into our own body
+- one finds no limits there
+
+
+
+## scientific revolution
+
+![](img/pascal_two_infinities_smaller.png){height=550}
+
+
+
+
+## revolution in the humanities
+
+- new tools: computer & the internet
+- new resources: research infrastructures, several datasets
+- new methods: data mining, machine learning
+- new disciplines: Digital Humanities
+
+
+
+
+# infrastructures in DH
+
+
+
+## { .no-background }
+
+![](https://clsinfra.io/wp-content/uploads/2021/09/CLS-INFRA_Linear-Long-Logo-Col.png)
+
+Computational Literary Studies Infrastructure (CLS INFRA) is a four-year partnership to build a shared resource of high-quality data, tools and knowledge to aid new approaches to studying literature in the digital age.
+
+This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 101004984.
+
+
+
+## CLS INFRA project
+
+* text collections (corpora)
+    * quality
+    * metadata
+    * conversion
+* methodology
+    * tools (NLP, datavis, ...)
+    * methodological considerations
+    * bibliographic survey
+* network of scholars
+    * training schools
+    * short-term research stays
+
+
+
+## ELTeC corpus
+
+![](https://raw.githubusercontent.com/computationalstylistics/presentations/master/clsinfra_intro/img/eltec.png){height=600}
+
+
+## DraCor programmable corpora
+
+![](https://raw.githubusercontent.com/computationalstylistics/presentations/master/clsinfra_intro/img/dracor.png){height=600}
+
+
+## survey of methods
+
+![](https://raw.githubusercontent.com/computationalstylistics/presentations/master/clsinfra_intro/img/grid.png){height=600}
+
+
+
+
+
+# text analysis
+
+
+## text analysis: two approaches
+
+- focusing on the content
+    - what my corpus is about?
+    - how to "read" through a large library
+    - approaches: topic modeling, keywords analysis
+- focusing on stylistic similarities
+    - why my texts form groups?
+    - how to detect different stylistics "signals"
+    - approaches: multivariate text classification methods
+
+
+
+## theoretical foundations
+
+- "Computation into criticism" (John Burrows)
+- "Algorithmic criticism" (Steve Ramsay)
+- "Distant reading" (Franco Moretti)
+- "Macroanalysis" (Matt Jockers)
+- "Riddle of literary quality" (Karina van Dalen-Oskam)
+
+
+
+
+## why text analysis?
+
+* authorship attribution
+* forensic linguistics
+* register analysis
+* genre recognition
+* gender differences
+* translatorial signal
+* early vs. mature style
+* style evolution
+* detecting dementia
+* ...
+
+
+
+## What makes them different?
+
+text A:
+
+    I have just returned from a visit to my landlord - the solitary neighbour that I shall be troubled with. This is certainly a beautiful country! In all England, I do not believe that I could have fixed on a situation so completely removed from the stir of society. A perfect misanthropist's heaven: and Mr. Heathcliff and I are such a suitable pair to divide the desolation between us. A capital fellow!
+
+
+text B:
+
+    OF MANS First Disobedience, and the Fruit
+    Of that Forbidden Tree, whose mortal tast
+    Brought Death into the World, and all our woe,
+    With loss of Eden, till one greater Man
+    Restore us, and regain the blissful Seat,
+    Sing Heav'nly Muse, that on the secret top
+    Of Oreb, or of Sinai, didst inspire
+    That Shepherd, who first taught the chosen Seed,
+    In the Beginning how the Heav'ns and Earth
+    Rose out of Chaos: or if Sion Hill
+    Delight thee more, and Siloa's Brook that flow'd
+    Fast by the Oracle of God; I thence
+    Invoke thy aid to my adventrous Song,
+
+
+## how to compare a set of texts?
+
+* extracting valuable (i.e. countable) language features from texts
+  * frequencies of words 👈
+  * frequencies of syllables
+  * versification patterns
+  * distribution of topics
+  * ...
+* comparing these features by means of multivariate analysis
+  * distance-based methods 👈
+  * neural networks
+  * ...
+
+
+
+## from words to features
+
+> ‘It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.’ </br> (J. Austen, _Pride and Prejudice_)
+
+<p>“<span style="color: red;">the</span>” = 3.52%</p>
+<p>“<span style="color: red;">to</span>” = 3.39%</p>
+<p>“<span style="color: red;">of</span>” = 2.94%</p>
+<p>“<span style="color: red;">a</span>” = 1.59%</p>
+<p>“<span style="color: red;">in</span>” = 1.53%</p>
+<p>“<span style="color: red;">was</span>” = 1.50%</p>
+<p><span style="color: red;">. . .</span></p>
+
+
+## from features to similarities
+
+
+```{r, echo = FALSE, message = FALSE}
+library(stylo)
+data(galbraith)
+data(lee)
+round(galbraith[1:19,1:8], 3)
+```
+
+
+
+## what we hope to get 
+
+```{r, echo = FALSE, message = FALSE, fig.align = "center"}
+stylo(frequencies = galbraith, gui = FALSE, analysis.type = "BCT", mfw.min = 100, mfw.max = 1000, titles.on.graphs = FALSE)
+```
+
+
+
+# software (feat. 'stylo')
+
+
+## Text analysis software
+
+- Mallet
+- Gensim
+- sklearn
+- Excel
+- Statistica
+- Orange Data Mining
+- JGAAP
+- stylo 👈
+- ...
+
+
+
+## stylo: a package for text analysis
+
+- an R package
+- written in R and runs in R
+- simple
+- fast
+- offers a few extensions
+- runs in command-line mode 😱
+- . . . but requires only three lines of code
+- no programming skills needed!
+
+
+## how to run stylo
+
+``` {R, eval = FALSE, echo = TRUE}
+library(stylo)
+setwd("the/path/to/my/corpus")
+stylo()
+```
+
+
+## graphical user interface (GUI)
+
+![](https://raw.githubusercontent.com/computationalstylistics/stylo_nutshell/master/img/stylo_1.png){height=400}
+
+
+
+## set your parameters
+
+![](https://raw.githubusercontent.com/computationalstylistics/stylo_nutshell/master/img/stylo_2.png){height=400}
+
+
+
+
+## hierarchical cluster analysis
+
+``` {r, echo = FALSE, message = FALSE, fig.align = "center"}
+stylo(frequencies = galbraith, gui = FALSE, mfw.min = 100, mfw.max = 100, titles.on.graphs = FALSE)
+```
+
+## multidimensional scaling
+
+``` {r, echo = FALSE, message = FALSE, fig.align = "center"}
+stylo(frequencies = galbraith, gui = FALSE, analysis.type = "MDS", mfw.min = 100, mfw.max = 100, titles.on.graphs = FALSE)
+```
+
+
+
+## 66 English Victorian novels
+
+![](https://computationalstylistics.github.io/assets/img/66_English_novels_network.png){height=550}
+
+
+
+
+# stylo's extensions
+
+## words distributed unevenly
+
+![](https://raw.githubusercontent.com/computationalstylistics/presentations/refs/heads/master/cracovian_alt/img/Diagram1.png){height=400}
+
+## Zeta method to extract keywords 
+
+![](https://raw.githubusercontent.com/computationalstylistics/presentations/refs/heads/master/cracovian_alt/img/Diagram2.png){height=400}
+
+
+## women are from Venus . . .
+
+- _Female words_: feelings glance effort paused feeling surprise noticed pause
+consciousness dared enjoyment tone listen exclaimed features seated continually anxiety solitude inward apparently painful entrance respectable relief closed watching feel bent peculiar rain suddenly cheerful clear trees aspect watched plan slight doubtles reached smile brow vague quiet mere movement gathered suffering entered listened observed warm exertion minutes change . . .
+
+- _Male words_: story although lord bosom honour honest duke parliament city score enemy coach coat inn thousand breast bill dozen lordship guilty court ain legs bottle captain fight pen battle sum nevertheless reader virtue order innocent condition infinite castle widow england accident readers laws fellows hundred service king stories persons ladyship fly street dearest honours member fortune government wig drank papers wretch described honourable pocket
+
+
+
+
+## sequential analysis
+
+![](img/sampling.png){height=400}
+
+
+
+## Roman de la Rose
+
+- 13th-century French allegorical poem
+- mixed authorship:
+    - Guillaume de Lorris (ca. 1230)
+    - Jean de Meun (ca. 1275)
+- The takeover point known (after the line 4,058)
+
+
+
+## Roman de la Rose sequentially
+
+![](https://raw.githubusercontent.com/computationalstylistics/stylo_nutshell/master/img/rolling-svm_100-features_5000-per-slice.png){height=450}
+
+
+
+
+# uncertainty everywhere
+
+
+## risk of being overly simplistic
+
+- fast results, especially using default parameters
+- tempting to apply a tool as a simple problem-solver
+- tacit assumption that statistics "tells the truth"
+  - humanists tend to overestimate numbers, plots, and maps
+  - hard scientists tend to underestimate language variation
+- tendency to forget about uncertainty in the dataset
+
+
+
+## word frequencies agin
+
+> ‘It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.’ </br> (J. Austen, _Pride and Prejudice_)
+
+<p>“<span style="color: red;">the</span>” = 3.52% 👈</p>
+<p>“<span style="color: red;">to</span>” = 3.39%</p>
+<p>“<span style="color: red;">of</span>” = 2.94%</p>
+<p>“<span style="color: red;">a</span>” = 1.59%</p>
+<p>“<span style="color: red;">in</span>” = 1.53%</p>
+<p>“<span style="color: red;">was</span>” = 1.50%</p>
+<p><span style="color: red;">. . .</span></p>
+
+
+## what is a word frequency, really?
+
+- frequency of "the" in _Pride and Prejudice_ is <span style="color: red;">3.52%</span>
+- however, if we devide the text into 122 chunks of 1,000 words:
+    - 2.3, 4.2, 4.4, 2.9, 3.3, 2.9, 2.6, 4, 3.5, 4.5, 2.2, 3.1, 2.8, 4, 3.3, 3.9, 2.8, 4.1, 3.3, 3.6, 3.4, 5.3, 6.1, 3.8, 3.2, 3.6, 3.8, 4.3, 2.9, 3.6, 3.7, 3.9, 4.2, 3.8, 2.8, 3.2, 4.5, 3.8, 3.9, 3.6, 3.5, 3.5, 2.4, 3.5, 3, 2.7, 1.9, 3.8, 4.8, 4.9, 4.7, 3.2, 5.8, 4.6, 2.5, 3.9, 4, 2.8, 3.4, 3.4, 6, 4.2, 3.5, 2.9, 5.4, 3.5, 3.1, 3.7, 3.5, 4.8, 2.7, 3.8, 4, 2.9, 4.3, 5.8, 3.8, 5, 5.6, 3.6, 3.8, 3.7, 4.4, 4.4, 2.5, 2.6, 2,1 etc.
+- max value: <span style="color: red;">6.1%</span>
+- min value: <span style="color: red;">1.9%</span>
+- what is the frequency of "the", after all???
+
+
+## frequency is a distribution
+
+``` {r, echo = FALSE, message = FALSE, fig.align = "center"}
+data(novels)
+parsed_corpus = parse.corpus(novels)
+samples4 = make.samples(parsed_corpus[[4]], sample.size = 1000, sampling = "normal.sampling")
+the_4 = sapply(samples4, function(x) sum(x == "the")) / 1000 * 100
+hist(the_4, main = "", xlab = "frequency of the word \"the\"", ylab = "number of samples")
+```
+
+
+## distribution of the word 'the'
+
+``` {r, echo = FALSE, message = FALSE, fig.align = "center"}
+dens = density(the_4)
+max_y = max(dens$y)
+max_x = max(dens$x)
+min_x = min(dens$x)
+plot(NULL, ylim = c(0, max_y), xlim = c(min_x, max_x), ylab = "density", xlab = "frequency of the word \"the\"")
+polygon(dens, col = rgb(0, 1, 0, 0.3))
+```
+
+
+## arithmetic mean
+
+``` {r, echo = FALSE, message = FALSE, fig.align = "center"}
+plot(NULL, ylim = c(0, max_y), xlim = c(min_x, max_x), ylab = "density", xlab = "frequency of the word \"the\"")
+polygon(dens, col = rgb(0, 1, 0, 0.3))
+abline(v = mean(the_4), col = rgb(1, 0, 0, 0.5), lwd = 5)
+```
+
+
+## point estimates?
+
+``` {r, echo = FALSE, message = FALSE, fig.align = "center"}
+freqlist = make.frequency.list(parsed_corpus)[1:1000]
+freqs = suppressMessages(make.table.of.frequencies(parsed_corpus, freqlist))
+stylo(frequencies = freqs, gui = FALSE, analysis.type = "MDS", mfw.min = 100, mfw.max = 100, titles.on.graphs = FALSE)
+```
+
+
+## point estimates are misleading
+
+``` {r, echo = FALSE, message = FALSE, fig.align = "center"}
+parsed_corpus = parse.corpus(novels, sample.size = 1000, sampling = "random.sampling", number.of.samples = 15)
+stylo(parsed.corpus = parsed_corpus, gui = FALSE, analysis.type = "MDS", mfw.min = 100, mfw.max = 100, titles.on.graphs = FALSE)
+```
+
+## the distributions are unknown
+
+- which features should be choosen
+    - 100 most frequent words?
+    - or perhaps 1,000 most frequent words?
+    - or maybe character 3-grams are better?
+- which parameters should be preferred
+    - Cosine Delta distance?
+    - Burrows Delta distance?
+    - minmax distance?
+- the results will always be slightly different
+- . . . and the distributions are unknown
+
+
+## exploring different features
+
+```{r, echo = FALSE, message = FALSE, fig.align = "center"}
+stylo(frequencies = lee, gui = FALSE, analysis.type = "BCT", mfw.min = 100, mfw.max = 1000, titles.on.graphs = FALSE)
+```
+
+
+
+## sampling from the features
+
+
+```{r, echo = FALSE, message = FALSE}
+data(galbraith)
+round(galbraith[1:19,1:8], 3)
+```
+
+
+## General Imposters method
+
+Testing the textual similarities of _The Sound and the Fury_:
+
+```{r, echo = FALSE, message = TRUE}
+data(lee)
+# getting the 8th row from the dataset (it contains frequencies for Galbraith):
+my_text_to_be_tested = lee[10, 1:100]
+# building the reference set so that it does not contain the 8th row
+my_frequency_table = lee[-c(10), 1:100]
+# launching the imposters method:
+imposters(reference.set = my_frequency_table, test = my_text_to_be_tested)
+```
+
+
+# conclusions
+
+
+## closing remarks 
+
+- 'stylo' has been around for some time
+- it became a _de facto_ standard in text classification
+- easy to use, but sometimes too easy
+- mind that statistics does not tell The Truth
+- several features that are in fact distributions
+- several parameters that are in fact distributions
+- suggestion: use tools with care!
+
+
+
+
+
+
+
+# thank you!
+
+
