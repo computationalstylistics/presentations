@@ -604,8 +604,8 @@ Invoke thy aid to my adventrous Song,</code></pre>
 <span id="cb3-3"><a href=""></a></span>
 <span id="cb3-4"><a href=""></a>5.624   3.782   2.074   2.597   1.916   1.313   1.492   1.419   1.221   0.825   0.872   ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="from-features-to-similarities" class="slide level2">
-<h2>from features to similarities</h2>
+<section id="from-representations-to-similarities" class="slide level2">
+<h2>from representations to similarities</h2>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>                       the   and    to    of     a   was     I    in
@@ -734,6 +734,59 @@ rowling_hallows      4.696 2.473 2.244 1.870 1.449 1.126 0.525 0.995</code></pre
 <section id="roman-de-la-rose-sequentially" class="slide level2">
 <h2>Roman de la Rose sequentially</h2>
 <p><img data-src="https://raw.githubusercontent.com/computationalstylistics/stylo_nutshell/master/img/rolling-svm_100-features_5000-per-slice.png" height="450"></p>
+</section>
+<section id="supervised-classification" class="slide level2">
+<h2>supervised classification</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>results2 <span class="ot">=</span> <span class="fu">classify</span>(<span class="at">gui =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb6-2"><a href=""></a>                    <span class="at">training.frequencies =</span> training_set, </span>
+<span id="cb6-3"><a href=""></a>                    <span class="at">test.frequencies =</span> test_set, </span>
+<span id="cb6-4"><a href=""></a>                    <span class="at">cv.folds =</span> <span class="dv">100</span>)</span>
+<span id="cb6-5"><a href=""></a><span class="fu">performance.measures</span>(results2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$precision
+   Capote  Faulkner   Glasgow HarperLee McCullers   OConnor    Styron     Welty 
+0.7974414 1.0000000 0.8951049 0.6493506 0.7006369 0.5898204 0.7267081 0.7738095 
+
+$recall
+   Capote  Faulkner   Glasgow HarperLee McCullers   OConnor    Styron     Welty 
+   0.9350    0.4225    0.6400    1.0000    0.5500    0.9850    0.7800    0.9750 
+
+$f
+   Capote  Faulkner   Glasgow HarperLee McCullers   OConnor    Styron     Welty 
+0.8607595 0.5940246 0.7463557 0.7874016 0.6162465 0.7378277 0.7524116 0.8628319 
+
+$accuracy
+[1] 0.7535
+
+$avg.precision
+[1] 0.766609
+
+$avg.recall
+[1] 0.7859375
+
+$avg.f
+[1] 0.7447324</code></pre>
+</div>
+</div>
+</section>
+<section id="confusion-matrix" class="slide level2">
+<h2>confusion matrix</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="fu">table</span>(results2<span class="sc">$</span>expected, results2<span class="sc">$</span>predicted)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           
+            Capote Faulkner Glasgow HarperLee McCullers OConnor Styron Welty
+  Capote       374        0       0         3         0       0     23     0
+  Faulkner      11      169       4        41        39      72     24    40
+  Glasgow       44        0     128         0         1       2     21     4
+  HarperLee      0        0       0       100         0       0      0     0
+  McCullers      2        0       0         0       110      60     18    10
+  OConnor        0        0       0         0         3     197      0     0
+  Styron        38        0      11        10         4       0    234     3
+  Welty          0        0       0         0         0       3      2   195</code></pre>
+</div>
+</div>
 </section></section>
 <section>
 <section id="uncertainty-everywhere" class="title-slide slide level1 center">
@@ -802,19 +855,19 @@ turning words into features, e.g. char n-grams (if applicable)...</code></pre>
 </div>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="distribution-of-the-word-the" class="slide level2">
 <h2>distribution of the word ‘the’</h2>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-10-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="arithmetic-mean" class="slide level2">
 <h2>arithmetic mean</h2>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-11-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="point-estimates" class="slide level2">
 <h2>point estimates?</h2>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-12-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="point-estimates-are-misleading" class="slide level2">
 <h2>point estimates are misleading</h2>
 <div class="cell" data-layout-align="center">
@@ -824,7 +877,7 @@ turning words into features, e.g. char n-grams (if applicable)...</code></pre>
 </div>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-10-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-13-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="the-distributions-are-unknown" class="slide level2">
 <h2>the distributions are unknown</h2>
 <ul>
@@ -847,7 +900,7 @@ turning words into features, e.g. char n-grams (if applicable)...</code></pre>
 <section id="exploring-different-features" class="slide level2">
 <h2>exploring different features</h2>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-11-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-14-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="sampling-from-the-features" class="slide level2">
 <h2>sampling from the features</h2>
 <div class="cell">
@@ -895,13 +948,13 @@ rowling_hallows      4.696 2.473 2.244 1.870 1.449 1.126 0.525 0.995</code></pre
 <pre><code>Capote   0</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Faulkner     0.88</code></pre>
+<pre><code>Faulkner     0.98</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Glasgow      0</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>HarperLee    0.16</code></pre>
+<pre><code>HarperLee    0.2</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>McCullers    0</code></pre>
@@ -910,14 +963,14 @@ rowling_hallows      4.696 2.473 2.244 1.870 1.449 1.126 0.525 0.995</code></pre
 <pre><code>OConnor      0.01</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Styron   0.02</code></pre>
+<pre><code>Styron   0.01</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Welty    0.61</code></pre>
+<pre><code>Welty    0.58</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Capote  Faulkner   Glasgow HarperLee McCullers   OConnor    Styron     Welty 
-     0.00      0.88      0.00      0.16      0.00      0.01      0.02      0.61 </code></pre>
+     0.00      0.98      0.00      0.20      0.00      0.01      0.01      0.58 </code></pre>
 </div>
 </div>
 </section></section>

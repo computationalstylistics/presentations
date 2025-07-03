@@ -217,8 +217,7 @@ the     and     to      of      a       was     I       in      he      that    
 
 
 
-## from features to similarities
-
+## from representations to similarities
 
 
 ```{r, echo = FALSE, message = FALSE}
@@ -351,6 +350,31 @@ consciousness dared enjoyment tone listen exclaimed features seated continually 
 
 ![](https://raw.githubusercontent.com/computationalstylistics/stylo_nutshell/master/img/rolling-svm_100-features_5000-per-slice.png){height=450}
 
+
+
+## supervised classification
+
+
+``` {r, echo = FALSE, message = FALSE}
+training_set = lee[c(1, 6, 11, 14, 16, 19, 22, 26), 1:100]
+test_set = lee[-c(1, 6, 11, 14, 16, 19, 22, 26), 1:100]
+```
+
+
+``` {r, echo = TRUE, message = FALSE}
+results2 = classify(gui = FALSE, 
+                    training.frequencies = training_set, 
+                    test.frequencies = test_set, 
+                    cv.folds = 100)
+performance.measures(results2)
+```
+
+
+## confusion matrix
+
+``` {r, echo = TRUE, message = TRUE}
+table(results2$expected, results2$predicted)
+```
 
 
 
