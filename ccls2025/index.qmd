@@ -203,7 +203,22 @@ text B:
 <p><span style="color: red;">. . .</span></p>
 
 
+
+
+## from features to representations
+
+
+``` txt
+
+the     and     to      of      a       was     I       in      he      that    it      ...
+
+5.624   3.782   2.074   2.597   1.916   1.313   1.492   1.419   1.221   0.825   0.872   ...
+```
+
+
+
 ## from features to similarities
+
 
 
 ```{r, echo = FALSE, message = FALSE}
