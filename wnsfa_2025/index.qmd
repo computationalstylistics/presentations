@@ -1,0 +1,384 @@
+---
+title: "Distant Reading </br> and Reception Studies"
+subtitle: "A Few Methodological Remarks"
+author: 
+    name: Maciej Eder
+    affiliation: Polish Academy of Sciences | Universitatea Lucian Blaga din Sibiu
+#    email: (<a>maciej.eder@ijp.pan.pl</a>)
+date: 2025-07-15
+date-format: "DD/MM/YYYY"
+#output:
+#  revealjs::revealjs_presentation:
+#    transition: fade
+#    highlight: espresso
+#    self_contained: true 
+#    css: clsinfra_rmarkdown.css
+format: 
+  revealjs:
+    multiplex: false
+    theme: ["pp.scss"]
+    logo: logo_ijp.png
+    css: big_logo.css
+    #css: clsinfra_rmarkdown.css
+    slide-number: c/t
+    #incremental: true
+---
+
+
+
+
+# introduction
+
+
+
+## First, what CLS is about
+
+* Computational Literary Studies
+* Aimed at analyzing (large amounts of) textual data...
+* ... by computational techniques
+
+
+
+
+## theoretical foundations
+
+- "Computation into criticism" (John Burrows)
+- "Algorithmic criticism" (Steve Ramsay)
+- "Distant reading" (Franco Moretti)
+- "Macroanalysis" (Matt Jockers)
+- "Riddle of literary quality" (Karina van Dalen-Oskam)
+
+
+
+
+# text analysis
+
+
+## text analysis: two approaches
+
+- focusing on the content
+    - what my corpus is about?
+    - how to "read" through a large library
+    - approaches: topic modeling, keywords analysis
+- focusing on stylistic similarities
+    - why my texts form groups?
+    - how to detect different stylistics "signals"
+    - approaches: multivariate text classification methods
+
+
+
+
+## why text analysis?
+
+* authorship attribution
+* forensic linguistics
+* register analysis
+* genre recognition
+* gender differences
+* translatorial signal
+* early vs. mature style
+* style evolution
+* detecting dementia
+* ...
+
+
+
+## What makes them different?
+
+text A:
+
+    I have just returned from a visit to my landlord - the solitary neighbour that I shall be troubled with. This is certainly a beautiful country! In all England, I do not believe that I could have fixed on a situation so completely removed from the stir of society. A perfect misanthropist's heaven: and Mr. Heathcliff and I are such a suitable pair to divide the desolation between us. A capital fellow!
+
+
+text B:
+
+    OF MANS First Disobedience, and the Fruit
+    Of that Forbidden Tree, whose mortal tast
+    Brought Death into the World, and all our woe,
+    With loss of Eden, till one greater Man
+    Restore us, and regain the blissful Seat,
+    Sing Heav'nly Muse, that on the secret top
+    Of Oreb, or of Sinai, didst inspire
+    That Shepherd, who first taught the chosen Seed,
+    In the Beginning how the Heav'ns and Earth
+    Rose out of Chaos: or if Sion Hill
+    Delight thee more, and Siloa's Brook that flow'd
+    Fast by the Oracle of God; I thence
+    Invoke thy aid to my adventrous Song,
+
+
+## how to compare a set of texts?
+
+* extracting valuable (i.e. countable) language features from texts
+  * frequencies of words 👈
+  * frequencies of syllables
+  * versification patterns
+  * distribution of topics
+  * ...
+* comparing these features by means of multivariate analysis
+  * distance-based methods 👈
+  * neural networks
+  * ...
+
+
+
+## from words to features
+
+> ‘It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.’ </br> (J. Austen, _Pride and Prejudice_)
+
+<p>“<span style="color: red;">the</span>” = 3.52%</p>
+<p>“<span style="color: red;">to</span>” = 3.39%</p>
+<p>“<span style="color: red;">of</span>” = 2.94%</p>
+<p>“<span style="color: red;">a</span>” = 1.59%</p>
+<p>“<span style="color: red;">in</span>” = 1.53%</p>
+<p>“<span style="color: red;">was</span>” = 1.50%</p>
+<p><span style="color: red;">. . .</span></p>
+
+
+
+
+## from features to representations
+
+
+``` txt
+
+the     and     to      of      a       was     I       in      he      that    it      ...
+
+5.624   3.782   2.074   2.597   1.916   1.313   1.492   1.419   1.221   0.825   0.872   ...
+```
+
+
+
+## from representations to similarities
+
+
+```{r, echo = FALSE, message = FALSE}
+library(stylo)
+data(galbraith)
+data(lee)
+round(galbraith[1:19,1:8], 3)
+```
+
+
+
+## what we hope to get 
+
+```{r, echo = FALSE, message = FALSE, fig.align = "center"}
+stylo(frequencies = galbraith, gui = FALSE, analysis.type = "BCT", mfw.min = 100, mfw.max = 1000, titles.on.graphs = FALSE)
+```
+
+
+
+## Text analysis software
+
+- Mallet
+- Gensim
+- sklearn
+- Excel
+- Statistica
+- Orange Data Mining
+- JGAAP
+- stylo 👈
+- ...
+
+
+
+
+## hierarchical cluster analysis
+
+``` {r, echo = FALSE, message = FALSE, fig.align = "center"}
+stylo(frequencies = galbraith, gui = FALSE, mfw.min = 100, mfw.max = 100, titles.on.graphs = FALSE)
+```
+
+## multidimensional scaling
+
+``` {r, echo = FALSE, message = FALSE, fig.align = "center"}
+stylo(frequencies = galbraith, gui = FALSE, analysis.type = "MDS", mfw.min = 100, mfw.max = 100, titles.on.graphs = FALSE)
+```
+
+
+
+## 66 English Victorian novels
+
+![](https://computationalstylistics.github.io/assets/img/66_English_novels_network.png){height=550}
+
+
+
+
+# stylo's extensions
+
+## words distributed unevenly
+
+![](https://raw.githubusercontent.com/computationalstylistics/presentations/refs/heads/master/cracovian_alt/img/Diagram1.png){height=400}
+
+## Zeta method to extract keywords 
+
+![](https://raw.githubusercontent.com/computationalstylistics/presentations/refs/heads/master/cracovian_alt/img/Diagram2.png){height=400}
+
+
+## women are from Venus . . .
+
+- _Female words_: feelings glance effort paused feeling surprise noticed pause
+consciousness dared enjoyment tone listen exclaimed features seated continually anxiety solitude inward apparently painful entrance respectable relief closed watching feel bent peculiar rain suddenly cheerful clear trees aspect watched plan slight doubtles reached smile brow vague quiet mere movement gathered suffering entered listened observed warm exertion minutes change . . .
+
+- _Male words_: story although lord bosom honour honest duke parliament city score enemy coach coat inn thousand breast bill dozen lordship guilty court ain legs bottle captain fight pen battle sum nevertheless reader virtue order innocent condition infinite castle widow england accident readers laws fellows hundred service king stories persons ladyship fly street dearest honours member fortune government wig drank papers wretch described honourable pocket
+
+
+
+
+## sequential analysis
+
+![](img/sampling.png){height=400}
+
+
+
+## Roman de la Rose
+
+- 13th-century French allegorical poem
+- mixed authorship:
+    - Guillaume de Lorris (ca. 1230)
+    - Jean de Meun (ca. 1275)
+- The takeover point known (after the line 4,058)
+
+
+
+## Roman de la Rose sequentially
+
+![](https://raw.githubusercontent.com/computationalstylistics/stylo_nutshell/master/img/rolling-svm_100-features_5000-per-slice.png){height=450}
+
+
+
+
+
+# between languages?
+
+
+
+
+## 
+
+![](https://dracor.org/img/merch/oedipus-tyrannus-print.png){height=700}
+
+
+## Perception of literary quality
+
+![](lit_quality.png){height=550}
+
+
+## 1,000 Polish novels
+
+![](https://computationalstylistics.github.io/assets/img/network_translationese.png){height=550}
+
+
+
+
+# conversion to POS-tags
+
+
+
+## Instead of words...
+
+It was by
+your desire that I first thought of such a composition. So many years
+have since past, that you may have, perhaps, forgotten this
+circumstance: but your desires are to me in the nature of commands;
+and the impression of them is never to be erased from my memory.
+Again, Sir, without your assistance this history had never been
+completed. Be not startled at the assertion. I do not intend to draw
+on you the suspicion of being a romance writer. I mean no more than
+that I partly owe to you my existence during great part of the time
+which I have employed in composing it: another matter which it may be
+necessary to remind you of; since there are certain actions of which
+you are apt to be extremely forgetful; but of these I hope I shall
+always have a better memory than yourself. 
+Lastly, It is owing to you that the history appears what it now is. If
+there be in this work, as some have been pleased to say, a stronger
+picture of a truly benevolent mind than is to be found in any other,
+who that knows you, and a particular . . . 
+
+## ... we can use grammatical categories
+
+PRP VBD IN PRP$ NN IN PRP RB VBD IN JJ DT NN .
+RB JJ NNS VBP IN NN , IN PRP MD VB , RB , VBN DT NN : CC PRP$ 
+NNS VBP TO PRP IN DT NN IN NNS : CC DT NN IN PRP VBZ RB TO VB VBN IN PRP$ NN .
+RB , NNP , IN PRP$ NN DT NN VBD RB VBN VBN .
+VB RB VBN IN DT NN . PRP VBP RB VB TO VB IN PRP DT NN IN VBG DT NN NN .
+PRP VBP DT JJR IN IN PRP RB VBP TO PRP PRP$ NN IN JJ NN IN DT NN WDT PRP VBP VBN IN VBG PRP : DT NN WDT PRP MD VB JJ TO VB PRP IN : IN EX VBP JJ NNS IN WDT PRP VBP JJ TO VB RB JJ : CC IN DT PRP VBP PRP MD RB VB DT JJR NN IN PRP . RB , PRP VBZ VBG TO PRP IN DT NN VBZ WP PRP RB VBZ .
+IN EX VB IN DT NN , IN DT VBP VBN VBN TO VB , DT JJR NN IN DT RB JJ NN IN VBZ TO VB VBN IN DT JJ , WP WDT VBZ PRP , CC DT JJ NN IN NNS , MD VB NN IN NN NN VBN VBN . IN EX . . . 
+
+
+## it works (kind of), but...
+
+![](english_POS-tagged_3-grams.png){height=550}
+
+
+
+# a meta-language
+
+
+## comparing texts in different languages
+
+* translating all the texts into a single language
+* either to source language, ot to target language
+* alternatively: to a meta-language
+* contemporary English a convenient meta-language
+* allows for immediate comparisons
+* topic modeling possible
+
+
+## Campanella, _Civitas Solis_ (fragm.)
+
+Attolitur ex amplissima planitie collis ingens, super quo maior pars civitatis fundata est. At multiplices illius ambitus exponuntur ad multum spatium extra montis radices, qui ea constat magnitudine, qua civitatis diameter duo et plus milliaria continet, ut circuitus sit septem. At ex gibbositate plura capit, quam si in planitie foret. Distincta est in septem gyros ambitusve ingentes, a septem planetis nominatos, et ab altero in alterum per quatuor strata viarum intratur, perque portas quatuor ad mundi angulos quatuor spectantes. Et profecto sic aedificata est, ut si quis primum expugnaret gyrum, necesse habet duplicato labore expugnare secundum; et maiori tertium, ac semper geminare vires, laboresque. Quapropter septies expugnanda est volenti eam subiugare. Ego tamen iudicio nec primum posse occupari ambitum ita crassus est, terra plenus, munitus propugnaculis, turribus, bombardis, et fossis.
+
+## Automated translation (gemma3n)
+
+A vast and towering hill rises from the widest plain, upon which the
+greater part of the city is founded. Its extensive circumference extends
+far beyond the mountain's roots, constituting a magnitude such that the
+city's diameter contains two and more thousand stadia, making its circuit
+seven. It consists of several distinct ramparts, more than if it were on a
+plain. These ramparts are divided into seven vast circles, named after the
+seven planets, and are entered through four layers of roads, and four
+gates facing the corners of the world. And it is constructed in such a way
+that if one were to conquer the first circle, it would be necessary to
+conquer the second with double the effort, and the third with even greater
+effort, always doubling the strength and labor. Therefore, it must be
+besieged seven times to subdue it. However, in my judgment, it is not
+easily taken in the first place, being full of land, fortified with
+ramparts, towers, bombardments, and ditches.
+
+## Notes on the Translation
+
+*   **"Collis ingens"**: Translated as "towering hill" to convey the
+impressive scale.
+*   **"Amplitissima planitie"**:  "Widest plain" is a direct translation.
+*   **"Multiplices illius ambitus"**: "Its extensive circumference"
+captures the idea of the city's large perimeter.
+*   **"Multia spatio extra montiis raices"**: "Extends far beyond the
+mountain's roots" is a literal rendering.
+*   **"Stadia"**:  I've left "stadia" as it is, as it's a unit of length.
+It's roughly equivalent to 185 meters (607 feet).
+*   **"Gibbositate"**: Translated as "ramparts" to convey the idea of the
+city's walls being uneven or having multiple levels.
+*   **"Planetis nominatos"**: "Named after the seven planets" is a
+straightforward translation.
+*   . . . 
+
+
+## Conclusions
+
+
+- difficult to compare texts in different languages
+- possible via a grammatical layer
+- translate into a meta-language
+- AI might prove helpful
+- comparing both content and style, to some extent
+
+
+
+
+
+
+# thank you!
+
+
