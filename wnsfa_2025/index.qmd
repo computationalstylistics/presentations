@@ -31,7 +31,7 @@ format:
 
 
 
-## First, what CLS is about
+## first, what CLS is about
 
 * Computational Literary Studies
 * Aimed at analyzing (large amounts of) textual data...
@@ -83,7 +83,7 @@ format:
 
 
 
-## What makes them different?
+## what makes them different?
 
 text A:
 
@@ -169,7 +169,7 @@ stylo(frequencies = galbraith, gui = FALSE, analysis.type = "BCT", mfw.min = 100
 
 
 
-## Text analysis software
+## text analysis software
 
 - Mallet
 - Gensim
@@ -242,7 +242,7 @@ consciousness dared enjoyment tone listen exclaimed features seated continually 
 
 
 
-## Roman de la Rose sequentially
+## _Roman de la Rose_ sequentially
 
 ![](https://raw.githubusercontent.com/computationalstylistics/stylo_nutshell/master/img/rolling-svm_100-features_5000-per-slice.png){height=450}
 
@@ -260,7 +260,7 @@ consciousness dared enjoyment tone listen exclaimed features seated continually 
 ![](https://dracor.org/img/merch/oedipus-tyrannus-print.png){height=700}
 
 
-## Perception of literary quality
+## perception of literary quality
 
 ![](lit_quality.png){height=550}
 
@@ -321,16 +321,16 @@ IN EX VB IN DT NN , IN DT VBP VBN VBN TO VB , DT JJR NN IN DT RB JJ NN IN VBZ TO
 * translating all the texts into a single language
 * either to source language, ot to target language
 * alternatively: to a meta-language
-* contemporary English a convenient meta-language
+* contemporary English as a convenient meta-language
 * allows for immediate comparisons
 * topic modeling possible
 
 
-## Campanella, _Civitas Solis_ (fragm.)
+## T. Campanella, _Civitas Solis_ (fragm.)
 
 Attolitur ex amplissima planitie collis ingens, super quo maior pars civitatis fundata est. At multiplices illius ambitus exponuntur ad multum spatium extra montis radices, qui ea constat magnitudine, qua civitatis diameter duo et plus milliaria continet, ut circuitus sit septem. At ex gibbositate plura capit, quam si in planitie foret. Distincta est in septem gyros ambitusve ingentes, a septem planetis nominatos, et ab altero in alterum per quatuor strata viarum intratur, perque portas quatuor ad mundi angulos quatuor spectantes. Et profecto sic aedificata est, ut si quis primum expugnaret gyrum, necesse habet duplicato labore expugnare secundum; et maiori tertium, ac semper geminare vires, laboresque. Quapropter septies expugnanda est volenti eam subiugare. Ego tamen iudicio nec primum posse occupari ambitum ita crassus est, terra plenus, munitus propugnaculis, turribus, bombardis, et fossis.
 
-## Automated translation (gemma3n)
+## automated translation (gemma3n)
 
 A vast and towering hill rises from the widest plain, upon which the
 greater part of the city is founded. Its extensive circumference extends
@@ -347,7 +347,7 @@ besieged seven times to subdue it. However, in my judgment, it is not
 easily taken in the first place, being full of land, fortified with
 ramparts, towers, bombardments, and ditches.
 
-## Notes on the Translation
+## notes on the translation
 
 *   **"Collis ingens"**: Translated as "towering hill" to convey the
 impressive scale.
@@ -365,7 +365,7 @@ straightforward translation.
 *   . . . 
 
 
-## Conclusions
+## conclusions
 
 
 - difficult to compare texts in different languages
