@@ -502,6 +502,8 @@ $$p(y) = \frac{1}{1 + e^{-(a + bx)}}$$
 * wszytko > wszystko 
 * abo > albo 
 
+[**Górski, R. L. and Eder, M.** (2023). Modeling the dynamics of language change: logistic regression, Piotrowski’s law, and a handful of examples in Polish. _Journal of Quantitative Linguistics_, 30(1): 125–51]
+
 
 
 ## Corpus (_in statu nascendi..._)
