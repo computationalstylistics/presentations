@@ -9,9 +9,9 @@ date-format: "DD/MM/YYYY"
 format: 
   revealjs:
     multiplex: false
-    theme: pp.scss
-    logo: logo_ijp.png
-    css: big_logo.css
+    theme: files/pp.scss
+    logo: files/logo_ijp.png
+    css: files/big_logo.css
     slide-number: c/t
 ---
 
@@ -64,6 +64,7 @@ my.dummy.variable = "
 
 ```
 
+# Introduction
 
 
 ## Why quantitative analysis?
@@ -131,7 +132,7 @@ boxplot(sie_w_100_powiesciach, dabrowska, col = c(rgb(1,0,0,0.5), rgb(0,0,1,0.5)
 
 
 ```{r fig-1a, echo = FALSE, message = FALSE}
-txt = readLines("Austen_Pride_tagged.txt")
+txt = readLines("files/Austen_Pride_tagged.txt")
 sentences = lapply(txt, function(x) unlist(strsplit(unlist(strsplit(x, " ")), ".*_")))
 NN = unlist(lapply(sentences, function(y) length(grep("NN", y))))
 PR = unlist(lapply(sentences, function(y) length(grep("PR", y))))
@@ -166,7 +167,7 @@ p
 <iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=cognitive+linguistics,generative+linguistics&year_start=1920&year_end=2022&corpus=en&smoothing=10" width=900 height=500 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no></iframe>
 -->
 
-![](img/ngram_viewer_1.png)
+![](files/ngram_viewer_1.png)
 
 
 
@@ -176,7 +177,7 @@ p
 <iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=cognitive+linguistics,generative+linguistics&year_start=1920&year_end=2022&corpus=en&smoothing=0" width=900 height=500 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no></iframe>
 -->
 
-![](img/ngram_viewer_2.png)
+![](files/ngram_viewer_2.png)
 
 
 # Towards a model
@@ -737,12 +738,22 @@ p
 
 
 
-## Conclusions
+## Conclusions 1
 
-* Traditional periodization (old-Polish, middle-Polish, new-Polish) seems to be oversimplified
-* Difficult to define clear-cut periods of the history of Polish
-* Should be expect that the other changes also followed Piotrowski's law?
-* Difficult to say why the model fails, sometimes.
+- Traditional periodization (old-Polish, middle-Polish, new-Polish) seems to be oversimplified
+- Difficult to define clear-cut periods of the history of Polish
+- Should be expect that the other changes also followed Piotrowski's law?
+- Difficult to say why the model (sometimes) fails. 
+
+
+## Conclusions 2
+
+- Logistic regression = a transformed linear regression
+- Suitable to model a binary variable (e.g. the proportion of _A_ vs. _B_)
+- Useful to explain a certain type of language change
+- Also: useful to explore languages in contact
+- Can be further generalized, to address categorial variables
+
 
 
 # Thank you!
