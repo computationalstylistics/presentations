@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/tabby.min.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.24">
+
+  <meta name="author" content="Maciej Eder">
+  <meta name="dcterms.date" content="2026-02-04">
+  <title>Text Mining</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-b4abc4e1d6877d67383f2b6049bdd647.css">
+  <link rel="stylesheet" href="big_logo_DigiTS.css">
+  <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Text Mining</h1>
+  <p class="subtitle">or how to Read Lots of Texts with no Time</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Maciej Eder 
+</div>
+        <p class="quarto-title-affiliation">
+            University of Tartu | Polish Academy of Sciences
+          </p>
+    </div>
+</div>
+
+  <p class="date">2026-02-04</p>
+</section>
+<section>
+<section id="text-mining-why-bother" class="title-slide slide level1 center">
+<h1>text mining – why bother?</h1>
+
+</section>
+<section id="motivation" class="slide level2">
+<h2>Motivation</h2>
+<ul>
+<li>Information retrieval:
+<ul>
+<li>How to “read” a big collection of documents, e.g.&nbsp;an archive?</li>
+<li>How to get relevant websites using search engines?</li>
+<li>How to fine-grain the results for ‘apple’ (1. a fruit, 2. a company)</li>
+</ul></li>
+<li>Linguistics:
+<ul>
+<li>What is the underlying model for defining word meaning?</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="distributional-semantics" class="title-slide slide level1 center">
+<h1>distributional semantics</h1>
+
+</section>
+<section id="meaning-defined-by-the-context" class="slide level2">
+<h2>Meaning defined by the context</h2>
+<blockquote>
+<p>The meaning of words lies in their use.</p>
+</blockquote>
+<p>(Wittgenstein 1953: 80, 109)</p>
+<blockquote>
+<p>You shall know a word by the company it keeps.</p>
+</blockquote>
+<p>(Firth 1962: 11)</p>
+</section>
+<section id="distributional-semantics-1" class="slide level2">
+<h2>Distributional semantics</h2>
+<ul>
+<li>A set of methods that make <strong>no assumption</strong> as to words’ relations and/or functions</li>
+<li>Meaning of the words is <strong>inferred</strong> from their:
+<ul>
+<li>Frequency</li>
+<li>Context</li>
+</ul></li>
+<li>These methods include:
+<ul>
+<li>Keyword analysis</li>
+<li>Collocations</li>
+<li>Topic modeling</li>
+<li>Word embeddings</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="keywords-analysis" class="title-slide slide level1 center">
+<h1>keywords analysis</h1>
+
+</section>
+<section id="keywords-in-information-extraction" class="slide level2">
+<h2>Keywords in information extraction</h2>
+<ul>
+<li>Extracting the contents, by identifying the most <strong>meaningful</strong> words</li>
+<li>The goal is to compare a text against a corpus</li>
+<li>Keyword = a word significantly more frequent in a given text</li>
+</ul>
+</section>
+<section id="emily-bronte-the-wuthering-heights" class="slide level2">
+<h2>Emily Bronte, <em>The Wuthering Heights</em></h2>
+<p>heathcliff, linton, catherine, hareton, earnshaw, cathy, edgar, ellen, heights, hindley, nelly, ll, grange, i, wuthering, t, joseph, isabella, master, gimmerton, zillah, m, exclaimed, he, thrushcross, and, answered, yah, kenneth, ve, maister, lockwood, kitchen, you, dean, moors, replied, cried, him, muttered, lintons, papa, she, till, commenced, on, wer, ech, shoo, leant, hearth, bonny, door, stairs, hell, me, crags, moor, wouldn, fiend, settle, jabez, penistone, fire, ye, its, bid, nowt, naught, yer, hush, mistress, grew, lad, compelled, minny, won, hisseln, skulker, soa, wisht, cousin, lattice, didn, yon, minute, lass, needn, inquired, snow, branderham, flaysome, gooid, sud, thear, affirming, interrupted, couldn, window, …</p>
+</section>
+<section id="a-simple-idea" class="slide level2">
+<h2>A simple idea…</h2>
+<blockquote>
+<p>I have just returned from a visit to my landlord – the solitary neighbour that I shall be troubled with.</p>
+</blockquote>
+<p>neighbour solitary troubled landlord visit returned just shall from I have be with my that a to the</p>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-1-1.png" width="864" class="r-stretch"></section></section>
+<section>
+<section id="collocations" class="title-slide slide level1 center">
+<h1>collocations</h1>
+
+</section>
+<section id="collocations-in-corpus-linguistics" class="slide level2">
+<h2>Collocations in corpus linguistics</h2>
+<ul>
+<li>A collocation is a pair of words that co-occur more often than would be expected by chance.</li>
+<li>Typical collocations are idioms, as <em>hot potato</em>, and phrasal verbs.</li>
+<li>Word frequencies used to calculate co-occurence probabilities.</li>
+</ul>
+</section>
+<section id="word-frequencies-as-probabilities" class="slide level2">
+<h2>Word frequencies as probabilities</h2>
+<ul>
+<li>Probability of finding a word A in a corpus is <span class="math inline">\(P(A)\)</span></li>
+<li>Probability of finding a word B in a corpus is <span class="math inline">\(P(B)\)</span></li>
+<li>Probability of finding them together is <span class="math inline">\(P(A) \times P(B)\)</span></li>
+</ul>
+<p>An example: <span class="math display">\[ P(A) = 0.001 \quad\quad P(B) = 0.002 \quad\quad P(A) \times P(B) = 0.000002 \]</span></p>
+</section>
+<section id="collocations-in-corpus-linguistics-1" class="slide level2">
+<h2>Collocations in corpus linguistics</h2>
+<ul>
+<li>However, some words tend to ‘like’ each other…</li>
+<li>… despite their theoretical probabilities.</li>
+<li><em>Cf.</em>:</li>
+</ul>
+<p>strong tea — *powerful tea</p>
+<p>powerful computer — *strong computer</p>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="topic-modeling" class="title-slide slide level1 center">
+<h1>topic modeling</h1>
+
+</section>
+<section id="whats-the-aim" class="slide level2">
+<h2>What’s the aim?</h2>
+<ul>
+<li>To discover hidden thematic structure in large collections of texts…</li>
+<li>… without any prior knowledge about word meanings or grammar.</li>
+</ul>
+</section>
+<section id="assumptions" class="slide level2">
+<h2>Assumptions</h2>
+<ul>
+<li>Certain words tend to occur more frequently in a text covering a given topic than in other texts.</li>
+<li>Texts are usually about many topics.</li>
+<li>A topic is a recurring pattern of co-occurring words.</li>
+</ul>
+</section>
+<section id="what-is-a-topic" class="slide level2">
+<h2>What is a topic?</h2>
+<blockquote>
+<p>We formally define a topic to be a distribution over a fixed vocabulary. For example, the <em>genetics</em> topic has words about genetics with high probability and the evolutionary biology topic has words about <em>evolutionary biology</em> with high probability.</p>
+</blockquote>
+<p>(Blei 2012, 78)</p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+
+<img data-src="img_and_data/lda_blei_1.png" class="r-stretch"></section>
+<section id="latent-dirichlet-allocation-lda" class="slide level2">
+<h2>Latent Dirichlet Allocation (LDA)</h2>
+<ul>
+<li>Each <strong>topic</strong> is a distribution over words</li>
+<li>Each <strong>document</strong> is a mixture of corpus-wide topics</li>
+<li>Each <strong>word</strong> is drawn from one of those topics</li>
+</ul>
+</section>
+<section id="latent-dirichlet-allocation-lda-1" class="slide level2">
+<h2>Latent Dirichlet Allocation (LDA)</h2>
+<ul>
+<li>in reality, we only observe the documents</li>
+<li>the other structure are <strong>hidden variables</strong></li>
+<li>the goal is <strong>to infer</strong> the hidden variables</li>
+</ul>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+
+<img data-src="img_and_data/lda_blei_2.png" class="r-stretch"></section>
+<section id="assumptions-cont." class="slide level2">
+<h2>Assumptions (cont.)</h2>
+<ul>
+<li>The order of words is not relevant (“bag of words”)</li>
+<li>The order of documents is not relevant</li>
+<li>The number of topics is fixed and known in advance</li>
+</ul>
+</section>
+<section id="a-topic-50-top-words" class="slide level2">
+<h2>A topic (50 top words)</h2>
+<p>fight soldier arms war soldiers field fly sword horse valiant march battle brave messenger arm army trumpet valour kings camp alarum walls join wars slain tent forces gates drum courage trumpets lion town fought foes english armour city saint guard colours victory herald swords fame armed country wounds plain safe …</p>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-2-1.png" width="864" class="r-stretch"></section></section>
+<section>
+<section id="shakespeare" class="title-slide slide level1 center">
+<h1>Shakespeare</h1>
+
+</section>
+<section id="topics-in-the-shakespearean-canon" class="slide level2">
+<h2>Topics in the Shakespearean canon</h2>
+<ul>
+<li>a corpus of 42 texts by Shakespeare…</li>
+<li>… sliced into samples of 1000 words each</li>
+<li>topic model inferred:
+<ul>
+<li>LDA algorithm</li>
+<li>25 topics</li>
+<li>excluded speakers’ names</li>
+<li>excluded common stop words</li>
+<li>topics visualized using wordclouds</li>
+</ul></li>
+</ul>
+</section>
+<section id="fights-swords-topic-6" class="slide level2">
+<h2>Fights &amp; swords (topic 6)</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+<section id="family-relations-topic-21" class="slide level2">
+<h2>Family relations (topic 21)</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<section id="tears-sorrow-topic-24" class="slide level2">
+<h2>Tears &amp; sorrow (topic 24)</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
+<section id="night-sleep-topic-23" class="slide level2">
+<h2>Night &amp; sleep (topic 23)</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
+<section id="face-kisses-topic-8" class="slide level2">
+<h2>Face &amp; kisses (topic 8)</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
+<section id="love-topic-5" class="slide level2">
+<h2>Love (topic 5)</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
+<section id="the-elements-topic-10" class="slide level2">
+<h2>The elements (topic 10)</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
+<section id="people-topic-15" class="slide level2">
+<h2>People? (topic 15)</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
+<section id="a-mixture-of-everything-topic-17" class="slide level2">
+<h2>A mixture of everything? (topic 17)</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
+<section id="how-to-interpret-topics" class="slide level2">
+<h2>How to interpret topics?</h2>
+<blockquote>
+<p>Indeed calling these models “topic models” is retrospective – the topics that emerge from the inference algorithm are interpretable for almost any collection that is analyzed. The fact that these look like topics has to do with the statistical structure of observed language and how it interacts with the specific probabilistic assumptions of LDA.</p>
+</blockquote>
+<p>(Blei 2012, 79)</p>
+</section>
+<section id="topics-in-documents" class="slide level2">
+<h2>Topics in documents</h2>
+<ul>
+<li>Each document contains (many) topics.</li>
+<li>The proportions of these topics can be plotted.</li>
+</ul>
+</section>
+<section id="the-climax-of-romeo-and-juliet" class="slide level2">
+<h2>The climax of <em>Romeo and Juliet</em></h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
+<section id="the-beginnig-of-the-tempest" class="slide level2">
+<h2>The beginnig of <em>The Tempest</em></h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"></section>
+<section id="a-midsummer-nights-dream" class="slide level2">
+<h2><em>A Midsummer Night’s Dream</em></h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section></section>
+<section>
+<section id="topics-genres" class="title-slide slide level1 center">
+<h1>topics &amp; genres</h1>
+
+</section>
+<section id="topics-vs.-genres" class="slide level2">
+<h2>Topics vs.&nbsp;genres</h2>
+<ul>
+<li>Proportions of topics can be used as features in machine learning.</li>
+<li>Will the topic structure corroborate the traditional division into Shakespearean genres?
+<ul>
+<li>red: comedies</li>
+<li>orange: tragedies</li>
+<li>green: histories</li>
+<li>black: romances</li>
+<li>blue: poetry</li>
+</ul></li>
+</ul>
+</section>
+<section id="topics-vs.-genres-cluster-analysis" class="slide level2">
+<h2>Topics vs.&nbsp;genres – cluster analysis</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section>
+<section id="topics-vs.-genres-pca" class="slide level2">
+<h2>Topics vs.&nbsp;genres – PCA</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch"></section>
+<section id="topics-vs.-genres-pca-1" class="slide level2">
+<h2>Topics vs.&nbsp;genres – PCA</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-17-1.png" width="960" class="r-stretch"></section>
+<section id="topics-vs.-genres-1" class="slide level2">
+<h2>Topics vs.&nbsp;genres</h2>
+
+<img data-src="img_and_data/topics_in_docs.png" class="r-stretch"></section>
+<section id="titus-andronicus" class="slide level2">
+<h2><em>Titus Andronicus</em></h2>
+
+<img data-src="img_and_data/topics_titus.png" class="r-stretch"></section>
+<section id="the-tempest" class="slide level2">
+<h2><em>The Tempest</em></h2>
+
+<img data-src="img_and_data/topics_tempest.png" class="r-stretch"></section>
+<section id="hamlet" class="slide level2">
+<h2><em>Hamlet</em></h2>
+
+<img data-src="img_and_data/topics_hamlet.png" class="r-stretch"></section></section>
+<section>
+<section id="topics-over-time" class="title-slide slide level1 center">
+<h1>topics over time</h1>
+
+</section>
+<section id="topics-in-teksty-drugie" class="slide level2">
+<h2>Topics in “Teksty Drugie”</h2>
+<ul>
+<li>main Polish journal on literary theory</li>
+<li>founded in the 70’s under the title <em>Teksty</em> (<em>The Texts</em>)</li>
+<li>banned by the communist government in 1981</li>
+<li>re-established in the 90’s as <em>Teksty Drugie</em> (<em>The Second Texts</em>)</li>
+<li>digitized version available</li>
+</ul>
+</section>
+<section id="how-did-the-topics-change-over-time" class="slide level2">
+<h2>How did the topics change over time?</h2>
+<ul>
+<li>texts lemmatized</li>
+<li>stopwords removed</li>
+<li>proper nouns (= NER) removed</li>
+<li>120 topics inferred</li>
+<li>topics labelled manually</li>
+</ul>
+</section>
+<section id="increasing-patterns" class="slide level2">
+<h2>Increasing patterns</h2>
+
+<img data-src="img_and_data/TD_increasing.png" class="r-stretch"></section>
+<section id="decreasing-patterns" class="slide level2">
+<h2>Decreasing patterns</h2>
+
+<img data-src="img_and_data/TD_decreasing.png" class="r-stretch"></section>
+<section id="u-shaped-patterns" class="slide level2">
+<h2>U-shaped patterns</h2>
+
+<img data-src="img_and_data/TD_u-shaped.png" class="r-stretch"></section>
+<section id="no-clear-trend" class="slide level2">
+<h2>No clear trend</h2>
+
+<img data-src="img_and_data/TD_no-trend.png" class="r-stretch"></section></section>
+<section>
+<section id="trivia" class="title-slide slide level1 center">
+<h1>trivia</h1>
+
+</section>
+<section id="implementations" class="slide level2">
+<h2>Implementations</h2>
+<ul>
+<li><a href="http://mallet.cs.umass.edu/">Mallet</a> (Java)</li>
+<li><a href="https://nlp.stanford.edu/software/tmt/tmt-0.4/">Stanford Topic Modeling Toolbox</a> (Java)</li>
+<li><a href="https://radimrehurek.com/gensim/">gensim</a> (Python)</li>
+<li><a href="https://github.com/lda-project/lda">lda</a> (Python)</li>
+<li><a href="https://cran.r-project.org/web/packages/topicmodels/index.html">topicmodels</a> (R)</li>
+<li><a href="https://cran.r-project.org/web/packages/mallet/index.html">Mallet invoked from R</a> (R + Java)</li>
+<li><a href="https://dariah-de.github.io/TopicsExplorer/"><strong>DARIAH Topic Explorer</strong></a> (standalone)</li>
+</ul>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="UT_logo.svg" class="slide-logo"></p>
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="index_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="index_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="index_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="index_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="index_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
