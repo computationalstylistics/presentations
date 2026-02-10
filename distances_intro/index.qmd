@@ -1,0 +1,429 @@
+---
+title: "Distance Measures"
+subtitle: "how a comparison looks like, really"
+author: 
+    name: Maciej Eder
+    affiliation: Polish Academy of Sciences | University of Tartu
+format: 
+  revealjs:
+    theme: pp.scss
+    #logo: UT_logo.svg
+    logo: csg.png
+    css: medium_logo.css
+    self_contained: true
+    #incremental: true
+---
+
+
+
+
+
+## What makes them different?
+
+text A:
+
+    I have just returned from a visit to my landlord - the solitary neighbour that I shall be troubled with. This is certainly a beautiful country! In all England, I do not believe that I could have fixed on a situation so completely removed from the stir of society. A perfect misanthropist's heaven: and Mr. Heathcliff and I are such a suitable pair to divide the desolation between us. A capital fellow!
+
+
+text B:
+
+    OF MANS First Disobedience, and the Fruit
+    Of that Forbidden Tree, whose mortal tast
+    Brought Death into the World, and all our woe,
+    With loss of Eden, till one greater Man
+    Restore us, and regain the blissful Seat,
+    Sing Heav'nly Muse, that on the secret top
+    Of Oreb, or of Sinai, didst inspire
+    That Shepherd, who first taught the chosen Seed,
+    In the Beginning how the Heav'ns and Earth
+    Rose out of Chaos: or if Sion Hill
+    Delight thee more, and Siloa's Brook that flow'd
+    Fast by the Oracle of God; I thence
+    Invoke thy aid to my adventrous Song,
+
+
+## how to compare a set of texts?
+
+* extracting valuable (i.e. countable) language features from texts
+  * frequencies of words 👈
+  * frequencies of syllables
+  * versification patterns
+  * distribution of topics
+  * ...
+* comparing these features by means of multivariate analysis
+  * distance-based methods 👈
+  * neural networks
+  * ...
+
+
+
+## from words to features
+
+> ‘It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.’ </br> (J. Austen, _Pride and Prejudice_)
+
+<p>“<span style="color: red;">the</span>” = 3.52%</p>
+<p>“<span style="color: red;">to</span>” = 3.39%</p>
+<p>“<span style="color: red;">of</span>” = 2.94%</p>
+<p>“<span style="color: red;">a</span>” = 1.59%</p>
+<p>“<span style="color: red;">in</span>” = 1.53%</p>
+<p>“<span style="color: red;">was</span>” = 1.50%</p>
+<p><span style="color: red;">. . .</span></p>
+
+
+
+
+## from features to representations
+
+
+``` txt
+
+the     and     to      of      a       was     I       in      he      that    it      ...
+
+5.624   3.782   2.074   2.597   1.916   1.313   1.492   1.419   1.221   0.825   0.872   ...
+```
+
+
+
+## from representations to similarities
+
+
+```{r, echo = FALSE, message = FALSE}
+library(stylo)
+data(galbraith)
+data(lee)
+round(galbraith[1:19,1:8], 3)
+```
+
+
+
+## what we hope to get 
+
+```{r, echo = FALSE, message = FALSE, fig.align = "center"}
+stylo(frequencies = galbraith, gui = FALSE, analysis.type = "BCT", mfw.min = 100, mfw.max = 1000, titles.on.graphs = FALSE)
+```
+
+
+# some theory
+
+
+
+## what is a distance?
+
+take any two texts:
+
+```{r, echo = FALSE, message = FALSE}
+galbraith = round(galbraith, 3)
+galbraith[c(13,24), 1:11]
+```
+
+subtract the values vertically:
+
+```{r, echo = FALSE, message = FALSE}
+difference = galbraith[13, 1:11] - galbraith[24, 1:11]
+difference = t(as.matrix(difference))
+rownames(difference) = "      "
+difference
+```
+
+then drop the minuses:
+
+
+```{r, echo = FALSE, message = FALSE}
+rownames(difference) = "             "
+abs(difference)
+```
+
+sum up the obtained values:
+
+```{r, echo = FALSE, message = FALSE}
+sum(abs(difference))
+```
+
+
+# more theory
+
+
+
+## Burrows's Delta
+
+> the mean of the absolute differences between the z-scores for a set of word-variables in a given text-group and the z-scores for the same set of word-variables in a target text.
+
+
+
+
+## Formulated in a formal way
+
+Let assume we have two texts, $A$ and $B$, and a single feature (e.g. the word “the”) to be computed. The difference between $a$ and $b$ is then defined as: 
+
+$$ \delta = \left\vert a_{the} - b_{the} \right\vert $$
+
+
+
+
+## The simple idea behind Delta
+
+$$\delta = \frac{\left\vert a_1 - b_1 \right\vert + \left\vert a_2 - b_2 \right\vert + ... + \left\vert a_n - b_n \right\vert}{n} $$
+
+or conveniently:
+
+$$\delta = \frac{1}{n} \sum_{i=1}^n{\left\vert a_i - b_i \right\vert} $$
+
+
+
+
+
+
+
+
+
+
+
+
+
+## pairwise similarities between texts
+
+|                | Milton (_Samson_) | Milton (_Paradise_) | Keats (_Hyperion_) | Patmore (_Eros_) | Browning (_Bishop_) |
+|----------------|-----------------|--------------------|------------------|---------------|-------------------|
+| “the”          | 4.57            | 4.24               | 4.25             | 4.19           | 4.47              |
+| “to”           | 3.11            | 3.29               | 3.43             | 3.14           | 3.71              |
+| “and”          | 3.19            | 3.0                | 3.08             | 2.85           | 2.81              |
+| “of”           | 2.6             | 3.0                | 2.63             | 2.43           | 2.86              |
+| “I”            | 2.17            | 2.2                | 2.13             | 2.42           | 2.22              |
+| “a”            | 2.24            | 1.92               | 1.92             | 2.21           | 1.92              |
+| . . .          | . . .           | . . .              | . . .          | . . .           | . . .          |
+
+
+
+
+## pairwise similarities between texts
+
+|                | <span style="color:red">Milton (_Samson_)</span> | <span style="color:red">Milton (_Paradise_)</span> | Keats (_Hyperion_) | Patmore (_Eros_) | Browning (_Bishop_) |
+|----------------|-----------------|--------------------|------------------|---------------|-------------------|
+| “the”          | <span style="color:red">4.57</span>            | <span style="color:red">4.24</span>               | 4.25             | 4.19           | 4.47              |
+| “to”           | <span style="color:red">3.11</span>            | <span style="color:red">3.29</span>               | 3.43             | 3.14           | 3.71              |
+| “and”          | <span style="color:red">3.19</span>            | <span style="color:red">3.0</span>                | 3.08             | 2.85           | 2.81              |
+| “of”           | <span style="color:red">2.6</span>             | <span style="color:red">3.0</span>                | 2.63             | 2.43           | 2.86              |
+| “I”            | <span style="color:red">2.17</span>            | <span style="color:red">2.2</span>                | 2.13             | 2.42           | 2.22              |
+| “a”            | <span style="color:red">2.24</span>            | <span style="color:red">1.92</span>               | 1.92             | 2.21           | 1.92              |
+| . . .          | <span style="color:red">. . .</span>           | <span style="color:red">. . .</span>              | . . .          | . . .           | . . .          |
+
+
+
+## pairwise similarities between texts
+
+|                | <span style="color:red">Milton (_Samson_)</span> | <span style="color:red">Milton (_Paradise_)</span> | Keats (_Hyperion_) | Patmore (_Eros_) | Browning (_Bishop_) |
+|----------------|-----------------|--------------------|------------------|---------------|-------------------|
+| “the”          | <span style="color:blue">4.57</span>            | <span style="color:blue">4.24</span>               | 4.25             | 4.19           | 4.47              |
+| “to”           | <span style="color:red">3.11</span>            | <span style="color:red">3.29</span>               | 3.43             | 3.14           | 3.71              |
+| “and”          | <span style="color:red">3.19</span>            | <span style="color:red">3.0</span>                | 3.08             | 2.85           | 2.81              |
+| “of”           | <span style="color:red">2.6</span>             | <span style="color:red">3.0</span>                | 2.63             | 2.43           | 2.86              |
+| “I”            | <span style="color:red">2.17</span>            | <span style="color:red">2.2</span>                | 2.13             | 2.42           | 2.22              |
+| “a”            | <span style="color:red">2.24</span>            | <span style="color:red">1.92</span>               | 1.92             | 2.21           | 1.92              |
+| . . .          | <span style="color:red">. . .</span>           | <span style="color:red">. . .</span>              | . . .          | . . .           | . . .          |
+
+
+## pairwise similarities between texts
+
+|                | <span style="color:red">Milton (_Samson_)</span> | <span style="color:red">Milton (_Paradise_)</span> | Keats (_Hyperion_) | Patmore (_Eros_) | Browning (_Bishop_) |
+|----------------|-----------------|--------------------|------------------|---------------|-------------------|
+| “the”          | <span style="color:red">4.57</span>            | <span style="color:red">4.24</span>               | 4.25             | 4.19           | 4.47              |
+| “to”           | <span style="color:blue">3.11</span>            | <span style="color:blue">3.29</span>               | 3.43             | 3.14           | 3.71              |
+| “and”          | <span style="color:red">3.19</span>            | <span style="color:red">3.0</span>                | 3.08             | 2.85           | 2.81              |
+| “of”           | <span style="color:red">2.6</span>             | <span style="color:red">3.0</span>                | 2.63             | 2.43           | 2.86              |
+| “I”            | <span style="color:red">2.17</span>            | <span style="color:red">2.2</span>                | 2.13             | 2.42           | 2.22              |
+| “a”            | <span style="color:red">2.24</span>            | <span style="color:red">1.92</span>               | 1.92             | 2.21           | 1.92              |
+| . . .          | <span style="color:red">. . .</span>           | <span style="color:red">. . .</span>              | . . .          | . . .           | . . .          |
+
+
+
+## pairwise similarities between texts
+
+|                | <span style="color:red">Milton (_Samson_)</span> | <span style="color:red">Milton (_Paradise_)</span> | Keats (_Hyperion_) | Patmore (_Eros_) | Browning (_Bishop_) |
+|----------------|-----------------|--------------------|------------------|---------------|-------------------|
+| “the”          | <span style="color:red">4.57</span>            | <span style="color:red">4.24</span>               | 4.25             | 4.19           | 4.47              |
+| “to”           | <span style="color:red">3.11</span>            | <span style="color:red">3.29</span>               | 3.43             | 3.14           | 3.71              |
+| “and”          | <span style="color:blue">3.19</span>            | <span style="color:blue">3.0</span>                | 3.08             | 2.85           | 2.81              |
+| “of”           | <span style="color:red">2.6</span>             | <span style="color:red">3.0</span>                | 2.63             | 2.43           | 2.86              |
+| “I”            | <span style="color:red">2.17</span>            | <span style="color:red">2.2</span>                | 2.13             | 2.42           | 2.22              |
+| “a”            | <span style="color:red">2.24</span>            | <span style="color:red">1.92</span>               | 1.92             | 2.21           | 1.92              |
+| . . .          | <span style="color:red">. . .</span>           | <span style="color:red">. . .</span>              | . . .          | . . .           | . . .          |
+
+
+## pairwise similarities between texts
+
+|                | <span style="color:red">Milton (_Samson_)</span> | <span style="color:red">Milton (_Paradise_)</span> | Keats (_Hyperion_) | Patmore (_Eros_) | Browning (_Bishop_) |
+|----------------|-----------------|--------------------|------------------|---------------|-------------------|
+| “the”          | <span style="color:red">4.57</span>            | <span style="color:red">4.24</span>               | 4.25             | 4.19           | 4.47              |
+| “to”           | <span style="color:red">3.11</span>            | <span style="color:red">3.29</span>               | 3.43             | 3.14           | 3.71              |
+| “and”          | <span style="color:red">3.19</span>            | <span style="color:red">3.0</span>                | 3.08             | 2.85           | 2.81              |
+| “of”           | <span style="color:blue">2.6</span>             | <span style="color:blue">3.0</span>                | 2.63             | 2.43           | 2.86              |
+| “I”            | <span style="color:red">2.17</span>            | <span style="color:red">2.2</span>                | 2.13             | 2.42           | 2.22              |
+| “a”            | <span style="color:red">2.24</span>            | <span style="color:red">1.92</span>               | 1.92             | 2.21           | 1.92              |
+| . . .          | <span style="color:red">. . .</span>           | <span style="color:red">. . .</span>              | . . .          | . . .           | . . .          |
+
+
+
+
+
+
+
+
+## pairwise similarities between texts
+
+|                | <span style="color:red">Milton (_Samson_)</span> | Milton (_Paradise_) | <span style="color:red">Keats (_Hyperion_)</span> | Patmore (_Eros_) | Browning (_Bishop_) |
+|----------------|-----------------|--------------------|------------------|---------------|-------------------|
+| “the”          | <span style="color:red">4.57</span>            | 4.24               | <span style="color:red">4.25</span>             | 4.19           | 4.47              |
+| “to”           | <span style="color:red">3.11</span>            | 3.29               | <span style="color:red">3.43</span>             | 3.14           | 3.71              |
+| “and”          | <span style="color:red">3.19</span>            | 3.0                | <span style="color:red">3.08</span>             | 2.85           | 2.81              |
+| “of”           | <span style="color:red">2.6</span>             | 3.0                | <span style="color:red">2.63</span>             | 2.43           | 2.86              |
+| “I”            | <span style="color:red">2.17</span>            | 2.2                | <span style="color:red">2.13</span>             | 2.42           | 2.22              |
+| “a”            | <span style="color:red">2.24</span>            | 1.92               | <span style="color:red">1.92</span>             | 2.21           | 1.92              |
+| . . .          | <span style="color:red">. . .</span>           | . . .              | <span style="color:red">. . .</span>          | . . .           | . . .          |
+
+
+
+
+## Multivariate aka multidimensional
+
+The features (“the”, “to”, “and”, ...) are sometimes called <span style="color:red">variables</span>.
+
+Consequently, the methods in question are <span style="color:red">multivariate</span>.
+
+More intriguing is the name <span style="color:red">multidimensional</span>.
+
+Should I be afraid of multidimensionality? (well, you were there already, and you dind't even blink!)
+
+
+
+# multidimensionality
+
+
+
+## Two texts, one dimension (i.e. one word) 
+
+<p align="center">
+    <img src="img/multidimensionality_01.svg" width="1000">
+</p>
+
+
+## Two texts, one dimension, one difference
+
+<p align="center">
+    <img src="img/multidimensionality_02.svg" width="1000">
+</p>
+
+
+## Two texts and two dimensions
+
+<p align="center">
+    <img src="img/multidimensionality_03.svg" width="1000">
+</p>
+
+
+## Constructing a two-dimensional space
+
+<p align="center">
+    <img src="img/multidimensionality_04.svg" width="1000">
+</p>
+
+
+## Constructing a two-dimensional space
+
+<p align="center">
+    <img src="img/multidimensionality_05.svg" width="1000">
+</p>
+
+
+
+## Two texts, two dimensions
+
+<p align="center">
+    <img src="img/multidimensionality_06.svg" width="1000">
+</p>
+
+
+
+## Two texts and three dimensions
+
+<p align="center">
+    <img src="img/multidimensionality_07.svg" width="1000">
+</p>
+
+
+
+## Constructing a three-dimensional space
+
+<p align="center">
+    <img src="img/multidimensionality_08.svg" width="1000">
+</p>
+
+
+
+## Constructing a three-dimensional space
+
+<p align="center">
+    <img src="img/multidimensionality_09.svg" width="1000">
+</p>
+
+
+
+## Constructing a three-dimensional space
+
+<p align="center">
+    <img src="img/multidimensionality_10.svg" width="1000">
+</p>
+
+
+
+## Introducing the fourth dimension
+
+<p align="center">
+    <img src="img/multidimensionality_11.svg" width="1000">
+</p>
+
+
+
+## Introducing the fourth dimension
+
+four-dimensional space:
+
+$$\delta = \frac{\left\vert a_1 - b_1 \right\vert + \left\vert a_2 - b_2 \right\vert + \left\vert a_3 - b_3 \right\vert + \left\vert a_4 - b_4 \right\vert}{4} $$
+
+five-dimensional space:
+
+$$\delta = \frac{\left\vert a_1 - b_1 \right\vert + \left\vert a_2 - b_2 \right\vert + \left\vert a_3 - b_3 \right\vert + \left\vert a_4 - b_4 \right\vert + \left\vert a_5 - b_5 \right\vert}{5} $$
+
+$n$-dimensional space:
+
+$$\delta = \frac{\left\vert a_1 - b_1 \right\vert + \left\vert a_2 - b_2 \right\vert + ... + \left\vert a_n - b_n \right\vert}{n} $$
+
+
+
+# distances in a space
+
+
+## closest possible distance
+
+![](img/euclidean_distance.png)
+
+
+
+
+## actual distance to pass
+
+![](img/manhattan_distance.png)
+
+
+
+
+## Manhattan vs. Euclidean
+
+![](img/ManhEuclid.png){height=500}
+
+
+# which distance, then?
+
+
+
+
+
