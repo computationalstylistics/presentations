@@ -1,0 +1,219 @@
+---
+title: "Rolling Stylometry"
+subtitle: "intro to a sequential analysis of style"
+author: 
+    name: Maciej Eder
+    affiliation: Polish Academy of Sciences | University of Tartu
+format: 
+  revealjs:
+    theme: pp.scss
+    #logo: UT_logo.svg
+    logo: csg.png
+    css: medium_logo.css
+    self_contained: true
+    #incremental: true
+---
+
+
+
+
+
+# Authorship attribution
+
+
+
+
+
+## Non-traditional authorship attribution
+
+Given:
+
+* a text of uncertain or anonymous authorship, and
+* a comparison corpus of texts by known authors,
+
+is it possible to find the **'nearest neighbor'**
+among the available candidates?
+
+
+
+
+
+
+
+## Example: _Prometheus Bound_
+
+* Aeschylus known for his 7 tragedies
+* _Prometheus Bound_ somewhat odd, and thus disputed
+* Traditional arguments against Aeschylus' authorship
+    * Zeus depicted as a cruel tyrant
+    * slightly different versification patterns
+    * the third actor needed in one of the scenes
+
+
+
+
+## Stylometry: where it (usually) begins
+
+```{r, echo = FALSE, message = FALSE}
+library(stylo)
+load("greek_drama_freqs.RData")
+round(greek_drama[1:19,1:10], 3)
+```
+
+
+
+
+## Table of computed distances
+
+```{r, echo = FALSE, message = FALSE}
+round(as.matrix(dist.delta(greek_drama)), 4)[1:19,1:5]
+```
+
+
+
+## Hierarchical cluster analysis
+
+```{r, echo = FALSE, message = FALSE, fig.align = "center"}
+stylo(frequencies = greek_drama, gui = FALSE, titles.on.graphs = FALSE)
+```
+
+
+
+## Multidimensional scaling
+
+```{r, echo = FALSE, message = FALSE, fig.align = "center"}
+stylo(frequencies = greek_drama, gui = FALSE, analysis.type = "MDS", titles.on.graphs = FALSE)
+```
+
+
+
+## Bootstrap consensus tree
+
+```{r, echo = FALSE, message = FALSE, fig.align = "center"}
+stylo(frequencies = greek_drama, gui = FALSE, analysis.type = "BCT", mfw.min = 100, mfw.max = 1000, titles.on.graphs = FALSE)
+```
+
+
+
+
+
+# Rolling stylometry
+
+
+
+## Style in microscopic scale
+
+![](img/rolling-svm_magnifying_glass_small.png)
+
+
+
+
+## Sequential analysis
+
+![](img/rolling_stylo.png)
+
+
+
+## Roman de la Rose
+
+
+* 13th-century French allegorical poem...
+* ... of mixed authorship:
+    * Guillaume de Lorris (ca. 1230)
+    * Jean de Meun (ca. 1275)
+* The takeover point known (after the line 4,058).
+
+
+
+
+
+## Roman de la Rose
+
+![](img/rdlr.png)
+
+
+
+
+## Queen Sophia's Bible
+
+* 15th-century Polish translation of the Bible
+* Two volumes:
+    * 2nd disintegrated early, before 17th cent.
+    * 1st lost (destroyed?) during WWII
+* Fortunately, a 1930 facsimile exists
+
+
+
+
+## Queen Sophia's Bible
+
+![](img/BZ_fragm.jpg)
+
+
+
+
+## Queen Sophia's Bible
+
+* Translated from Czech
+    * Hebrew → Latin → Czech → Polish
+* Five scribal hands recognizable
+* Probably more than one translator involved
+* <span style="color: red">Multi-level collaborative work</span>
+
+
+
+
+## Queen Sophia's Bible
+
+![](img/BZ-nsc.png)
+
+
+
+## Queen Sophia's Bible
+
+![](img/BZ-svm.png)
+
+
+
+
+## Harper Lee
+
+- 15 July 2015: _Go Set a Watchman_
+    - second novel by Harper Lee
+    - _To Kill a Mockingbird_ (1960) got the Pulitzer
+    - haevily edited by Tay Hohoff
+- Roumors that Truman Capote wrote it
+- Roumors that Lee wrote _In Cold Blood_
+
+
+## Truman Capote did write it
+
+![](img/in_cold_blood.png)
+
+
+
+## The Mockingbird
+
+![](img/mockingbird_svm_100.png)
+
+
+## The Mockingbird
+
+![](img/mockingbird_svm_300.png)
+
+
+
+## The Vugate (St. Jermome?)
+
+![](img/vugate.png)
+
+
+## The Vugate (St. Jermome?)
+
+![](img/vugate_FRAGM.png)
+
+
+
+
+# questions?
+
