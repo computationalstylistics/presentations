@@ -2,7 +2,7 @@
 title: "Digital Text Scholarship </br> aka DigiTS"
 subtitle: "(a general intro)"
 author: Maciej Eder
-date: 2025/10/06
+date: 2026/03/26
 format: 
   revealjs:
     theme: files/pp.scss
@@ -29,6 +29,7 @@ format:
 ##
 
 ![](files/digits-rgb-full.png)
+
 
 ## objectives
 
@@ -90,9 +91,7 @@ format:
 - ~~Professor of Literature, Pedagogical University of Kraków~~
 - expert in computer-assisted text analysis using machine-learning and neural networks
 - PhD in literature, habilitation in linguistics
-- PI of the Horizon2020 project _Computational Literary Studies Infrastructure_ (CLS INFRA)
-- author of the software package _stylo_ for R
-- Tartu Linnamaraton finisher (21k)
+
 
 
 
@@ -113,7 +112,7 @@ format:
 - Thiago Dumont Oliveira, Research Fellow in Digital Humanities
 - Bhumika Bhattacharya, Junior Researcher
 - Sofia Kriuchkova, Junior Researcher
-- student assistants (to be appointed)
+- student assistants (Ove, Manpreet, Olga)
 
 
 
@@ -161,45 +160,6 @@ format:
 - LinkedIn profile: [https://www.linkedin.com/company/utartu-digits/](https://www.linkedin.com/company/utartu-digits/)
 - bluesky profile: [https://bsky.app/profile/digitsut.bsky.social](https://bsky.app/profile/digitsut.bsky.social)
 
-
-
-# project's trivia
-
-
-
-##
-
-![](files/sofa.jpg)
-
-
-## 
-
-![](files/gitlab.png)
-
-
-## 
-
-![](files/discord.png)
-
-
-## 
-
-![](files/calendar.png)
-
-
-## 
-
-![](files/seminars.jpg)
-
-
-## 
-
-![](files/reading_group.jpg)
-
-
-## 
-
-![](files/bicycle.jpg)
 
 
 # questions? suggestions?
