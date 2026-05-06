@@ -1,0 +1,316 @@
+---
+title: "From Texts to Networks"
+subtitle: "Worshop in Network Analysis"
+author: 
+    name: Maciej Eder
+    affiliation: University of Tartu | Polish Academy of Sciences
+date: 2026/05/06
+date-format: "DD/MM/YYYY"
+format: 
+  revealjs:
+    theme: pp.scss
+    #logo: UT_logo.svg
+    #css: big_logo.css
+    logo: DigiTS-RGB-short-SMALL.svg
+    css: big_logo_DigiTS.css
+    self_contained: false
+---
+
+
+
+
+# Introduction
+
+## Aims of the study
+
+- Assessing large number of texts
+- Leveraging existing explanatory methods
+- Automatic analysis of textual relations...
+- ... that will reveal groups of similar texts
+
+
+
+## Mapping literature
+
+- Chronology
+- Genre
+- Imitation
+- Authorship
+- ...
+
+
+
+## Basic concepts
+
+- “Computation into criticism” (John Burrows)
+- “Distant reading” (Franco Moretti)
+- “Macroanalysis” (Matthew Jockers)
+- Big Data
+- Authorship attribution
+
+
+
+## Cluster analysis dendrograms
+
+- Highly dependent on feature selection
+- Highly dependent on similarity measure
+- Highly dependent on linkage algorithm
+- No validation provided
+
+
+## 136 most frequent words
+
+![](img/136_MFWs.svg)
+
+
+
+
+## 137 most frequent words
+
+![](img/137_MFWs.svg)
+
+
+
+
+## Unstable results
+
+- Noise?
+- Unreliability of the linkage procedure?
+- More than one stylistic layer?
+
+
+
+
+## Layers
+
+![](img/layers_in_literary_texts.png)
+
+
+
+
+# Networks to rescue
+
+
+
+## A new technique: assumptions
+
+- Explanatory power of dendrograms
+- Stable results and/or validation
+- Scalability: 500 texts? 1000 texts? 31M texts?
+
+
+## Authorship attribution
+
+- An anonymous text is tested against a set of “candidates”
+- Goal: to find the nearest neighbor
+- Effective style-marker: most frequent words (grammatical words)
+
+
+
+## Establishing a distance
+
+![](img/neighbor1.svg?)
+
+
+
+## Another distance...
+
+![](img/neighbor2.svg)
+
+
+
+
+## Checking each sample
+
+![](img/neighbor3.svg)
+
+
+
+## Deciding which distance is shortest
+
+![](img/neighbor4.svg)
+
+
+
+## From attribution to stylometry
+
+- If it works with anonymous texts, ...
+- ... what about extending the same procedure?
+- What about applying it to _all_ texts?
+
+
+
+## Distances to txt1
+
+![](img/neighbor5.svg)
+
+
+
+## Distances to txt2
+
+![](img/neighbor6.svg)
+
+
+
+
+## Distances to txt3
+
+![](img/neighbor7.svg)
+
+
+
+
+## A resulting network
+
+![](img/neighbor8.svg)
+
+
+
+## From stylometry to networks
+
+- Nearest neighbors can be represented as connected nodes of a network.
+- A variety of layout algorithms can be applied.
+
+
+## Example
+
+![](img/sample_network.svg)
+
+
+## Reliability, stupid!
+
+- Instead of one analysis (e.g. 100 MFWs)...
+- ... a whole range (100, 200, 300 MFW, etc.).
+- Next, particular “snapshots” summarized.
+
+
+
+## 100 MFWs
+
+![](img/cons_network_1.svg)
+
+
+
+## 200 MFWs
+
+![](img/cons_network_2.svg)
+
+
+
+## 300 MFWs
+
+![](img/cons_network_3.svg)
+
+
+
+## Consensus network
+
+![](img/cons_network_4.svg)
+
+
+
+
+## Importance of runners-up
+
+- Nearest neighbors = the most similar
+- Runners-up: do they really deserve to be filtered out?
+- Solution: more connections!
+
+
+
+## 3 neighbors to txt1
+
+![](img/neighbor10.svg)
+
+
+
+## 3 neighbors to txt2
+
+![](img/neighbor11.svg)
+
+
+
+
+## 3 neighbors to txt3
+
+![](img/neighbor12.svg)
+
+
+
+
+## A resulting network
+
+![](img/neighbor13.svg)
+
+
+## Two algorithms togegher
+
+![](img/Diagram1.png)
+
+
+
+
+
+# Latin literature at a glance
+
+
+## 
+
+![](img/raw_network.svg)
+
+
+## Traces of chronology?
+
+- “Ciceronianus es, non Christianus!” (God accusing St Jerome)
+- “Renovatio antiquitatis” (Renaissance humanists)
+- hypothesis: noticeable traces of chronology
+
+
+
+## 
+
+![](img/chronology.svg)
+
+
+
+
+## 
+
+![](img/genre.svg)
+
+
+
+## 
+
+![](img/masters_of_latin.svg)
+
+
+## How influential was Cicero?
+
+- Ciceronian Quarrel: the single most important debate of the Renaissance.
+- Imitation of the admirable Ciceronian style.
+- hypothesis: visible traces of Cicero in early modern Latin writings.
+
+
+## 
+
+![](img/Cic_followers.svg)
+
+
+
+
+## Conclusions
+
+- No clear chronological pattern.
+- Genre signal: predominant.
+- Masters of style tend to keep outside the network.
+
+
+## Further research
+
+- More texts!
+- More genres!
+- More “Attic” writers (e.g. Lipsius).
+
+
+
