@@ -2,8 +2,8 @@
 // Include theme-specific fonts
 @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Zen+Antique&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
 
 
 
@@ -13,11 +13,11 @@
 // Base settings for all themes that can optionally be
 // overridden by the super-theme
 
-// Background of the presen tation
+// Background of the presentation
 $backgroundColor: #fcfbf9;
 
 // Primary/body text
-$mainFont: 'Playfair', serif;
+$mainFont: 'Jost', sans-serif;
 $mainFontSize: 30px;
 $mainColor: #333;
 
@@ -26,7 +26,7 @@ $blockMargin: 20px;
 
 // Headings
 $headingMargin: 0 0 $blockMargin 0;
-$headingFont: 'Playfair', Impact, serif;
+$headingFont: 'Alegreya', Impact, sans-serif;
 $headingColor: #006791;
 $headingLineHeight: 1.2;
 $headingLetterSpacing: normal;
