@@ -13,44 +13,177 @@ format:
     logo: csg.png
     css: medium_logo.css
     self_contained: true
-    slide-number: c/t
+    #slide-number: c/t
     #incremental: true
 ---
 
 
 
 
-# [https://tinyurl.com/jcls2025](https://tinyurl.com/jcls2025)
 
 
-# slides on github!!!
+# [https://tinyurl.com/zampolli2026](https://tinyurl.com/zampolli2026)
+
+![](img/zampolli2026-qr.png){height=300}
 
 
 
-# introduction
 
 
-## 
-
-> [T]he 2026 Antonio Zampolli Prize was awarded to the stylo tool and the Computational Stylistics Group for their transformative impact on our field through the development and dissemination of stylo [...]. Beyond the software, the prize also recognizes the group’s sustained efforts in community-building through workshops, open-source development, interdisciplinary collaborations, and training initiatives that have empowered a new generation of digital humanists.
-
-> (ADHO Award Committee)
 
 
+
+
+# A bit of a context
 
 ## Krakow, Poland
 
+![](img/krakow.jpg)
 
 
-## 
+## Krakow's commitment to DH
+
+- Wincenty Lutosławski (1863--1954) lived there
+    - introduced the notion of "stylometry"
+- home of Computational Stylistics Group
+- hosted Digital Humanities 2016
+- hosted TEI 2025
+- will host EADH 2026
+
+![](img/dh2016_logo.png)
+
+
+
+
+# The team
+
+
+## Jan the Great
+
+::: columns
+::: {.column width="70%"}
+- seminal works in text analysis & stylometry
+- revolutionized translation studies
+- introduced large-scale visualizations of literary texts 
+:::
+::: {.column width="30%"}
+![](https://computationalstylistics.github.io/assets/img/jan_rybicki.png)
+:::
+:::
+
+
+## Joanna the Strong
+
+::: columns
+::: {.column width="70%"}
+- pioneering work on multimodal stylometry
+- novel insights to film studies
+- pinpointed the show-runners behind "Doctor Who" 
+:::
+::: {.column width="30%"}
+![](https://computationalstylistics.github.io/assets/img/joanna_byszuk.png)
+:::
+:::
+
+
+## Artjoms the Mastermind
+
+::: columns
+::: {.column width="70%"}
+- cutting-edge studies in versification... 
+- ... in the context of cultural evolution
+- developed the repository PoeTree
+- runs "Latent Reading" Discord server
+:::
+::: {.column width="30%"}
+![](https://computationalstylistics.github.io/assets/img/artjoms_sela.jpg)
+:::
+:::
+
+
+
+## Laura the Wise
+
+::: columns
+::: {.column width="70%"}
+- novel insights to the Spanish Golden Age
+- verified the authorship of "La Segunda Celestina"
+- explored the style of Gustavo Adolfo Bécquer
+:::
+::: {.column width="30%"}
+![](https://computationalstylistics.github.io/assets/img/laura_hernandez_lorenzo.jpg)
+:::
+:::
+
+
+
+## Jacek the Raising Star
+
+::: columns
+::: {.column width="70%"}
+- transformative work in Hindi vs Sanskrit vs Urdu
+- contributions to distributional semantics
+- discovered latent structure of synonyms
+:::
+::: {.column width="30%"}
+![](https://computationalstylistics.github.io/assets/img/jacek_bakowski_thumbnail.png)
+:::
+:::
+
+
+
+## Aleksandra the Genius 
+
+::: columns
+::: {.column width="70%"}
+- novel work in stylometry and AI
+- fluent in Java, Python, R, and more
+- introduced a method of versification scansion
+:::
+::: {.column width="30%"}
+![](img/a_rykowska.jpg)
+:::
+:::
+
+
+
+
 
 ## Computational Stylistics Group
 
 
+- no formal structure
+- no (serious) DH environment
+- hosted (?) by a few entities
+    - an institute for linguistics
+    - a department of English Studies
+    - a depratment of Medieval Studies
+- initially, no funding
 
 
 
-# computational stylistics
+## Bottom-up, lightweight
+
+- running a series of talks "Digital Humanities Lunch"
+- running an informal Reading Group 
+- running _ad hoc_ seminars
+- committed to R as free software
+- sharing the code and the datasets
+- committed to open source & open science
+- minimal computing in practice!
+
+
+
+## Required equipment
+
+![](img/sofa.png){height=450}
+
+
+
+
+
+
+# Computational stylistics
 
 
 
@@ -88,7 +221,7 @@ format:
 
 
 
-## A beginning of a good friendship
+## A collaborative paper
 
 * Artjoms Šeļa
 * Ben Nagy
@@ -362,17 +495,7 @@ Family relations vs. public sphere
 
 
 
-
-# more examples
-
-
-
-<!-- cover some AI -->
-
-
-
-
-## 
+# More examples 👇
 
 ![](img/csg_projects.png)
 
@@ -380,28 +503,32 @@ Family relations vs. public sphere
 
 
 
-# infrastructures in DH
+
+# Infrastructures in DH
 
 
 
-## ELTeC corpus
+## ELTeC: a corpus novels
 
 ![](https://raw.githubusercontent.com/computationalstylistics/presentations_archive/master/clsinfra_intro/img/eltec.png){height=600}
 
 
-## DraCor programmable corpora
+
+## DraCor: a corpus of plays
 
 ![](https://raw.githubusercontent.com/computationalstylistics/presentations_archive/master/clsinfra_intro/img/dracor.png){height=600}
 
 
 
+## PoeTree: a corpus of poetry
+
+![](img/poetree.png){height=600}
 
 
 
 
 
-
-# beyond language resources
+# Beyond language resources
 
 
 ## TEI markup
@@ -456,7 +583,7 @@ Family relations vs. public sphere
     - IIIF
     - . . . 
 
-## The grammar of DH (cont.)
+## The grammar of DH
 
 - methods
     - topic modeling
@@ -473,7 +600,7 @@ Family relations vs. public sphere
     - . . .
 
 
-## The grammar of DH (cont.)
+## The grammar of DH
 
 - teaching environments
     - ESU
@@ -491,6 +618,7 @@ Family relations vs. public sphere
 
 
 
+# Stylo
 
 
 
@@ -499,15 +627,14 @@ Family relations vs. public sphere
 
 
 
-
-## stylo: a package for text analysis
+## Stylo: a package for text analysis
 
 - an R package
 - written in R and run in R
-- simple (entry level)
+- simple
 - fast
 - offers a few extensions
-- runs in command-line mode,
+- runs in command-line mode 🙀
 - however, requires only three lines of code
 - no programming skills needed!
 
@@ -527,7 +654,7 @@ stylo()
 
 
 
-## set your parameters
+## Set your parameters
 
 ![](https://raw.githubusercontent.com/computationalstylistics/stylo_nutshell/master/img/stylo_2.png){height=400}
 
@@ -540,11 +667,9 @@ stylo()
 
 
 
-
 ## Bootstrap consensus tree
 
 ![](img/stylo_consensus.png)
-
 
 
 
@@ -554,11 +679,21 @@ stylo()
 
 
 
-# Teaching environments
+# Teaching environment
 
 
 
+## Workshops and summer schools
 
+- Digital Humanities Summer Institute (DHSI)
+    - Victoria, 2016--2024
+    - Montréal, 2025--2026
+- Europen Summer University "Culture & Technology" (ESU)
+    - Leipzig, 2009--2022
+    - Cluj-Napoka, 2023--2024
+    - Besançon, 2025--2026
+- taught by Jan, Joanna, Jeremi, Artjoms, Maciej, Jacek, Michał
+- well over a hundred participants in total
 
 
 ## ESU 2017
@@ -566,14 +701,24 @@ stylo()
 ![](img/esu_2017.jpg)
 
 
-## Survey of methods
+## Invisible colleges of DH
 
-![](https://raw.githubusercontent.com/computationalstylistics/presentations_archive/master/clsinfra_intro/img/grid.png){height=600}
-
-
-## Dariah Campus
+![](https://upload.wikimedia.org/wikipedia/commons/2/27/Templeofrosycross_highres.png)
 
 
+# Conclusions
 
 
+## Big things start with small steps
+
+- don't wait for big ideas -- start small, and do it _now_
+- don't wait for your Dean's approval -- go bottom-up
+- don't plan to build a large system -- share the code you already have
+- do apply for funding, but conduct your research regardless
+- collaborate
+- use your coffee machine and a couch
+- chase curiosity-driven research questions
+
+
+# Thank you! 
 
