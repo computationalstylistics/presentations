@@ -10,7 +10,7 @@
 * Language change and Piotrowski's law [presentation](https://computationalstylistics.github.io/presentations/piotrowski/)
 * Manhattan, Euclidean, and their Siblings (DH2024) [presentation](https://computationalstylistics.github.io/presentations/norms_dh2024/)
 * General intro to the DigiTS project [presentation](https://computationalstylistics.github.io/presentations/DigiTS_intro/)
-
+* The Antonio Zampolli Award 2026 [presentation](https://computationalstylistics.github.io/presentations/zampolli/)
 
 ### a selection of talks in Polish
 
