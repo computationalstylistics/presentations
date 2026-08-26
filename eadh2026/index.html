@@ -6,22 +6,26 @@
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.24">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
-  <meta name="author" content="Maciej Eder">
-  <meta name="dcterms.date" content="2026-05-11">
-  <title>Digital Humanities and AI:  A Showcase</title>
+  <title>Bibliography, LLMs,  and Polish Prints  in 16th–19th Centuries</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -96,8 +100,8 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-b4abc4e1d6877d67383f2b6049bdd647.css">
-  <link rel="stylesheet" href="big_logo_DigiTS.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-9d698224372d65293c6568bd10d6cc9e.css">
+  <link rel="stylesheet" href="medium_logo.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -189,335 +193,38 @@
       margin-right: 0; 
     }
   </style>
-  <link href="index_files/libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
-  <script src="index_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-  <script src="index_files/libs/viz-1.8.2/viz.js"></script>
-  <link href="index_files/libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
-  <script src="index_files/libs/grViz-binding-1.0.11/grViz.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Digital Humanities and AI: <br> A Showcase</h1>
+  <h1 class="title">Bibliography, LLMs, <br> and Polish Prints <br> in 16th–19th Centuries</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Maciej Eder 
+Maciej Eder
 </div>
         <p class="quarto-title-affiliation">
             University of Tartu | Polish Academy of Sciences
           </p>
     </div>
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Karolina Eder
+</div>
+        <p class="quarto-title-affiliation">
+            University of the National Education Commission
+          </p>
+    </div>
 </div>
 
-  <p class="date">2026-05-11</p>
+  <p class="date">18/09/2026</p>
 </section>
 <section>
-<section id="not-only-chatgpt" class="title-slide slide level1 center">
-<h1>not only chatGPT</h1>
-
-</section>
-<section id="chatbot" class="slide level2">
-<h2>chatbot</h2>
-
-<img data-src="img/Screenshot_chatGPT.png" class="r-stretch"></section>
-<section id="another-chatbot" class="slide level2">
-<h2>another chatbot</h2>
-
-<img data-src="img/Screenshot_MSTY.png" class="r-stretch"></section>
-<section id="traditional-models-not-sufficient" class="slide level2">
-<h2>traditional models not sufficient</h2>
-<p>multivariate machine learning (e.g.&nbsp;SVM) fails to map a large feature space:</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-00e580b35cdd1a6770c0" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-00e580b35cdd1a6770c0">{"x":{"diagram":"digraph {\n  graph [layout = dot, rankdir = TD]\n  \n  node [shape = rectangle, fixedsize = true, width = 4, style = filled, fillcolor = Beige]      \n  box1 [label = \"Why did the banana cross the road?\"]\n  box2 [label = \"mapping function\", fillcolor = Linen, width = 2]\n  box3 [label = \"Perché la banana ha attraversato la strada?\"]\n  \n  # edge definitions with the node IDs\n  box1 -> box2 -> box3\n  \n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-</section>
-<section id="turning-points" class="slide level2">
-<h2>turning points</h2>
-<ul>
-<li>1970s – artificial neural networks</li>
-<li>2000s – deep learning networks</li>
-<li>2013 – word embeddings (word2vec)</li>
-<li>2014 – sequence mapping (seq2seq)</li>
-<li>2017 – attention is all you need (The Transformer) 👈</li>
-<li>2018 – pre-trained multi-language model (BERT)</li>
-<li>2019 – large generative model (GPT-2)</li>
-<li>2022 – a model released as a chatbot (chatGPT)</li>
-<li>2023 – multimodal models</li>
-<li>2024 – reasoning models</li>
-<li>2025 – compressed models (distillation, quantization)</li>
-<li>2026 – agentic systems (OpenClaw, Hermes-Agent)</li>
-</ul>
-</section></section>
-<section>
-<section id="the-transformer" class="title-slide slide level1 center">
-<h1>the Transformer</h1>
-
-</section>
-<section id="artificial-neural-network" class="slide level2">
-<h2>artificial neural network</h2>
-
-<img data-src="img/neural_networks-001.png" class="r-stretch"></section>
-<section id="deep-learning-neural-network" class="slide level2">
-<h2>deep learning neural network</h2>
-
-<img data-src="img/neural_networks-006.png" class="r-stretch"></section>
-<section id="encoder-decoder-neural-network" class="slide level2">
-<h2>encoder-decoder neural network</h2>
-
-<img data-src="img/neural_networks-008.png" class="r-stretch"></section>
-<section id="transformer-neural-network" class="slide level2">
-<h2>transformer neural network</h2>
-
-<img data-src="img/Transformer.png" class="r-stretch"></section>
-<section id="sequence-to-sequence-mapping" class="slide level2">
-<h2>sequence to sequence mapping</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-822a1d565295444c0819" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-822a1d565295444c0819">{"x":{"diagram":"digraph {\n  graph [layout = dot, rankdir = TD]\n  \n  node [shape = rectangle, fixedsize = true, width = 3, style = filled, fillcolor = Beige]\n  box1 [label = \"input text sequence\"]\n  box2 [label = \"TRANSFORMER\", fillcolor = Linen, width = 2]\n  box3 [label = \"output text sequence\"]\n  \n  # edge definitions with the node IDs\n  box1 -> box2 -> box3\n  \n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-</section>
-<section id="from-audio-to-text" class="slide level2">
-<h2>from audio to text</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-18557fee2e878db21d7b" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-18557fee2e878db21d7b">{"x":{"diagram":"digraph {\n  graph [layout = dot, rankdir = TD]\n  \n  node [shape = rectangle, fixedsize = true, width = 3, style = filled, fillcolor = Beige]      \n  box1 [label = \"input audio signal\"]\n  box2 [label = \"TRANSFORMER\", fillcolor = Linen, width = 2]\n  box3 [label = \"generated text transcription\"]\n  \n  # edge definitions with the node IDs\n  box1 -> box2-> box3\n  \n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-</section>
-<section id="from-text-to-audio" class="slide level2">
-<h2>from text to audio</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-637a57ef0b74f59400f5" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-637a57ef0b74f59400f5">{"x":{"diagram":"digraph {\n  graph [layout = dot, rankdir = TD]\n  \n  node [shape = rectangle, fixedsize = true, width = 3, style = filled, fillcolor = Beige]      \n  box1 [label = \"input written text\"]\n  box2 [label = \"TRANSFORMER\", fillcolor = Linen, width = 2]\n  box3 [label = \"speech synthesis\"]\n  \n  # edge definitions with the node IDs\n  box1 -> box2 -> box3\n  \n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-</section>
-<section id="from-text-to-image" class="slide level2">
-<h2>from text to image</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-53554316af16e7f1f90b" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-53554316af16e7f1f90b">{"x":{"diagram":"digraph {\n  graph [layout = dot, rankdir = TD]\n  \n  node [shape = rectangle, fixedsize = true, width = 3, style = filled, fillcolor = Beige]      \n  box1 [label = \"text prompt\"]\n  box2 [label = \"TRANSFORMER\", fillcolor = Linen, width = 2]\n  box3 [label = \"generated picture\"]\n  \n  # edge definitions with the node IDs\n  box1 -> box2 -> box3\n  \n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-</section>
-<section id="universe-lsd-fractal-worlds-eyes" class="slide level2">
-<h2>Universe, LSD, Fractal Worlds, Eyes</h2>
-
-<img data-src="img/021.png" class="r-stretch"></section>
-<section id="the-same-prompt-different-results" class="slide level2">
-<h2>the same prompt, different results</h2>
-
-<img data-src="img/022.png" class="r-stretch"></section>
-<section id="machine-translation" class="slide level2">
-<h2>machine translation</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-c26c3e3f29f68089f62d" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-c26c3e3f29f68089f62d">{"x":{"diagram":"digraph {\n  graph [layout = dot, rankdir = TD]\n  \n  node [shape = rectangle, fixedsize = true, width = 4, style = filled, fillcolor = Beige]      \n  box1 [label = \"Why did the banana cross the road?\"]\n  box2 [label = \"TRANSFORMER\", fillcolor = Linen, width = 2]\n  box3 [label = \"Perché la banana ha attraversato la strada?\"]\n  \n  # edge definitions with the node IDs\n  box1 -> box2 -> box3\n  \n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-</section></section>
-<section>
-<section id="large-language-models" class="title-slide slide level1 center">
-<h1>Large Language Models</h1>
-
-</section>
-<section id="llm-lrm-gpt-bert" class="slide level2">
-<h2>LLM, LRM, GPT, BERT</h2>
-<ul>
-<li>BERT: Bidirectional Encoder Representations from Transformers</li>
-<li>GPT: Generative Pre-trained Transformer
-<ul>
-<li>not only the architecture</li>
-<li>but also the trained parameters</li>
-<li>massive amounts of textual data used</li>
-</ul></li>
-<li>LLM: Large Language Model
-<ul>
-<li>a group of modern text-oriented models</li>
-</ul></li>
-<li>LRM: Large Reasoning Model
-<ul>
-<li>a group of models involving “the chain of thoughts”</li>
-</ul></li>
-</ul>
-</section>
-<section id="model-size-comparison" class="slide level2">
-<h2>model size comparison</h2>
-
-<img data-src="img/bg_llm-model-size_1.jpg" class="r-stretch"></section>
-<section id="a-small-selection-of-llms" class="slide level2">
-<h2>a small selection of LLMs</h2>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Model</th>
-<th>Release</th>
-<th>Parameter Count</th>
-<th>Training Data</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Opus 4.7</td>
-<td>2026</td>
-<td>&gt;1.6 trillion</td>
-<td>almost the whole internet</td>
-</tr>
-<tr class="even">
-<td>GPT‑4</td>
-<td>2023</td>
-<td>&gt;1 trillion</td>
-<td>web + proprietary</td>
-</tr>
-<tr class="odd">
-<td>DeepSeek-R1</td>
-<td>2025</td>
-<td>671B</td>
-<td>&gt;85,000 agent tasks</td>
-</tr>
-<tr class="even">
-<td>LLaMA 2</td>
-<td>2023</td>
-<td>7B, 13B, 70B</td>
-<td>public corpora</td>
-</tr>
-<tr class="odd">
-<td>Mistral 7B</td>
-<td>2023</td>
-<td>7B</td>
-<td>public data</td>
-</tr>
-<tr class="even">
-<td>BERT</td>
-<td>2018</td>
-<td>110M</td>
-<td>Wikipedia + BookCorpus</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>😲 recent LLMs are over 10,000 times bigger than BERT</p>
-</blockquote>
-</section></section>
-<section>
-<section id="translation-to-sign-language" class="title-slide slide level1 center">
-<h1>translation to sign language</h1>
-
-</section>
-<section id="aim-of-the-project" class="slide level2">
-<h2>aim of the project</h2>
-<ul>
-<li>to provide a system to automatically translate
-<ul>
-<li>written language to sign language</li>
-<li>originally from Polish to PSL (PJM)</li>
-<li>later: Ukrainian to USL</li>
-</ul></li>
-<li>capable of translatin any input text</li>
-<li>prototype: public administration domain</li>
-<li>plans: the system used by public institutions</li>
-</ul>
-</section>
-<section id="avatar-modeling-with-unreal" class="slide level2">
-<h2>avatar modeling with Unreal</h2>
-
-<img data-src="img/unreal.png" class="r-stretch"></section>
-<section id="kristofer-the-avatar" class="slide level2">
-<h2>Kristofer the Avatar</h2>
-
-<img data-src="img/kristofer_main.png" class="r-stretch"></section>
-<section id="mock-up-gesture-capturing" class="slide level2">
-<h2>mock-up gesture capturing</h2>
-
-<img data-src="img/mockup.png" class="r-stretch"></section>
-<section id="sign-language-represented-as-glosses" class="slide level2">
-<h2>sign language represented as glosses</h2>
-<p>A sentence in a phonic language:</p>
-<ul>
-<li><em>I will put a book on a table.</em></li>
-</ul>
-<p>Vs. a sentence in a sign language:</p>
-<ul>
-<li><em>BOOK, TABLE, PUT-ON</em></li>
-</ul>
-<p>Not only SVO vs.&nbsp;SOV, but also the number of words differ.</p>
-<p>(Also, sign languages use space, and have non-manual gestures…)</p>
-</section>
-<section id="translation-as-a-mapping-problem" class="slide level2">
-<h2>translation as a mapping problem</h2>
-
-<img data-src="img/gloss_to_dsg.png" class="r-stretch"></section>
-<section id="the-transformer-again" class="slide level2">
-<h2>the Transformer again</h2>
-<ul>
-<li>Deep learning neural network</li>
-<li>Based on the multi-head attention mechanism</li>
-<li>Context-aware</li>
-<li>Suitable for language data (i.e.&nbsp;linear order matters)</li>
-<li>Designed to solve machine translation problems (!)</li>
-</ul>
-</section>
-<section id="data-scarcity-problem" class="slide level2">
-<h2>data scarcity problem</h2>
-<ul>
-<li>AI models have to be fed with lots of data</li>
-<li>In our case, only 800 sentences available</li>
-<li>Two approaches to overcome the issue:
-<ul>
-<li>Data Augmentation (synthetic datasets to rescue)</li>
-<li>Transfer Learning (train the model, and then fine-tune)</li>
-</ul></li>
-</ul>
-</section>
-<section id="manually-annotated-sentences" class="slide level2">
-<h2>800 manually annotated sentences</h2>
-
-<img data-src="img/anotacja_elan.png" class="r-stretch"></section>
-<section id="deutsche-gebärdensprache-dgs" class="slide level2">
-<h2>Deutsche Gebärdensprache (DGS)</h2>
-
-<img data-src="img/anotacja_dgs.png" class="r-stretch"></section>
-<section id="overcoming-data-limitations" class="slide level2">
-<h2>overcoming data limitations</h2>
-<p>Transfer Learning:</p>
-<ul>
-<li>training a model on a big yet genral dataset
-<ul>
-<li>e.g., on 80,000 sentences from DSG corpus</li>
-</ul></li>
-<li>fine-tuning using a target dataset
-<ul>
-<li>e.g.&nbsp;the 800 sentences in PJM</li>
-</ul></li>
-</ul>
-<p>Data Augmentation:</p>
-<ul>
-<li>creating a synthetic dataset</li>
-<li>by artificially copying original sentences…</li>
-<li>… with some random modifications introduced.</li>
-<li>finally, training a model on the augmented dataset</li>
-</ul>
-</section>
-<section id="does-it-work" class="slide level2">
-<h2>does it work?</h2>
-
-<img data-src="img/avatar_evaluation.png" class="r-stretch"></section></section>
-<section>
-<section id="printing-centers-in-the-16th-19th-centuries" class="title-slide slide level1 center">
-<h1>printing centers <br> in the 16th-19th centuries</h1>
+<section id="introduction" class="title-slide slide level1 center">
+<h1>introduction</h1>
 
 </section>
 <section id="aim-of-the-study" class="slide level2">
@@ -553,32 +260,37 @@ Maciej Eder
 <img data-src="img/Estr_database.png" class="r-stretch"></section>
 <section id="unstructured-data-in-the-wild" class="slide level2">
 <h2>unstructured data in the wild</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href=""></a>Cracoviae ex Off. Hier. Szarffenbergii. A. 1549.</span>
-<span id="cb1-2"><a href=""></a>Typis Univ. Zamoscensis. A. 1748.</span>
-<span id="cb1-3"><a href=""></a>w Łowiczu 1782.</span>
-<span id="cb1-4"><a href=""></a>S. Pietierburg, w tip. Wtorago Otdielenija Sobstwiennoj Jego Imp. Wieliczestwa Kancelarii, 1849,</span>
-<span id="cb1-5"><a href=""></a>Frankfurt und Leipzig 1728.</span>
-<span id="cb1-6"><a href=""></a>W drukarni Lwowskiey Soc. Jesu {b. r. 1746}.</span>
-<span id="cb1-7"><a href=""></a>Lemberg, 1888,</span>
-<span id="cb1-8"><a href=""></a>V Praze, tisk a sklad c. k. knihtiskárny Synů Bohumila Haase, 1852,</span>
-<span id="cb1-9"><a href=""></a>Bromberg, Louis Levit, gedruckt bei C. L. Gasse, 1844,</span>
-<span id="cb1-10"><a href=""></a>Dantisci 1644.</span>
-<span id="cb1-11"><a href=""></a>München, Druck, Franz Paul Ercacher, (ok. 1895),</span>
-<span id="cb1-12"><a href=""></a>1565.</span>
-<span id="cb1-13"><a href=""></a>Vindobonae, typ. Ueberreiter, 1840,</span>
-<span id="cb1-14"><a href=""></a>Lwiw, tszczanijem, iżdywenijem i typom Instytuta Stauropyhijanskaho pry Cerkwi Usp. Pr. Bohorod., 1857,</span>
-<span id="cb1-15"><a href=""></a>Posiedzeń 10,</span>
-<span id="cb1-16"><a href=""></a>Danzig, Verlag von Th. Bertling, Druck von A. W. Kafemann, 1860,</span>
-<span id="cb1-17"><a href=""></a>Anno M.DC.LXXXV. (1685). Crac: Typis Francisci Cezary, S. R. M. Typ.</span>
-<span id="cb1-18"><a href=""></a>Gedruckt zu Leiptzig, M. D. LXXVI (1576),</span>
-<span id="cb1-19"><a href=""></a>Dorpat, bei C. A. Kluge; Leipzig bei C. F. Köhler, gedruckt bei J. C. Schünmann in Dorpat, 1836,</span>
-<span id="cb1-20"><a href=""></a>Gedruckt zu Dantzigk, durch Jacobum Rhodum. M. D L XXX (1580),</span>
-<span id="cb1-21"><a href=""></a>Gdańsk, druk. wdowy Jerzego Rhete, 1649.</span>
-<span id="cb1-22"><a href=""></a>Typis Academiae Posnaniensis (1698).</span>
-<span id="cb1-23"><a href=""></a>In Venegia appresso Gabriel Giolito de Ferrari MDLXI (1561).</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="" aria-label="1"></a>Cracoviae ex Off. Hier. Szarffenbergii. A. 1549.</span>
+<span id="cb1-2"><a href="" aria-label="2"></a>Typis Univ. Zamoscensis. A. 1748.</span>
+<span id="cb1-3"><a href="" aria-label="3"></a>w Łowiczu 1782.</span>
+<span id="cb1-4"><a href="" aria-label="4"></a>S. Pietierburg, w tip. Wtorago Otdielenija Sobstwiennoj Jego Imp. Wieliczestwa Kancelarii, 1849,</span>
+<span id="cb1-5"><a href="" aria-label="5"></a>Frankfurt und Leipzig 1728.</span>
+<span id="cb1-6"><a href="" aria-label="6"></a>W drukarni Lwowskiey Soc. Jesu {b. r. 1746}.</span>
+<span id="cb1-7"><a href="" aria-label="7"></a>Lemberg, 1888,</span>
+<span id="cb1-8"><a href="" aria-label="8"></a>V Praze, tisk a sklad c. k. knihtiskárny Synů Bohumila Haase, 1852,</span>
+<span id="cb1-9"><a href="" aria-label="9"></a>Bromberg, Louis Levit, gedruckt bei C. L. Gasse, 1844,</span>
+<span id="cb1-10"><a href="" aria-label="10"></a>Dantisci 1644.</span>
+<span id="cb1-11"><a href="" aria-label="11"></a>München, Druck, Franz Paul Ercacher, (ok. 1895),</span>
+<span id="cb1-12"><a href="" aria-label="12"></a>1565.</span>
+<span id="cb1-13"><a href="" aria-label="13"></a>Vindobonae, typ. Ueberreiter, 1840,</span>
+<span id="cb1-14"><a href="" aria-label="14"></a>Lwiw, tszczanijem, iżdywenijem i typom Instytuta Stauropyhijanskaho pry Cerkwi Usp. Pr. Bohorod., 1857,</span>
+<span id="cb1-15"><a href="" aria-label="15"></a>Posiedzeń 10,</span>
+<span id="cb1-16"><a href="" aria-label="16"></a>Danzig, Verlag von Th. Bertling, Druck von A. W. Kafemann, 1860,</span>
+<span id="cb1-17"><a href="" aria-label="17"></a>Anno M.DC.LXXXV. (1685). Crac: Typis Francisci Cezary, S. R. M. Typ.</span>
+<span id="cb1-18"><a href="" aria-label="18"></a>Gedruckt zu Leiptzig, M. D. LXXVI (1576),</span>
+<span id="cb1-19"><a href="" aria-label="19"></a>Dorpat, bei C. A. Kluge; Leipzig bei C. F. Köhler, gedruckt bei J. C. Schünmann in Dorpat, 1836,</span>
+<span id="cb1-20"><a href="" aria-label="20"></a>Gedruckt zu Dantzigk, durch Jacobum Rhodum. M. D L XXX (1580),</span>
+<span id="cb1-21"><a href="" aria-label="21"></a>Gdańsk, druk. wdowy Jerzego Rhete, 1649.</span>
+<span id="cb1-22"><a href="" aria-label="22"></a>Typis Academiae Posnaniensis (1698).</span>
+<span id="cb1-23"><a href="" aria-label="23"></a>In Venegia appresso Gabriel Giolito de Ferrari MDLXI (1561).</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section></section>
+<section>
+<section id="methodology" class="title-slide slide level1 center">
+<h1>methodology</h1>
+
 </section>
-<section id="llms-to-rescue" class="slide level2">
-<h2>LLMs to rescue</h2>
+<section id="llms-to-the-rescue" class="slide level2">
+<h2>LLMs to the rescue</h2>
 <ul>
 <li>manual data extraction unrealistic for ~400,000 entries</li>
 <li>LLMs capable of classifying, denoising, translating etc.</li>
@@ -590,147 +302,130 @@ Maciej Eder
 </section>
 <section id="the-prompt" class="slide level2">
 <h2>the prompt</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a>PROMPT_INTRO <span class="op">=</span> <span class="st">"""You are an expert librarian, with a profound expertise in Polish prints </span></span>
-<span id="cb2-2"><a href=""></a><span class="st">from 16th-19th centuries.</span></span>
-<span id="cb2-3"><a href=""></a></span>
-<span id="cb2-4"><a href=""></a><span class="st">I will give you bibliographic entries divided into three TAB-separated fields:</span></span>
-<span id="cb2-5"><a href=""></a><span class="st">Author[TAB]Title[TAB]Publication info.</span></span>
-<span id="cb2-6"><a href=""></a></span>
-<span id="cb2-7"><a href=""></a><span class="st">Extract ONLY place of publication and year of publication.</span></span>
-<span id="cb2-8"><a href=""></a><span class="st">Prioritize place/year inside parentheses if present.</span></span>
-<span id="cb2-9"><a href=""></a><span class="st">Convert city names to modern Polish spelling when possible (e.g., Breslau/Vratislavia -&gt; Wrocław; </span></span>
-<span id="cb2-10"><a href=""></a><span class="st">Lemberg -&gt; Lwów).</span></span>
-<span id="cb2-11"><a href=""></a><span class="st">If missing, output "-".</span></span>
-<span id="cb2-12"><a href=""></a></span>
-<span id="cb2-13"><a href=""></a><span class="st">OUTPUT RULES:</span></span>
-<span id="cb2-14"><a href=""></a><span class="st">- Output EXACTLY one line per entry, numbered 1..N.</span></span>
-<span id="cb2-15"><a href=""></a><span class="st">- Each line must be: "i. Place: &lt;Place&gt;, Year: &lt;Year&gt;"</span></span>
-<span id="cb2-16"><a href=""></a><span class="st">- No extra text.</span></span>
-<span id="cb2-17"><a href=""></a></span>
-<span id="cb2-18"><a href=""></a><span class="st">Entries:</span></span>
-<span id="cb2-19"><a href=""></a><span class="st">"""</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="" aria-label="1"></a>PROMPT_INTRO <span class="op">=</span> <span class="st">"""You are an expert librarian, with a profound expertise in Polish prints </span></span>
+<span id="cb2-2"><a href="" aria-label="2"></a><span class="st">from 16th-19th centuries.</span></span>
+<span id="cb2-3"><a href="" aria-label="3"></a></span>
+<span id="cb2-4"><a href="" aria-label="4"></a><span class="st">I will give you bibliographic entries divided into three TAB-separated fields:</span></span>
+<span id="cb2-5"><a href="" aria-label="5"></a><span class="st">Author[TAB]Title[TAB]Publication info.</span></span>
+<span id="cb2-6"><a href="" aria-label="6"></a></span>
+<span id="cb2-7"><a href="" aria-label="7"></a><span class="st">Extract ONLY place of publication and year of publication.</span></span>
+<span id="cb2-8"><a href="" aria-label="8"></a><span class="st">Prioritize place/year inside parentheses if present.</span></span>
+<span id="cb2-9"><a href="" aria-label="9"></a><span class="st">Convert city names to modern Polish spelling when possible (e.g., Breslau/Vratislavia -&gt; Wrocław; </span></span>
+<span id="cb2-10"><a href="" aria-label="10"></a><span class="st">Lemberg -&gt; Lwów).</span></span>
+<span id="cb2-11"><a href="" aria-label="11"></a><span class="st">If missing, output "-".</span></span>
+<span id="cb2-12"><a href="" aria-label="12"></a></span>
+<span id="cb2-13"><a href="" aria-label="13"></a><span class="st">OUTPUT RULES:</span></span>
+<span id="cb2-14"><a href="" aria-label="14"></a><span class="st">- Output EXACTLY one line per entry, numbered 1..N.</span></span>
+<span id="cb2-15"><a href="" aria-label="15"></a><span class="st">- Each line must be: "i. Place: &lt;Place&gt;, Year: &lt;Year&gt;"</span></span>
+<span id="cb2-16"><a href="" aria-label="16"></a><span class="st">- No extra text.</span></span>
+<span id="cb2-17"><a href="" aria-label="17"></a></span>
+<span id="cb2-18"><a href="" aria-label="18"></a><span class="st">Entries:</span></span>
+<span id="cb2-19"><a href="" aria-label="19"></a><span class="st">"""</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="the-system-works-nicely" class="slide level2">
 <h2>the system works nicely</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href=""></a>Place: Mülheim a. d. R., Year: 1871-1876  </span>
-<span id="cb3-2"><a href=""></a>Place: Warszawa, Year: 1881  </span>
-<span id="cb3-3"><a href=""></a>Place: Warszawa, Year: 1881  </span>
-<span id="cb3-4"><a href=""></a>Place: Toruń, Year: 1882  </span>
-<span id="cb3-5"><a href=""></a>Place: -, Year: -  </span>
-<span id="cb3-6"><a href=""></a>Place: Warszawa, Year: 1895  </span>
-<span id="cb3-7"><a href=""></a>Place: -, Year: -  </span>
-<span id="cb3-8"><a href=""></a>Place: Kraków, Year: 1892  </span>
-<span id="cb3-9"><a href=""></a>Place: -, Year: -  </span>
-<span id="cb3-10"><a href=""></a>Place: -, Year: -  </span>
-<span id="cb3-11"><a href=""></a>Place: Kraków, Year: 1874  </span>
-<span id="cb3-12"><a href=""></a>Place: Lwów, Year: 1848  </span>
-<span id="cb3-13"><a href=""></a>Place: -, Year: 1870  </span>
-<span id="cb3-14"><a href=""></a>Place: -, Year: -  </span>
-<span id="cb3-15"><a href=""></a>Place: Warszawa, Year: 1831  </span>
-<span id="cb3-16"><a href=""></a>Place: Lwów, Year: 1848  </span>
-<span id="cb3-17"><a href=""></a>Place: Kraków, Year: 1848  </span>
-<span id="cb3-18"><a href=""></a>Place: Lwów, Year: 1848  </span>
-<span id="cb3-19"><a href=""></a>Place: Warszawa, Year: -  </span>
-<span id="cb3-20"><a href=""></a>Place: -, Year: -  </span>
-<span id="cb3-21"><a href=""></a>Place: Lwów, Year: 1848  </span>
-<span id="cb3-22"><a href=""></a>Place: Paryż, Year: 1843  </span>
-<span id="cb3-23"><a href=""></a>Place: Kraków, Year: 1900  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="" aria-label="1"></a>Place: Mülheim a. d. R., Year: 1871-1876  </span>
+<span id="cb3-2"><a href="" aria-label="2"></a>Place: Warszawa, Year: 1881  </span>
+<span id="cb3-3"><a href="" aria-label="3"></a>Place: Warszawa, Year: 1881  </span>
+<span id="cb3-4"><a href="" aria-label="4"></a>Place: Toruń, Year: 1882  </span>
+<span id="cb3-5"><a href="" aria-label="5"></a>Place: -, Year: -  </span>
+<span id="cb3-6"><a href="" aria-label="6"></a>Place: Warszawa, Year: 1895  </span>
+<span id="cb3-7"><a href="" aria-label="7"></a>Place: -, Year: -  </span>
+<span id="cb3-8"><a href="" aria-label="8"></a>Place: Kraków, Year: 1892  </span>
+<span id="cb3-9"><a href="" aria-label="9"></a>Place: -, Year: -  </span>
+<span id="cb3-10"><a href="" aria-label="10"></a>Place: -, Year: -  </span>
+<span id="cb3-11"><a href="" aria-label="11"></a>Place: Kraków, Year: 1874  </span>
+<span id="cb3-12"><a href="" aria-label="12"></a>Place: Lwów, Year: 1848  </span>
+<span id="cb3-13"><a href="" aria-label="13"></a>Place: -, Year: 1870  </span>
+<span id="cb3-14"><a href="" aria-label="14"></a>Place: -, Year: -  </span>
+<span id="cb3-15"><a href="" aria-label="15"></a>Place: Warszawa, Year: 1831  </span>
+<span id="cb3-16"><a href="" aria-label="16"></a>Place: Lwów, Year: 1848  </span>
+<span id="cb3-17"><a href="" aria-label="17"></a>Place: Kraków, Year: 1848  </span>
+<span id="cb3-18"><a href="" aria-label="18"></a>Place: Lwów, Year: 1848  </span>
+<span id="cb3-19"><a href="" aria-label="19"></a>Place: Warszawa, Year: -  </span>
+<span id="cb3-20"><a href="" aria-label="20"></a>Place: -, Year: -  </span>
+<span id="cb3-21"><a href="" aria-label="21"></a>Place: Lwów, Year: 1848  </span>
+<span id="cb3-22"><a href="" aria-label="22"></a>Place: Paryż, Year: 1843  </span>
+<span id="cb3-23"><a href="" aria-label="23"></a>Place: Kraków, Year: 1900  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="sometimes-llms-seem-confused" class="slide level2">
 <h2>sometimes, LLMs seem confused</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href=""></a>The given input describes a large set of scenarios for the zombie apocalypse simulation. For each </span>
-<span id="cb4-2"><a href=""></a>of the 12 test cases, a valid path from the upper-left corner to the lower-right corner of the </span>
-<span id="cb4-3"><a href=""></a>50 × 50 grid is not found while avoiding both the obstacles and the attack ranges of the zombies. </span>
-<span id="cb4-4"><a href=""></a>Consequently, the output for every test case is a single line containing `-1`.</span>
-<span id="cb4-5"><a href=""></a></span>
-<span id="cb4-6"><a href=""></a>-1</span>
-<span id="cb4-7"><a href=""></a>-1</span>
-<span id="cb4-8"><a href=""></a>-1</span>
-<span id="cb4-9"><a href=""></a>-1</span>
-<span id="cb4-10"><a href=""></a>-1</span>
-<span id="cb4-11"><a href=""></a>-1</span>
-<span id="cb4-12"><a href=""></a>-1</span>
-<span id="cb4-13"><a href=""></a>-1</span>
-<span id="cb4-14"><a href=""></a>-1</span>
-<span id="cb4-15"><a href=""></a>-1</span>
-<span id="cb4-16"><a href=""></a>-1</span>
-<span id="cb4-17"><a href=""></a>-1</span>
-<span id="cb4-18"><a href=""></a></span>
-<span id="cb4-19"><a href=""></a>Place: -, Year: -  </span>
-<span id="cb4-20"><a href=""></a>Place: -, Year: -  </span>
-<span id="cb4-21"><a href=""></a>Place: -, Year: -  </span>
-<span id="cb4-22"><a href=""></a>Place: -, Year: -  </span>
-<span id="cb4-23"><a href=""></a>Place: -, Year: -</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="" aria-label="1"></a>The given input describes a large set of scenarios for the zombie apocalypse simulation. For each </span>
+<span id="cb4-2"><a href="" aria-label="2"></a>of the 12 test cases, a valid path from the upper-left corner to the lower-right corner of the </span>
+<span id="cb4-3"><a href="" aria-label="3"></a>50 × 50 grid is not found while avoiding both the obstacles and the attack ranges of the zombies. </span>
+<span id="cb4-4"><a href="" aria-label="4"></a>Consequently, the output for every test case is a single line containing `-1`.</span>
+<span id="cb4-5"><a href="" aria-label="5"></a></span>
+<span id="cb4-6"><a href="" aria-label="6"></a>-1</span>
+<span id="cb4-7"><a href="" aria-label="7"></a>-1</span>
+<span id="cb4-8"><a href="" aria-label="8"></a>-1</span>
+<span id="cb4-9"><a href="" aria-label="9"></a>-1</span>
+<span id="cb4-10"><a href="" aria-label="10"></a>-1</span>
+<span id="cb4-11"><a href="" aria-label="11"></a>-1</span>
+<span id="cb4-12"><a href="" aria-label="12"></a>-1</span>
+<span id="cb4-13"><a href="" aria-label="13"></a>-1</span>
+<span id="cb4-14"><a href="" aria-label="14"></a>-1</span>
+<span id="cb4-15"><a href="" aria-label="15"></a>-1</span>
+<span id="cb4-16"><a href="" aria-label="16"></a>-1</span>
+<span id="cb4-17"><a href="" aria-label="17"></a>-1</span>
+<span id="cb4-18"><a href="" aria-label="18"></a></span>
+<span id="cb4-19"><a href="" aria-label="19"></a>Place: -, Year: -  </span>
+<span id="cb4-20"><a href="" aria-label="20"></a>Place: -, Year: -  </span>
+<span id="cb4-21"><a href="" aria-label="21"></a>Place: -, Year: -  </span>
+<span id="cb4-22"><a href="" aria-label="22"></a>Place: -, Year: -  </span>
+<span id="cb4-23"><a href="" aria-label="23"></a>Place: -, Year: -</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="some-replies-are-werid" class="slide level2">
 <h2>some replies are werid…</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href=""></a>#### Correctness Proof  </span>
-<span id="cb5-2"><a href=""></a></span>
-<span id="cb5-3"><a href=""></a>We prove that the algorithm outputs the correct value for every query.</span>
-<span id="cb5-4"><a href=""></a></span>
-<span id="cb5-5"><a href=""></a>---</span>
-<span id="cb5-6"><a href=""></a></span>
-<span id="cb5-7"><a href=""></a>##### Lemma 1  </span>
-<span id="cb5-8"><a href=""></a>During the processing of a query the variable `index` equals the</span>
-<span id="cb5-9"><a href=""></a>binary number whose bits are exactly the bits encoded by the query</span>
-<span id="cb5-10"><a href=""></a>(`1` → `1`, `2` → `0`), read from the first to the last integer.</span>
-<span id="cb5-11"><a href=""></a></span>
-<span id="cb5-12"><a href=""></a>**Proof.**</span>
-<span id="cb5-13"><a href=""></a></span>
-<span id="cb5-14"><a href=""></a>*Initialization.*  </span>
-<span id="cb5-15"><a href=""></a>Before the first integer is processed `index = 0`.  </span>
-<span id="cb5-16"><a href=""></a>This is the value of a binary number with no bits – the empty prefix.</span>
-<span id="cb5-17"><a href=""></a></span>
-<span id="cb5-18"><a href=""></a>*Induction step.*  </span>
-<span id="cb5-19"><a href=""></a>Assume after reading the first `k` integers (`k ≥ 0`)</span>
-<span id="cb5-20"><a href=""></a>`index` equals the integer represented by the first `k` bits.</span>
-<span id="cb5-21"><a href=""></a>When the `(k+1)`‑st integer `d` is read,</span>
-<span id="cb5-22"><a href=""></a>the algorithm shifts the current value left by one (`index &lt;&lt; 1`)</span>
-<span id="cb5-23"><a href=""></a>and OR‑s with the new bit `bit` (`0` if `d = 2`, `1` if `d = 1`).</span>
-<span id="cb5-24"><a href=""></a>Thus the new value represents the binary number whose prefix</span>
-<span id="cb5-25"><a href=""></a>consists of the first `k` bits followed by the `(k+1)`‑st bit.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="" aria-label="1"></a>#### Correctness Proof  </span>
+<span id="cb5-2"><a href="" aria-label="2"></a></span>
+<span id="cb5-3"><a href="" aria-label="3"></a>We prove that the algorithm outputs the correct value for every query.</span>
+<span id="cb5-4"><a href="" aria-label="4"></a></span>
+<span id="cb5-5"><a href="" aria-label="5"></a>---</span>
+<span id="cb5-6"><a href="" aria-label="6"></a></span>
+<span id="cb5-7"><a href="" aria-label="7"></a>##### Lemma 1  </span>
+<span id="cb5-8"><a href="" aria-label="8"></a>During the processing of a query the variable `index` equals the</span>
+<span id="cb5-9"><a href="" aria-label="9"></a>binary number whose bits are exactly the bits encoded by the query</span>
+<span id="cb5-10"><a href="" aria-label="10"></a>(`1` → `1`, `2` → `0`), read from the first to the last integer.</span>
+<span id="cb5-11"><a href="" aria-label="11"></a></span>
+<span id="cb5-12"><a href="" aria-label="12"></a>**Proof.**</span>
+<span id="cb5-13"><a href="" aria-label="13"></a></span>
+<span id="cb5-14"><a href="" aria-label="14"></a>*Initialization.*  </span>
+<span id="cb5-15"><a href="" aria-label="15"></a>Before the first integer is processed `index = 0`.  </span>
+<span id="cb5-16"><a href="" aria-label="16"></a>This is the value of a binary number with no bits – the empty prefix.</span>
+<span id="cb5-17"><a href="" aria-label="17"></a></span>
+<span id="cb5-18"><a href="" aria-label="18"></a>*Induction step.*  </span>
+<span id="cb5-19"><a href="" aria-label="19"></a>Assume after reading the first `k` integers (`k ≥ 0`)</span>
+<span id="cb5-20"><a href="" aria-label="20"></a>`index` equals the integer represented by the first `k` bits.</span>
+<span id="cb5-21"><a href="" aria-label="21"></a>When the `(k+1)`‑st integer `d` is read,</span>
+<span id="cb5-22"><a href="" aria-label="22"></a>the algorithm shifts the current value left by one (`index &lt;&lt; 1`)</span>
+<span id="cb5-23"><a href="" aria-label="23"></a>and OR‑s with the new bit `bit` (`0` if `d = 2`, `1` if `d = 1`).</span>
+<span id="cb5-24"><a href="" aria-label="24"></a>Thus the new value represents the binary number whose prefix</span>
+<span id="cb5-25"><a href="" aria-label="25"></a>consists of the first `k` bits followed by the `(k+1)`‑st bit.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="the-eureka-moment" class="slide level2">
 <h2>the eureka moment</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-code-line-numbers="12,13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>PROMPT_INTRO <span class="op">=</span> <span class="st">"""You are an expert librarian, with a profound expertise in Polish prints </span></span>
-<span id="cb6-2"><a href=""></a><span class="st">from 16th-19th centuries.</span></span>
-<span id="cb6-3"><a href=""></a></span>
-<span id="cb6-4"><a href=""></a><span class="st">I will give you bibliographic entries divided into three TAB-separated fields:</span></span>
-<span id="cb6-5"><a href=""></a><span class="st">Author[TAB]Title[TAB]Publication info.</span></span>
-<span id="cb6-6"><a href=""></a></span>
-<span id="cb6-7"><a href=""></a><span class="st">Extract ONLY place of publication and year of publication.</span></span>
-<span id="cb6-8"><a href=""></a><span class="st">Prioritize place/year inside parentheses if present.</span></span>
-<span id="cb6-9"><a href=""></a><span class="st">Convert city names to modern Polish spelling when possible (e.g., Breslau/Vratislavia -&gt; Wrocław; </span></span>
-<span id="cb6-10"><a href=""></a><span class="st">Lemberg -&gt; Lwów).</span></span>
-<span id="cb6-11"><a href=""></a><span class="st">If missing, output "-".</span></span>
-<span id="cb6-12"><a href=""></a><span class="st">Take the entries one by one carefully to avoid confusion.</span></span>
-<span id="cb6-13"><a href=""></a><span class="st">Expect to process exactly 50 entries.</span></span>
-<span id="cb6-14"><a href=""></a></span>
-<span id="cb6-15"><a href=""></a><span class="st">OUTPUT RULES:</span></span>
-<span id="cb6-16"><a href=""></a><span class="st">- Output EXACTLY one line per entry, numbered 1..N.</span></span>
-<span id="cb6-17"><a href=""></a><span class="st">- Each line must be: "i. Place: &lt;Place&gt;, Year: &lt;Year&gt;"</span></span>
-<span id="cb6-18"><a href=""></a><span class="st">- No extra text.</span></span>
-<span id="cb6-19"><a href=""></a></span>
-<span id="cb6-20"><a href=""></a><span class="st">Entries:</span></span>
-<span id="cb6-21"><a href=""></a><span class="st">"""</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section></section>
-<section>
-<section id="results" class="title-slide slide level1 center">
-<h1>results</h1>
-
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-code-line-numbers="12,13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="" aria-label="1"></a>PROMPT_INTRO <span class="op">=</span> <span class="st">"""You are an expert librarian, with a profound expertise in Polish prints </span></span>
+<span id="cb6-2"><a href="" aria-label="2"></a><span class="st">from 16th-19th centuries.</span></span>
+<span id="cb6-3"><a href="" aria-label="3"></a></span>
+<span id="cb6-4"><a href="" aria-label="4"></a><span class="st">I will give you bibliographic entries divided into three TAB-separated fields:</span></span>
+<span id="cb6-5"><a href="" aria-label="5"></a><span class="st">Author[TAB]Title[TAB]Publication info.</span></span>
+<span id="cb6-6"><a href="" aria-label="6"></a></span>
+<span id="cb6-7"><a href="" aria-label="7"></a><span class="st">Extract ONLY place of publication and year of publication.</span></span>
+<span id="cb6-8"><a href="" aria-label="8"></a><span class="st">Prioritize place/year inside parentheses if present.</span></span>
+<span id="cb6-9"><a href="" aria-label="9"></a><span class="st">Convert city names to modern Polish spelling when possible (e.g., Breslau/Vratislavia -&gt; Wrocław; </span></span>
+<span id="cb6-10"><a href="" aria-label="10"></a><span class="st">Lemberg -&gt; Lwów).</span></span>
+<span id="cb6-11"><a href="" aria-label="11"></a><span class="st">If missing, output "-".</span></span>
+<span id="cb6-12"><a href="" aria-label="12"></a><span class="st">Take the entries one by one carefully to avoid confusion.</span></span>
+<span id="cb6-13"><a href="" aria-label="13"></a><span class="st">Expect to process exactly 50 entries.</span></span>
+<span id="cb6-14"><a href="" aria-label="14"></a></span>
+<span id="cb6-15"><a href="" aria-label="15"></a><span class="st">OUTPUT RULES:</span></span>
+<span id="cb6-16"><a href="" aria-label="16"></a><span class="st">- Output EXACTLY one line per entry, numbered 1..N.</span></span>
+<span id="cb6-17"><a href="" aria-label="17"></a><span class="st">- Each line must be: "i. Place: &lt;Place&gt;, Year: &lt;Year&gt;"</span></span>
+<span id="cb6-18"><a href="" aria-label="18"></a><span class="st">- No extra text.</span></span>
+<span id="cb6-19"><a href="" aria-label="19"></a></span>
+<span id="cb6-20"><a href="" aria-label="20"></a><span class="st">Entries:</span></span>
+<span id="cb6-21"><a href="" aria-label="21"></a><span class="st">"""</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="results-number-of-printed-books" class="slide level2">
-<h2>results: number of printed books</h2>
-
-<img data-src="index_files/figure-revealjs/fig_1-1.png" width="960" class="r-stretch"></section>
-<section id="results-centers-vs.-peripheries" class="slide level2">
-<h2>results: centers vs.&nbsp;peripheries</h2>
-
-<img data-src="index_files/figure-revealjs/fig_2-1.png" width="960" class="r-stretch"></section>
-<section id="results-printing-centers" class="slide level2">
-<h2>results: printing centers</h2>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
 <section id="small-tidy-vs.-big-dirty" class="slide level2">
 <h2>Small &amp; tidy vs.&nbsp;Big &amp; dirty</h2>
 <ul>
@@ -755,6 +450,10 @@ Maciej Eder
 <ul>
 <li>Qwen 3.6 27b</li>
 <li>Qwen 3.6 35b</li>
+</ul></li>
+<li>on August 14, 2026: a substantially updated Qwen:
+<ul>
+<li>Qwen 3.8 27b</li>
 </ul></li>
 </ul>
 </section>
@@ -807,7 +506,7 @@ Maciej Eder
 <tr class="odd">
 <td style="text-align: left;">gpt-oss:20b</td>
 <td style="text-align: right;">0.890</td>
-<td style="text-align: right;">0.856</td>
+<td style="text-align: right;">0.869</td>
 <td style="text-align: right;"></td>
 <td style="text-align: right;">✅</td>
 <td style="text-align: right;">✅</td>
@@ -816,7 +515,7 @@ Maciej Eder
 <tr class="even">
 <td style="text-align: left;">gemma4:26b</td>
 <td style="text-align: right;">0.840</td>
-<td style="text-align: right;">0.854</td>
+<td style="text-align: right;">0.875</td>
 <td style="text-align: right;"></td>
 <td style="text-align: right;">✅</td>
 <td style="text-align: right;">✅</td>
@@ -824,9 +523,9 @@ Maciej Eder
 </tr>
 <tr class="odd">
 <td style="text-align: left;">qwen3.6:35b</td>
-<td style="text-align: right;">0.940</td>
-<td style="text-align: right;">0.959</td>
-<td style="text-align: right;">🏆</td>
+<td style="text-align: right;">0.892</td>
+<td style="text-align: right;">0.925</td>
+<td style="text-align: right;"></td>
 <td style="text-align: right;">🐌</td>
 <td style="text-align: right;">✅</td>
 <td style="text-align: right;">❌</td>
@@ -834,7 +533,7 @@ Maciej Eder
 <tr class="even">
 <td style="text-align: left;">gemma4:31b</td>
 <td style="text-align: right;">0.929</td>
-<td style="text-align: right;">0.951</td>
+<td style="text-align: right;">0.978</td>
 <td style="text-align: right;">👀</td>
 <td style="text-align: right;">🐌🐌</td>
 <td style="text-align: right;">🐌</td>
@@ -843,31 +542,40 @@ Maciej Eder
 <tr class="odd">
 <td style="text-align: left;">qwen3.6:27b</td>
 <td style="text-align: right;">0.945</td>
-<td style="text-align: right;">0.953</td>
+<td style="text-align: right;">0.979</td>
 <td style="text-align: right;">💪</td>
 <td style="text-align: right;">🐌🐌</td>
 <td style="text-align: right;">🐌</td>
 <td style="text-align: right;">❌</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">deepseek:70b</td>
-<td style="text-align: right;">0.646</td>
-<td style="text-align: right;">0.422</td>
-<td style="text-align: right;"></td>
+<td style="text-align: left;">qwen3.8:27b</td>
+<td style="text-align: right;">0.948</td>
+<td style="text-align: right;">0.973</td>
+<td style="text-align: right;">🏆</td>
+<td style="text-align: right;">🐌🐌</td>
+<td style="text-align: right;">🐌</td>
 <td style="text-align: right;">❌</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">gpt-oss:120b</td>
-<td style="text-align: right;">0.924</td>
-<td style="text-align: right;">0.713</td>
+<td style="text-align: left;">deepseek:70b</td>
+<td style="text-align: right;">0.646</td>
+<td style="text-align: right;">0.432</td>
 <td style="text-align: right;"></td>
 <td style="text-align: right;">❌</td>
 <td style="text-align: right;">✅</td>
 <td style="text-align: right;">✅</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">gpt-oss:120b</td>
+<td style="text-align: right;">0.924</td>
+<td style="text-align: right;">0.720</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">❌</td>
+<td style="text-align: right;">✅</td>
+<td style="text-align: right;">✅</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">gpt5.4</td>
 <td style="text-align: right;">???</td>
 <td style="text-align: right;">???</td>
@@ -902,13 +610,30 @@ Maciej Eder
 <li>or process your dataset in batches.</li>
 </ul>
 </section></section>
-<section id="thank-you-ai-teh" class="title-slide slide level1 center">
-<h1>thank you! / AI-teh!</h1>
+<section>
+<section id="results" class="title-slide slide level1 center">
+<h1>results</h1>
+
+</section>
+<section id="results-number-of-printed-books" class="slide level2">
+<h2>results: number of printed books</h2>
+
+<img data-src="index_files/figure-revealjs/fig_1-1.png" width="960" class="r-stretch"></section>
+<section id="results-centers-vs.-peripheries" class="slide level2">
+<h2>results: centers vs.&nbsp;peripheries</h2>
+
+<img data-src="index_files/figure-revealjs/fig_2-1.png" width="960" class="r-stretch"></section>
+<section id="results-printing-centers" class="slide level2">
+<h2>results: printing centers</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section></section>
+<section id="thank-you" class="title-slide slide level1 center">
+<h1>thank you!</h1>
 
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
-<p><img src="DigiTS-RGB-short-SMALL.svg" class="slide-logo"></p>
+<p><img src="csg.png" class="slide-logo"></p>
 <div class="footer footer-default">
 
 </div>
@@ -963,7 +688,7 @@ Maciej Eder
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
