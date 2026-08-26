@@ -96,7 +96,7 @@ In Venegia appresso Gabriel Giolito de Ferrari MDLXI (1561).
 
 - manual data extraction unrealistic for ~400,000 entries
 - LLMs capable of classifying, denoising, translating etc.
-- LLMs good in detecting pattenns in unstructured data
+- LLMs good in detecting patterns in unstructured data
 - however, the dataset cannot be just fed into a LLM 
 - but: the data can be split into batches
 - batches of 50 entries sent to the model, one at a time 
@@ -325,18 +325,14 @@ Entries:
 
 
 
-# LLMs run locally
-
-## easier than you think
+# LLMs locally: easier than you think
 
 - get a program to run LLMs, e.g.: [https://ollama.com/](https://ollama.com/)
 - pull a model of your choice, e.g.:
-    - `gemma3n` -- multilingual, designed to work on older laptops
-    - `deepseek-r1:8b` -- reasoning model, yet still relatively small
-    - `qwen3.5:9b` -- a new kid on the block, reasoning while compact
-    - `mistral-small` -- bulky (13Gb on disk), but still can be run locally
-    - `gpt-oss:20b` -- might require a recent laptop, but still installable
-    - `cogito:70b` -- a monster desktop computer should be able to handle it
+    - `gemma4:12b` -- multilingual, requires just 16Gb of RAM
+    - `gemma4:31b` -- top performance
+    - `qwen3.6:35b` -- just 4b active parameters (=fast)
+    - `qwen3.8:27b` -- a new kid on the block, strong reasoning
     - . . . and dozens of other models.
 - run in a chatbot mode (known from chatGPT etc.)
 - or process your dataset in batches.

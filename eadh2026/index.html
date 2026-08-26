@@ -294,7 +294,7 @@ Karolina Eder
 <ul>
 <li>manual data extraction unrealistic for ~400,000 entries</li>
 <li>LLMs capable of classifying, denoising, translating etc.</li>
-<li>LLMs good in detecting pattenns in unstructured data</li>
+<li>LLMs good in detecting patterns in unstructured data</li>
 <li>however, the dataset cannot be just fed into a LLM</li>
 <li>but: the data can be split into batches</li>
 <li>batches of 50 entries sent to the model, one at a time</li>
@@ -587,29 +587,23 @@ Karolina Eder
 </tbody>
 </table>
 </section></section>
-<section>
-<section id="llms-run-locally" class="title-slide slide level1 center">
-<h1>LLMs run locally</h1>
-
-</section>
-<section id="easier-than-you-think" class="slide level2">
-<h2>easier than you think</h2>
+<section id="llms-locally-easier-than-you-think" class="title-slide slide level1 center">
+<h1>LLMs locally: easier than you think</h1>
 <ul>
 <li>get a program to run LLMs, e.g.: <a href="https://ollama.com/">https://ollama.com/</a></li>
 <li>pull a model of your choice, e.g.:
 <ul>
-<li><code>gemma3n</code> – multilingual, designed to work on older laptops</li>
-<li><code>deepseek-r1:8b</code> – reasoning model, yet still relatively small</li>
-<li><code>qwen3.5:9b</code> – a new kid on the block, reasoning while compact</li>
-<li><code>mistral-small</code> – bulky (13Gb on disk), but still can be run locally</li>
-<li><code>gpt-oss:20b</code> – might require a recent laptop, but still installable</li>
-<li><code>cogito:70b</code> – a monster desktop computer should be able to handle it</li>
+<li><code>gemma4:12b</code> – multilingual, requires just 16Gb of RAM</li>
+<li><code>gemma4:31b</code> – top performance</li>
+<li><code>qwen3.6:35b</code> – just 4b active parameters (=fast)</li>
+<li><code>qwen3.8:27b</code> – a new kid on the block, strong reasoning</li>
 <li>. . . and dozens of other models.</li>
 </ul></li>
 <li>run in a chatbot mode (known from chatGPT etc.)</li>
 <li>or process your dataset in batches.</li>
 </ul>
-</section></section>
+</section>
+
 <section>
 <section id="results" class="title-slide slide level1 center">
 <h1>results</h1>
