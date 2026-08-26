@@ -301,6 +301,48 @@ Entries:
 - compared with manual annotation
 
 
+## achieved accuracies: batch size
+
+```{r fig_6, echo=FALSE, message=FALSE}
+
+place = c(0.891, 0.913, 0.919, 0.916)
+year = c(0.980, 0.959, 0.972, 0.971)
+batch_size = c("50", "25", "10", "5")
+acc_summary = rbind(place, year)
+colnames(acc_summary) = batch_size
+
+barplot(acc_summary, beside = TRUE,
+        col = c("lightblue", "mistyrose"), 
+        ylim = c(0.3, 1), xpd = FALSE)
+legend("topright", 
+       legend = rownames(acc_summary), 
+       bty = "n", lwd = 10, 
+       col = c("lightblue", "mistyrose"))
+#title(main = "Batch size influence")
+```
+
+
+
+## achieved accuracies: models
+
+```{r fig_5, echo=FALSE, message=FALSE}
+place = c(0.89, 0.84, 0.892, 0.929, 0.945, 0.948, 0.646, 0.924)
+year = c(0.869, 0.875, 0.925, 0.978, 0.979, 0.973, 0.432, 0.72)
+models = c("oss:20b", "gemma4:26b", "qwen3.6:35b", "gemma4:31b", "qwen3.6:27b", "qwen3.8:27b", "deepseek:70", "oss:120b")
+acc_summary = rbind(place, year)
+colnames(acc_summary) = models
+
+barplot(acc_summary, beside = TRUE,
+        col = c("lightblue", "mistyrose"), 
+        ylim = c(0.3, 1), xpd = FALSE)
+legend("topright", 
+       legend = rownames(acc_summary), 
+       bty = "n", lwd = 10, 
+       col = c("lightblue", "mistyrose"))
+title(main = "Model performance")
+```
+
+
 
 
 ## performance comparison
@@ -319,6 +361,8 @@ Entries:
 |deepseek:70b| 0.646| 0.432|      |❌    |✅    |✅    |
 |gpt-oss:120b| 0.924| 0.720|      |❌    |✅    |✅    |
 |gpt5.4      | ???  | ???  | 🥇   |❌    |❌    |✅    |
+
+
 
 
 
@@ -348,7 +392,7 @@ Entries:
 
 ```{r fig_1, echo=FALSE, message=FALSE}
 
-txt = readLines("output_gpt120_ver3.txt", warn = FALSE)
+txt = readLines("results_qwen38-27b.txt", warn = FALSE)
 
 txt_relevant = grep("Place: .*Year: ", txt, value = TRUE)
 
