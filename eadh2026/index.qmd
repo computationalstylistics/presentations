@@ -248,14 +248,6 @@ Entries:
 
 
 
-## Small & tidy vs. Big & dirty
-
-- it would have been great to have it all, but...
-- messy dataset better than no dataset
-- in the Humanities, we are obsessed with high quality
-- however, a bigger picture only possible when the dataset is big too!
-
-
 ## but...
 
 - the model gpt-oss:120b outperformed competition (so far)
@@ -374,12 +366,12 @@ title(main = "Model performance")
 - get a program to run LLMs, e.g.: [https://ollama.com/](https://ollama.com/)
 - pull a model of your choice, e.g.:
     - `gemma4:12b` -- multilingual, requires just 16Gb of RAM
-    - `gemma4:31b` -- top performance
+    - `gemma4:31b` -- astonishing performance
     - `qwen3.6:35b` -- just 4b active parameters (=fast)
-    - `qwen3.8:27b` -- a new kid on the block, strong reasoning
+    - `qwen3.8:27b` -- a new kid on the block, amazingly strong
     - . . . and dozens of other models.
-- run in a chatbot mode (known from chatGPT etc.)
-- or process your dataset in batches.
+- to be run in a chatbot mode (known from chatGPT etc.)
+- or to process your dataset in batches.
 
 
 
