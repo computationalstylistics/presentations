@@ -246,16 +246,17 @@ Entries:
 ```
 
 
+# we processed the dataset again 
+
 
 
 ## but...
 
-- the model gpt-oss:120b outperformed competition (so far)
+- the model gpt-oss:120b outperformed competition (we thought)
 - on April 2, 2026: the Gemma4 family released:
     - Gemma 4 26b
     - Gemma 4 31b
-    - Gemma 4 e4b
-    - Gemma 4 e2b
+    - . . . 
 - on April 3, 2026: the Qwen3.6 family released:
     - Qwen 3.6 27b
     - Qwen 3.6 35b
@@ -357,21 +358,9 @@ title(main = "Model performance")
 
 
 
+# we processed the dataset again 
 
 
-
-
-# LLMs locally: easier than you think
-
-- get a program to run LLMs, e.g.: [https://ollama.com/](https://ollama.com/)
-- pull a model of your choice, e.g.:
-    - `gemma4:12b` -- multilingual, requires just 16Gb of RAM
-    - `gemma4:31b` -- astonishing performance
-    - `qwen3.6:35b` -- just 4b active parameters (=fast)
-    - `qwen3.8:27b` -- a new kid on the block, amazingly strong
-    - . . . and dozens of other models.
-- to be run in a chatbot mode (known from chatGPT etc.)
-- or to process your dataset in batches.
 
 
 
@@ -553,6 +542,23 @@ ggplot(book_long,
 
 
 ```
+
+
+
+
+
+# LLMs locally: easier than you think
+
+- get a program to run LLMs, e.g.: [https://ollama.com/](https://ollama.com/)
+- pull a model of your choice, e.g.:
+    - `gemma4:12b` -- multilingual, requires just 16Gb of RAM
+    - `gemma4:31b` -- astonishing performance
+    - `qwen3.6:35b` -- just 4b active parameters (=fast)
+    - `qwen3.8:27b` -- a new kid on the block, amazingly strong
+    - . . . and dozens of other models.
+- to be run in a chatbot mode (known from chatGPT etc.)
+- or to process your dataset in batches.
+
 
 
 
