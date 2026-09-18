@@ -546,7 +546,7 @@ ggplot(book_long,
 
 ## results: Latin replaced with Polish
 
-![](LAT_vs_POL_with_trendlines.png)
+![](img/LAT_vs_POL_with_trendlines.png)
 
 
 
