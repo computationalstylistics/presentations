@@ -297,7 +297,8 @@ Karolina Eder
 <li>LLMs good in detecting patterns in unstructured data</li>
 <li>however, the dataset cannot be just fed into a LLM</li>
 <li>but: the data can be split into batches</li>
-<li>batches of 50 entries sent to the model, one at a time</li>
+<li>batches of 50 entries sent to the model, one batch at a time</li>
+<li>chosen model: gpt-oss:120b (run locally)</li>
 </ul>
 </section>
 <section id="the-prompt" class="slide level2">
@@ -426,15 +427,20 @@ Karolina Eder
 <span id="cb6-20"><a href="" aria-label="20"></a><span class="st">Entries:</span></span>
 <span id="cb6-21"><a href="" aria-label="21"></a><span class="st">"""</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
-<section>
 <section id="we-processed-the-dataset-again" class="title-slide slide level1 center">
 <h1>we processed the dataset again</h1>
+
+</section>
+
+<section>
+<section id="and-we-got-satisfactory-results" class="title-slide slide level1 center">
+<h1>and we got satisfactory results</h1>
 
 </section>
 <section id="but" class="slide level2">
 <h2>but…</h2>
 <ul>
-<li>the model gpt-oss:120b outperformed competition (we thought)</li>
+<li>the model gpt-oss:120b kept outperforming competition (we thought)</li>
 <li>on April 2, 2026: the Gemma4 family released:
 <ul>
 <li>Gemma 4 26b</li>
@@ -579,10 +585,10 @@ Karolina Eder
 <td style="text-align: right;">✅</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">gpt5.4</td>
+<td style="text-align: left;">gpt5.6</td>
 <td style="text-align: right;">???</td>
 <td style="text-align: right;">???</td>
-<td style="text-align: right;">🥇</td>
+<td style="text-align: right;">(🥇?)</td>
 <td style="text-align: right;">❌</td>
 <td style="text-align: right;">❌</td>
 <td style="text-align: right;">✅</td>
@@ -611,7 +617,21 @@ Karolina Eder
 <section id="results-printing-centers" class="slide level2">
 <h2>results: printing centers</h2>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section>
+<section id="results-latin-replaced-with-polish" class="slide level2">
+<h2>results: Latin replaced with Polish</h2>
+
+<img data-src="LAT_vs_POL_with_trendlines.png" class="r-stretch"></section>
+<section id="conclusions" class="slide level2">
+<h2>conclusions</h2>
+<ul>
+<li>LLMs in annotation pipelines: very efficient</li>
+<li>messy datasets can get a new life now</li>
+<li>(modern) local LLMs better than we all thought</li>
+<li>the <em>Bibliography</em> by Estreichers: suitable for large-scale studies</li>
+<li>the history of Polish prints can be re-written now (kinda)</li>
+</ul>
+</section></section>
 <section id="llms-locally-easier-than-you-think" class="title-slide slide level1 center">
 <h1>LLMs locally: easier than you think</h1>
 <ul>
@@ -629,6 +649,15 @@ Karolina Eder
 </ul>
 </section>
 
+<section>
+<section id="epilogue" class="title-slide slide level1 center">
+<h1>epilogue</h1>
+
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+
+<img data-src="img/estr_webpage.png" class="r-stretch"></section></section>
 <section id="thank-you" class="title-slide slide level1 center">
 <h1>thank you!</h1>
 
@@ -690,7 +719,7 @@ Karolina Eder
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: 'c/t',
+        slideNumber: false,
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',

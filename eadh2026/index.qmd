@@ -17,7 +17,7 @@ format:
     logo: csg.png
     css: medium_logo.css
     self_contained: true
-    slide-number: c/t
+    #slide-number: c/t
     #incremental: true
 ---
 
@@ -99,7 +99,8 @@ In Venegia appresso Gabriel Giolito de Ferrari MDLXI (1561).
 - LLMs good in detecting patterns in unstructured data
 - however, the dataset cannot be just fed into a LLM 
 - but: the data can be split into batches
-- batches of 50 entries sent to the model, one at a time 
+- batches of 50 entries sent to the model, one batch at a time 
+- chosen model: gpt-oss:120b (run locally)
 
 
 
@@ -248,11 +249,11 @@ Entries:
 
 # we processed the dataset again 
 
-
+# and we got satisfactory results
 
 ## but...
 
-- the model gpt-oss:120b outperformed competition (we thought)
+- the model gpt-oss:120b kept outperforming competition (we thought)
 - on April 2, 2026: the Gemma4 family released:
     - Gemma 4 26b
     - Gemma 4 31b
@@ -353,7 +354,7 @@ title(main = "Model performance")
 |qwen3.8:27b | 0.948| 0.973| 🏆   |🐌🐌  |🐌    |❌    |
 |deepseek:70b| 0.646| 0.432|      |❌    |✅    |✅    |
 |gpt-oss:120b| 0.924| 0.720|      |❌    |✅    |✅    |
-|gpt5.4      | ???  | ???  | 🥇   |❌    |❌    |✅    |
+|gpt5.6      | ???  | ???  | (🥇?)|❌    |❌    |✅    |
 
 
 
@@ -543,6 +544,19 @@ ggplot(book_long,
 
 ```
 
+## results: Latin replaced with Polish
+
+![](LAT_vs_POL_with_trendlines.png)
+
+
+
+## conclusions
+
+- LLMs in annotation pipelines: very efficient
+- messy datasets can get a new life now
+- (modern) local LLMs better than we all thought
+- the _Bibliography_ by Estreichers: suitable for large-scale studies
+- the history of Polish prints can be re-written now (kinda)
 
 
 
@@ -558,6 +572,13 @@ ggplot(book_long,
     - . . . and dozens of other models.
 - to be run in a chatbot mode (known from chatGPT etc.)
 - or to process your dataset in batches.
+
+
+# epilogue
+
+## 
+
+![](img/estr_webpage.png)
 
 
 
